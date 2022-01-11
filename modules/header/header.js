@@ -3,12 +3,22 @@ import Image from 'next/image';
 
 const Header = () => {
     return (
-        <Header>
-            <Image>
+        <header className="flex items-center">
+            <main>
+                <div>
+                    <h1 >
+                        MEDUZA
+                    </h1>
+                    <h3>
+                        Rent a Boat Company
+                    </h3>
+                </div>
+                <div>
+                    <NavBar />
+                </div>
+            </main>
 
-            </Image>
-            <NavBar />
-        </Header>
+        </header>
 
     );
 }
