@@ -21,8 +21,9 @@ const Home = () => {
                         <button>
                             go one day forward
                         </button>
-                        <Reservations />
+
                     </div>
+                    <Reservations />
                 </div>
                 <div>
 
