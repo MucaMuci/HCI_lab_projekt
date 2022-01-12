@@ -4,9 +4,9 @@ import LogoImg from '../../assets/logo.png';
 
 const Header = () => {
     return (
-        <header className="flex ">
-            <main className="inline-flex"> {/* Zašto ne radi flex-row */}
-                <div >
+        <header >
+            <main className="flex flex-row ">
+                <div>
                     <Image
                         src={LogoImg}
                         layout="fixed"
@@ -14,14 +14,14 @@ const Header = () => {
                         height={100}
                     />
                 </div>
-                <div >
+                <div className="flex flex-col">
                     <h1 >
                         MEDUZA
                     </h1>
                     <h3>
                         Rent a Boat Company
                     </h3>
-                    <NavBar /> {/*Kako izdvojit Sign in */}
+                    <NavBar />
                 </div>
 
             </main>

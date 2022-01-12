@@ -9,7 +9,7 @@ const Footer = () => {
     return (
         <section>
             <main>
-                <div className="inline-flex">
+                <div className="flex flex-row">
                     <Image
                         src={LogoImg}
                         width={100}
@@ -44,7 +44,7 @@ const Footer = () => {
                                 media accounts:
                             </h2>
                         </div>
-                        <div className='inline-flex'>
+                        <div className='flex flex-row'>
                             <Image
                                 src={WhatsappImg}
                                 width={30}

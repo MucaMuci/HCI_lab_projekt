@@ -5,7 +5,7 @@ import Image from 'next/image';
 const Login = () => {
     return (
         <section>
-            <main className='inline-flex'>
+            <main className='flex flex-row justify-center '>
                 <div>
                     <Image
                         src={LogoImg2}
@@ -23,7 +23,7 @@ const Login = () => {
                         <button>Log In</button>
 
                     </div>
-                    <div className='border inline-flex'>
+                    <div className='border flex flex-row'>
                         <div>
                             Don't have an account?
                         </div>

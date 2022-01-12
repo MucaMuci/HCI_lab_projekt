@@ -5,7 +5,7 @@ import Image from 'next/image';
 const Register = () => {
     return (
         <section>
-            <main className='inline-flex'>
+            <main className='flex flex-row'>
                 <div>
                     <Image
                         src={LogoImg2}
@@ -24,7 +24,7 @@ const Register = () => {
                         <button>Register</button>
 
                     </div>
-                    <div className='border inline-flex'>
+                    <div className='border flex flex-row'>
                         <div>
                             Already have an account?
                         </div>
