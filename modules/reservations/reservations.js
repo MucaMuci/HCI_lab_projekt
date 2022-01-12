@@ -1,5 +1,5 @@
 import Reservation from "../../components/reservation";
-import { reservation, reservations } from '../../const/reservationList'
+import { reservations } from '../../const/reservationList'
 
 const Reservations = () => {
     return (

@@ -1,64 +1,64 @@
 const reservation = ({ name, customersName, phoneNumber, payed, hasYetToPay, pickUpTime, pickUpPlace, needsSkipper, additionalEquipment, comment }) => (
-    <div>
-        <div>
+    <div className="flex flex-col">
+        <div className="flex justify-center">
             {name}
         </div>
         <div className="flex flex-row">
-            <div>
-                <div>
+            <div className="flex flex-col items-end">
+                <div className="flex  pr-2">
                     Customers name:
                 </div>
-                <div>
+                <div className="flex pr-2">
                     Phone number:
                 </div>
-                <div>
+                <div className="flex pr-2">
                     Payed:
                 </div>
-                <div>
+                <div className="flex pr-2">
                     Has yet to pay:
                 </div>
-                <div>
+                <div className="flex pr-2">
                     Pick-up time:
                 </div>
-                <div>
+                <div className="flex pr-2">
                     Pick-up place:
                 </div>
-                <div>
+                <div className="flex pr-2">
                     Needs skipper:
                 </div>
-                <div>
+                <div className="flex pr-2">
                     Additional equipment:
                 </div>
             </div>
             <div>
-                <div>
+                <div className="flex pl-2">
                     {customersName}
                 </div>
-                <div>
+                <div className="flex pl-2">
                     {phoneNumber}
                 </div>
-                <div>
+                <div className="flex pl-2">
                     {payed}
                 </div>
-                <div>
+                <div className="flex pl-2">
                     {hasYetToPay}
                 </div>
-                <div>
+                <div className="flex pl-2">
                     {pickUpTime}
                 </div>
-                <div>
+                <div className="flex pl-2">
                     {pickUpPlace}
                 </div>
-                <div>
+                <div className="flex pl-2">
                     {needsSkipper}
                 </div>
-                <div>
+                <div className="flex pl-2">
                     {additionalEquipment}
                 </div>
             </div>
 
         </div>
-        <div>
+        <div className="flex justify-center">
             More information
         </div>
         <div>

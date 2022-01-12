@@ -1,5 +1,6 @@
 import Footer from "../modules/footer/footer";
 import Header from "../modules/header/header";
+import Notes from "../modules/notes/notes";
 import Reservations from "../modules/reservations/reservations";
 
 const Home = () => {
@@ -8,7 +9,7 @@ const Home = () => {
             <Header />
             <div className="flex flex-row justify-between">
                 <div>
-
+                    <Notes />
                 </div>
                 <div className="flex flex-col">
                     <div className="flex flex-row justify-around">
