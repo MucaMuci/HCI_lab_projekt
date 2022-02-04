@@ -2,20 +2,21 @@ import LogoImg from '../assets/logo.png';
 import LogoImg2 from '../assets/logo2.png';
 import Image from 'next/image';
 import GoogleImg from '../assets/google.png';
+import Background from '../assets/background.png'
 
 const Login = () => {
     return (
-        <section className='h-screen bg-hci-bg'>
-            <main className='flex justify-center '>
-                <div className='hidden sm:block sm:self-center'>
+        <section className='h-screen flex justify-center bg-hci-bg'>
+            <main className='flex justify-center items-center'>
+                <div className='hidden sm:block'>
                     <Image
                         src={LogoImg2}
                         width={100}
                         height={100}
                     />
                 </div>
-                <div className='pt-4 px-6'>
-                    <div className='bg-white flex flex-col border border-gray-300 px-5 pb-5'>
+                <div className='px-6'>
+                    <div className='bg-white flex flex-col border border-gray-300 px-5 pt-3 pb-8'>
                         <div className='text-5xl self-center pt-2'>MEDUZA</div>
                         <h2 className='text-4xl self-center pb-8 text-center'>Rent a Boat Company</h2>
 
@@ -38,7 +39,7 @@ const Login = () => {
                                 <div className='px-2'>OR</div>
                                 <div className='self-center border border-solid w-full h-0 border-gray-300'></div>
                             </div>
-                            <div className='pt-2 pb-5 flex justify-center w-11/12 '>
+                            <div className='pt-2 flex justify-center w-11/12 '>
                                 <button className='flex justify-center text-medium rounded w-full py-1 shadow-btn-sjena'>
                                     <Image
                                         src={GoogleImg}
@@ -66,7 +67,7 @@ const Login = () => {
                         <button className='text-hci-modra font-medium'>Register</button>
                     </div>
                 </div>
-                <div className='hidden sm:block sm:self-center'>
+                <div className='hidden sm:block'>
                     <Image
                         src={LogoImg}
                         width={100}
