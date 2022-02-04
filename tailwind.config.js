@@ -4,6 +4,9 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",],
   theme: {
     extend: {
+      boxShadow: {
+        'btn-sjena': '0 1px 2px 1px rgba(0,0,0,0.3)',
+      },
       colors: {
         'hci-modra': {
           DEFAULT: '#3C47A9'
