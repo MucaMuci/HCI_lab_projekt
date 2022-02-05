@@ -3,6 +3,7 @@ import NavBar from "../../components/navbar";
 import Image from 'next/image';
 import LogoImg from '../../assets/logo.png';
 import UserImg from '../../assets/user.png';
+import UserManImg from '../../assets/user_man.png';
 import Hamburger from '../../assets/hamburger.png'
 import BurgerNavigation from '../../components/burgerNavigation'
 
@@ -48,12 +49,17 @@ const Header = () => {
                         width={70}
                         height={70}
                     />
+                    {/* <Image
+                        src={UserManImg}
+                        width={70}
+                        height={70}
+                    /> */}
 
                 </div>
                 <div className=" md:hidden self-center pr-3">
-                    <BurgerNavigation isOpen={isClicked}
+                    {/* <BurgerNavigation isOpen={isClicked}
                         className={`cursor-pointer z-50 transition-all ease-linear duration-500 ${isClicked ? 'transform rotate-90' : ''
-                            }`} />
+                            }`} /> */}
                     <Image
                         onClick={() => setIsClicked(!isClicked)}
                         src={Hamburger}

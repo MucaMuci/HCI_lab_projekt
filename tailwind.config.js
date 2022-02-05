@@ -20,6 +20,9 @@ module.exports = {
         },
         'hci-siva': {
           DEFAULT: '#6b6b6b'
+        },
+        'hci-gradient': {
+          DEFAULT: '#4C5CEC'
         }
       }
     },

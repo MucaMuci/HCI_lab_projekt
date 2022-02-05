@@ -2,15 +2,15 @@ import Image from "next/image";
 import Brod1 from "../assets/brod1.png"
 
 const Reservation = ({ image, name, hasYetToPay, pickUpTime, pickUpPlace, needsSkipper, additionalEquipment, phoneNumber }) => (
-    <div className="flex flex-row py-5">
-        <div className="flex flex-row shadow-btn-sjena rounded-2xl px-5 py-5">
-            <div className="">
+    <div className="flex py-5">
+        <div className="flex flex-col md:flex-row shadow-btn-sjena rounded-2xl px-5 py-5">
+            <div className="flex ">
                 <Image
                     src={Brod1}
                     height={320}
                     width={320} />
             </div>
-            <div className="pl-10">
+            <div className="pl-10 flex flex-col">
                 <div className="flex text-4xl pb-4">
                     {name}
                 </div>
