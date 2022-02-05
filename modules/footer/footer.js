@@ -7,64 +7,74 @@ import Image from 'next/image';
 
 const Footer = () => {
     return (
-        <section>
-            <main>
-                <div className="flex flex-row">
-                    <Image
-                        src={LogoImg}
-                        width={100}
-                        height={100}
-                    />
-                    <div>
-                        <h1>
-                            MEDUZA
-                        </h1>
-                        <h2>
-                            rent a boat with us!
-                        </h2>
+        <section className=' bg-hci-header'>
+            <main className=' max-w-5xl mx-auto '>
+                <div className=" flex  items-center flex-row justify-around ">
+                    <div className='hidden sm:flex items-center py-2'>
+                        <Image
+                            src={LogoImg}
+                            width={100}
+                            height={100}
+                        />
+                        <div>
+                            <h1 className='text-white text-4xl'>
+                                MEDUZA
+                            </h1>
+                            <h2 className='text-white text-lg'>
+                                rent a boat with us!
+                            </h2>
+                        </div>
                     </div>
-                    <div>
-                        <h1>
+                    <div className='flex flex-col justify-center self-start sm:self-center text-sm sm:text-base py-2'>
+                        <h1 className='text-white'>
                             Feel free to contact us via:
                         </h1>
-                        <h2>
+                        <h2 className='text-white'>
                             meduza@gmail.com
                         </h2>
-                        <h3>
+                        <h3 className='text-white'>
                             +385 99 827 6859
                         </h3>
                     </div>
-                    <div >
+                    <div className='flex flex-col  pr-2 self-start sm:self-center text-sm sm:text-base py-2'>
                         <div>
-                            <h1>
+                            <h1 className='text-white'>
                                 Or on any of our social
 
                             </h1>
-                            <h2>
+                            <h2 className='text-white'>
                                 media accounts:
                             </h2>
                         </div>
-                        <div className='flex flex-row'>
-                            <Image
-                                src={WhatsappImg}
-                                width={30}
-                                height={30}
-                            />
-                            <Image
-                                src={TwitterImg}
-                                width={30}
-                                height={30}
-                            />
-                            <Image
-                                src={FacebookImg}
-                                width={30}
-                                height={30}
-                            />
-                            <Image
-                                src={InstagramImg}
-                                width={30}
-                                height={30}
-                            />
+                        <div className='flex flex-row '>
+                            <div className='pr-1'>
+                                <Image
+                                    src={WhatsappImg}
+                                    width={30}
+                                    height={30}
+                                />
+                            </div>
+                            <div className='pr-1'>
+                                <Image
+                                    src={TwitterImg}
+                                    width={30}
+                                    height={30}
+                                />
+                            </div>
+                            <div className='pr-1'>
+                                <Image
+                                    src={FacebookImg}
+                                    width={30}
+                                    height={30}
+                                />
+                            </div>
+                            <div className='pr-1'>
+                                <Image
+                                    src={InstagramImg}
+                                    width={30}
+                                    height={30}
+                                />
+                            </div>
                         </div>
                     </div>
                 </div>
