@@ -17,6 +17,9 @@ module.exports = {
         },
         'hci-header': {
           DEFAULT: '#0F1544'
+        },
+        'hci-siva': {
+          DEFAULT: '#6b6b6b'
         }
       }
     },

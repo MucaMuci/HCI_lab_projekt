@@ -8,28 +8,34 @@ const Home = () => {
         <>
 
             <Header />
+            <main className="">
+                <div className="flex flex-col justify-center">
 
-            <div className="flex flex-row justify-between">
+                    <div className="flex flex-col pt-10 pb-2">
+                        <div className="flex flex-row justify-center">
+                            <button>
+                                --
+                            </button>
+                            <div className="px-5 text-lg font-semibold">
+                                Today&apos;s schedule:
+                            </div>
+                            <button>
+                                --
+                            </button>
 
-                <div className="flex flex-col">
-                    <div className="flex flex-row justify-around">
-                        <button>
-                            go one day backward
-                        </button>
-                        <div>
-                            Today:
                         </div>
-                        <button>
-                            go one day forward
-                        </button>
+                    </div>
+                    <div>
+                        <div className='self-center border border-solid w-full h-0 border-black'></div>
+                        <div className="flex max-w-5xl mx-auto justify-center">
+                            <Reservations />
+                        </div>
+                    </div>
+                    <div>
 
                     </div>
-                    <Reservations />
                 </div>
-                <div>
-
-                </div>
-            </div>
+            </main>
             <Footer />
         </>
     );

@@ -4,19 +4,18 @@ import { reservations } from '../../const/reservationList'
 const Reservations = () => {
     return (
         <div>
-            <div>
+            <div className="flex flex-col">
                 {reservations.map((el) => (
                     <Reservation
+
+                        image={el.image}
                         name={el.name}
-                        customersName={el.customersName}
-                        phoneNumber={el.phoneNumber}
-                        payed={el.payed}
                         hasYetToPay={el.hasYetToPay}
                         pickUpTime={el.pickUpTime}
                         pickUpPlace={el.pickUpPlace}
                         needsSkipper={el.needsSkipper}
                         additionalEquipment={el.additionalEquipment}
-                        comment={el.comment}
+                        phoneNumber={el.phoneNumber}
                     />
                 ))}
             </div>

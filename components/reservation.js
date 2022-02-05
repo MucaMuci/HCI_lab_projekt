@@ -1,76 +1,79 @@
-const reservation = ({ name, customersName, phoneNumber, payed, hasYetToPay, pickUpTime, pickUpPlace, needsSkipper, additionalEquipment, comment }) => (
-    <div className="flex flex-col">
-        <div className="flex justify-center">
-            {name}
-        </div>
-        <div className="flex flex-row">
-            <div className="flex flex-col items-end">
-                <div className="flex  pr-2">
-                    Customers name:
-                </div>
-                <div className="flex pr-2">
-                    Phone number:
-                </div>
-                <div className="flex pr-2">
-                    Payed:
-                </div>
-                <div className="flex pr-2">
-                    Has yet to pay:
-                </div>
-                <div className="flex pr-2">
-                    Pick-up time:
-                </div>
-                <div className="flex pr-2">
-                    Pick-up place:
-                </div>
-                <div className="flex pr-2">
-                    Needs skipper:
-                </div>
-                <div className="flex pr-2">
-                    Additional equipment:
-                </div>
-            </div>
-            <div>
-                <div className="flex pl-2">
-                    {customersName}
-                </div>
-                <div className="flex pl-2">
-                    {phoneNumber}
-                </div>
-                <div className="flex pl-2">
-                    {payed}
-                </div>
-                <div className="flex pl-2">
-                    {hasYetToPay}
-                </div>
-                <div className="flex pl-2">
-                    {pickUpTime}
-                </div>
-                <div className="flex pl-2">
-                    {pickUpPlace}
-                </div>
-                <div className="flex pl-2">
-                    {needsSkipper}
-                </div>
-                <div className="flex pl-2">
-                    {additionalEquipment}
-                </div>
-            </div>
+import Image from "next/image";
+import Brod1 from "../assets/brod1.png"
 
-        </div>
-        <div className="flex justify-center">
-            More information
-        </div>
-        <div>
-            <div>
-                Comment
+const Reservation = ({ image, name, hasYetToPay, pickUpTime, pickUpPlace, needsSkipper, additionalEquipment, phoneNumber }) => (
+    <div className="flex flex-row py-5">
+        <div className="flex flex-row shadow-btn-sjena rounded-2xl px-5 py-5">
+            <div className="">
+                <Image
+                    src={Brod1}
+                    height={320}
+                    width={320} />
             </div>
-            <div>
-                {comment}
+            <div className="pl-10">
+                <div className="flex text-4xl pb-4">
+                    {name}
+                </div>
+                <div className="flex flex-row text-lg">
+                    <div className="flex flex-col items-start ">
+                        <div className="flex pb-4">
+                            <div className="flex pr-2 font-medium">
+                                Has yet to pay:
+                            </div>
+                            <div className="flex text-hci-siva">
+                                {hasYetToPay}
+                            </div>
+                        </div>
+                        <div className="flex">
+                            <div className="flex pr-2 font-medium">
+                                Pick-up time:
+                            </div>
+                            <div className="flex text-hci-siva">
+                                {pickUpTime}
+                            </div>
+                        </div>
+                        <div className="flex pb-4">
+                            <div className="flex pr-2 font-medium">
+                                Pick-up place:
+                            </div>
+                            <div className="flex text-hci-siva">
+                                {pickUpPlace}
+                            </div>
+                        </div>
+                        <div className="flex pb-4">
+                            <div className="flex pr-2 font-medium">
+                                Needs skipper:
+                            </div>
+                            <div className="flex text-hci-siva">
+                                {needsSkipper}
+                            </div>
+                        </div>
+                        <div className="flex pb-4">
+                            <div className="flex pr-2 font-medium">
+                                Additional equipment:
+                            </div>
+                            <div className="flex text-hci-siva">
+                                {additionalEquipment}
+                            </div>
+                        </div>
+                        <div className="flex pb-4">
+                            <div className="flex pr-2 font-medium">
+                                Phone number:
+                            </div>
+                            <div className="flex text-hci-siva">
+                                {phoneNumber}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="flex text-lg font-medium">
+                    <button className="text-hci-modra">
+                        More information
+                    </button>
+                </div>
             </div>
         </div>
-
     </div>
 );
 
-export default reservation
+export default Reservation
