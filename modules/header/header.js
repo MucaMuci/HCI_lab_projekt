@@ -11,7 +11,7 @@ const Header = () => {
 
     return (
         <header className="bg-hci-header">
-            <main className="flex justify-between bg-hci-header ">
+            <main className=" max-w-5xl mx-auto flex justify-between bg-hci-header ">
                 <div className="flex flex-row bg-hci-header" >
                     <div className="md:hidden lg:flex bg-hci-header">
                         <Image
