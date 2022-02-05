@@ -1,7 +1,8 @@
 module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
-    "./components/**/*.{js,ts,jsx,tsx}",],
+    "./components/**/*.{js,ts,jsx,tsx}",
+    "./modules/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       boxShadow: {
@@ -13,6 +14,9 @@ module.exports = {
         },
         'hci-bg': {
           DEFAULT: '#F6F6F6'
+        },
+        'hci-header': {
+          DEFAULT: '#0F1544'
         }
       }
     },

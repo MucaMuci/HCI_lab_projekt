@@ -15,7 +15,7 @@ const Register = () => {
                     />
                 </div>
                 <div className='px-6 '>
-                    <div className='bg-white flex flex-col border border-gray-300 pt-3 pb-8'>
+                    <div className='bg-white flex flex-col border border-gray-300 px-5 pt-3 pb-8'>
                         <div className='text-5xl self-center pt-2'>MEDUZA</div>
                         <h2 className='text-4xl self-center pb-8 text-center'>Rent a Boat Company</h2>
 

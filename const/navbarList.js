@@ -1,8 +1,8 @@
 export const navigationItems = [
     'Home page',
     'Boats schedule',
-    'List of boats',
+    'Boats',
     'Make a reservation',
     'Blog',
-    'Sign in',
+    'Reviews',
 ];

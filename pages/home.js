@@ -6,11 +6,11 @@ import Reservations from "../modules/reservations/reservations";
 const Home = () => {
     return (
         <>
+
             <Header />
+
             <div className="flex flex-row justify-between">
-                <div>
-                    <Notes />
-                </div>
+
                 <div className="flex flex-col">
                     <div className="flex flex-row justify-around">
                         <button>
