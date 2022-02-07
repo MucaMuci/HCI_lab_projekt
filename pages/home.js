@@ -38,7 +38,7 @@ const Home = () => {
                     </div>
                     <div>
                         <div className='self-center border border-solid w-full h-0 border-black'></div>
-                        <div className="flex max-w-5xl mx-auto justify-center">
+                        <div className="flex max-w-6xl mx-auto justify-center">
                             <Reservations />
                         </div>
                     </div>

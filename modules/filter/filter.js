@@ -6,7 +6,7 @@ import Plus from "../../assets/plus.png"
 const Filter = () => {
     return (
         <section>
-            <div className="border bg-white border-hci-siva rounded-3xl flex flex-col sm:flex-row justify-center divide-y sm:divide-x py-3 text-center">
+            <div className="border bg-white border-hci-siva rounded-3xl flex flex-col sm:flex-row justify-center divide-y sm:divide-y-0 sm:divide-x py-3 text-center">
                 <div className="flex flex-col items-center px-2">
                     <div className="text-lg font-medium pb-2">
                         Boat&apos;s name
