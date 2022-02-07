@@ -19,10 +19,16 @@ module.exports = {
           DEFAULT: '#0F1544'
         },
         'hci-siva': {
-          DEFAULT: '#6b6b6b'
+          DEFAULT: '#B6B6B6'
         },
         'hci-gradient': {
           DEFAULT: '#4C5CEC'
+        },
+        'hci-siva-2': {
+          DEFAULT: '#F2F2F2'
+        },
+        'hci-svijetlo-siva': {
+          DEFAULT: '#E5E5E5'
         }
       }
     },
