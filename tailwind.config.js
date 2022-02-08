@@ -29,6 +29,9 @@ module.exports = {
         },
         'hci-svijetlo-siva': {
           DEFAULT: '#E5E5E5'
+        },
+        'hci-siva-slova': {
+          DEFAULT: '#585858'
         }
       }
     },
