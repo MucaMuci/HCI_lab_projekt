@@ -22,12 +22,12 @@ const Header = () => {
                             height={100}
                         />
                     </div>
-                    <div className="flex flex-col items-center justify-center lg:justify-end py-2">
+                    <div className="flex flex-col  justify-center lg:justify-end py-2">
                         <div className="text-4xl text-white text-center md:hidden lg:block">
                             MEDUZA
                         </div>
-                        <div className="text-xl sm:text-2xl md:hidden lg:block lg:text-2xl  text-white text-center ">
-                            Rent a Boat Company
+                        <div className="text-2xl md:hidden lg:block lg:text-2xl  text-white  ">
+                            Rent a Boat
                         </div>
 
                     </div>
@@ -38,7 +38,7 @@ const Header = () => {
                             MEDUZA
                         </div>
                         <div className="text-2xl text-white text-center hidden md:flex lg:hidden">
-                            Rent a Boat Company
+                            Rent a Boat
                         </div>
                     </div>
                     <NavBar />
