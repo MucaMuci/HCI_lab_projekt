@@ -2,7 +2,7 @@ export const scheduleList = [
     {
         time: "7:00",
         text: "Barraccuda 755 parts off.",
-        Icon_Src: "/sea-darkBlue.png"
+        Icon_Src: "/images/sea-icons/sea-darkBlue.png"
     },
 
     {
@@ -23,11 +23,11 @@ export const scheduleList = [
         Icon_Src: "/images/sea-icons/sea-red.png"
     },
 
-    /*  {
-         time: "14:30",
-         text: "Švecki sajam u Biogradu.",
-         Icon_Src: ""
-     }, */
+    {
+        time: "14:30",
+        text: "Švecki sajam u Biogradu.",
+        Icon_Src: ""
+    },
 
     {
         time: "17:30",

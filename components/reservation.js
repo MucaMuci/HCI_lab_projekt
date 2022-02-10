@@ -20,7 +20,7 @@ const Reservation = ({ image, name, hasYetToPay, pickUpTime, pickUpPlace, needsS
                             <div className="flex pr-2 font-medium">
                                 Has yet to pay:
                             </div>
-                            <div className="flex text-hci-siva">
+                            <div className="flex text-hci-siva-slova">
                                 {hasYetToPay}
                             </div>
                         </div>
@@ -28,7 +28,7 @@ const Reservation = ({ image, name, hasYetToPay, pickUpTime, pickUpPlace, needsS
                             <div className="flex pr-2 font-medium">
                                 Pick-up time:
                             </div>
-                            <div className="flex text-hci-siva">
+                            <div className="flex text-hci-siva-slova">
                                 {pickUpTime}
                             </div>
                         </div>
@@ -36,7 +36,7 @@ const Reservation = ({ image, name, hasYetToPay, pickUpTime, pickUpPlace, needsS
                             <div className="flex pr-2 font-medium">
                                 Pick-up place:
                             </div>
-                            <div className="flex text-hci-siva">
+                            <div className="flex text-hci-siva-slova">
                                 {pickUpPlace}
                             </div>
                         </div>
@@ -44,7 +44,7 @@ const Reservation = ({ image, name, hasYetToPay, pickUpTime, pickUpPlace, needsS
                             <div className="flex pr-2 font-medium">
                                 Needs skipper:
                             </div>
-                            <div className="flex text-hci-siva">
+                            <div className="flex text-hci-siva-slova">
                                 {needsSkipper}
                             </div>
                         </div>
@@ -52,7 +52,7 @@ const Reservation = ({ image, name, hasYetToPay, pickUpTime, pickUpPlace, needsS
                             <div className="flex pr-2 font-medium">
                                 Additional equipment:
                             </div>
-                            <div className="flex text-hci-siva">
+                            <div className="flex text-hci-siva-slova">
                                 {additionalEquipment}
                             </div>
                         </div>
@@ -60,7 +60,7 @@ const Reservation = ({ image, name, hasYetToPay, pickUpTime, pickUpPlace, needsS
                             <div className="flex pr-2 font-medium">
                                 Phone number:
                             </div>
-                            <div className="flex text-hci-siva">
+                            <div className="flex text-hci-siva-slova">
                                 {phoneNumber}
                             </div>
                         </div>
