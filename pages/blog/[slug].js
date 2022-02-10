@@ -15,18 +15,9 @@ export default function PostPage({
     return (
         <>
             <Header />
-            <div className='max-w-6xl mx-auto'>
-                <div className='max-w-6xl'>
-                    <div>
-                        <Image src={cover_image}
-                            width={1152}
-                            height={618}
-                            alt='' />
-                    </div>
-                </div>
-            </div>
-            <div className=" bg-hci-siva-2 w-full  py-2 my-4">
-                <div className='max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-end'>
+            <div className="flex flex-col pt-10 pb-4 bg-gradient-to-b from-hci-gradient to-white"></div>
+            <div className=" bg-hci-siva-2 w-full  py-2 mb-4">
+                <div className='max-w-4xl mx-auto flex flex-col sm:flex-row justify-between items-end'>
                     <div className="text-4xl">
                         {title}
                     </div>
@@ -35,9 +26,15 @@ export default function PostPage({
                     </div>
                 </div>
             </div>
-            <div className='max-w-6xl mx-auto'>
-                <div>
-
+            <div className='max-w-4xl mx-auto'>
+                <div className='max-w-4xl '>
+                    <div className="">
+                        <Image src={cover_image}
+                            width={1152}
+                            height={618}
+                            alt=''
+                        />
+                    </div>
 
                     <div className=''>
                         <div dangerouslySetInnerHTML={{ __html: marked(content) }}></div>
