@@ -1,8 +1,14 @@
 ---
 title: 'In between two heavens, there lies Vrulja.'
 date: '18.02.2019.'
-cover_image: '/images/posts/vrulja.png'
+cover_image: '/images/posts/vrulja_front.png'
+image: '/images/posts/vrulja.png'
 author: 'MatejAdmin'
+excerpt: 'Underneath the passage that connected 
+Dalmatian Zagora and Dalmatian seaside for 
+years, there lies Vrulja. A perfect 
+combination of sea and montains, rock and
+sand. With it’s natural springs of fresh...'
 ---
 
 Underneath the passage that connected Dalmatian Zagora and Dalmatian seaside for years, 
