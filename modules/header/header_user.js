@@ -6,6 +6,7 @@ import UserImg from '../../assets/user.png';
 import UserManImg from '../../assets/user_man.png';
 import Hamburger from '../../assets/hamburger.png'
 import BurgerNavigation from '../../components/burgerNavigation'
+import Link from "next/link";
 
 const HeaderUser = () => {
     const [isClicked, setIsClicked] = useState(false);
@@ -43,12 +44,14 @@ const HeaderUser = () => {
                     </div>
                     <NavBar />
                 </div>
-                <div className="hidden md:flex md:self-center md:pr-3">
-                    <Image
-                        src={UserImg}
-                        width={70}
-                        height={70}
-                    />
+                <div className="hidden md:flex md:self-center md:pr-3 hover:cursor-pointer">
+                    <Link href={"/login"}>
+                        <Image
+                            src={UserImg}
+                            width={70}
+                            height={70}
+                        />
+                    </Link>
                     {/* <Image
                         src={UserManImg}
                         width={70}

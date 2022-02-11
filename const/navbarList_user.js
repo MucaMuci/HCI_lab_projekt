@@ -1,9 +1,31 @@
 export const navigationItems = [
-    'Home page',
-    'Boats',
-    'Taxi',
-    'Organized Trips',
-    'About Us',
-    'Blog',
-    'Reviews',
+    {
+        name: 'Home page',
+        path: "/homeuser"
+    },
+    {
+        name: 'Boats',
+        path: "/boats"
+    },
+    {
+        name: 'Taxi',
+        path: "/taxi"
+    },
+    {
+        name: 'Organized trips',
+        path: "/organizedtrips"
+    },
+    {
+        name: 'About Us',
+        path: "/aboutus"
+    },
+    {
+        name: 'Blog',
+        path: "/blog_user"
+    },
+    {
+        name: 'Reviews',
+        path: "/reviewsuser"
+    },
+
 ];
