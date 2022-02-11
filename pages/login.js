@@ -16,10 +16,10 @@ const Login = () => {
                         height={100}
                     />
                 </div>
-                <div className='px-6'>
+                <div className='px-6 font-inter'>
                     <div className='bg-white flex flex-col border border-gray-300 px-5 pt-3 pb-8'>
-                        <div className='text-5xl self-center pt-2'>MEDUZA</div>
-                        <h2 className='text-4xl self-center pb-8 text-center'>Rent a Boat Company</h2>
+                        <div className='text-5xl self-center pt-2 font-merriweather'>MEDUZA</div>
+                        <h2 className='text-4xl self-center pb-8 text-center font-merriweather'>Rent a Boat Company</h2>
 
                         <div className='flex flex-col items-center'>
                             <input className='border border-gray-300 w-11/12 rounded py-2 px-1 bg-hci-bg ' placeholder='Username'></input>

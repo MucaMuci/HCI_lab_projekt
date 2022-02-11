@@ -20,7 +20,7 @@ const Home = () => {
         <>
             <div className={notesClicked || scheduleClicked ? "fixed blur-sm z-0" : ""}>
                 <Header />
-                <main>
+                <main className="font-merriweather">
                     <div className="flex flex-row h-full">
                         <div className="flex flex-col justify-center w-9/12">
 

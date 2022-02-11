@@ -5,6 +5,11 @@ module.exports = {
     "./modules/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      fontFamily: {
+        'merriweather': ['"Merriweather"', 'serif'],
+        'inter': ['"Inter"', 'sans-serif']
+      },
+
       boxShadow: {
         'btn-sjena': '0 1px 2px 1px rgba(0,0,0,0.3)',
       },
