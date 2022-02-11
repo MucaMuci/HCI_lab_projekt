@@ -11,6 +11,8 @@ import Notes from "../modules/notes/notes";
 import DArrow from "../assets/down_arrow.png";
 import CompletedNotes from "../modules/notes/completedNotes";
 import Schedule from "../modules/schedule/schedule";
+import { NextSeo } from "next-seo";
+import SEO from '../data/next-seo.config';
 
 const Home = () => {
     const [notesClicked, setNotesClicked] = useState(false);
@@ -18,6 +20,7 @@ const Home = () => {
     const [completedClicked, setCompletedClicked] = useState(false);
     return (
         <>
+            <NextSeo {...SEO} />
             <div className={notesClicked || scheduleClicked ? "fixed blur-sm z-0" : ""}>
                 <Header />
                 <main className="font-merriweather">
