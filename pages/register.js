@@ -2,6 +2,7 @@ import LogoImg from '../assets/logo.png';
 import LogoImg2 from '../assets/logo2.png';
 import GoogleImg from '../assets/google.png';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const Register = () => {
     return (
@@ -58,8 +59,9 @@ const Register = () => {
                         <div className='pr-3 font-medium'>
                             Already have an account?
                         </div>
-
-                        <button className='text-hci-modra font-medium'>Log in</button>
+                        <Link href="/login">
+                            <button className='text-hci-modra font-medium'>Log in</button>
+                        </Link>
                     </div>
                 </div>
                 <div className='hidden sm:block '>
