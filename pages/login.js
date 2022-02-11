@@ -4,10 +4,13 @@ import Image from 'next/image';
 import GoogleImg from '../assets/google.png';
 import Background from '../assets/background.png'
 import Link from 'next/link';
+import { NextSeo } from 'next-seo';
+import SEO from '../data/next-seo.config';
 
 const Login = () => {
     return (
         <section className='h-screen flex justify-center bg-hci-bg'>
+            <NextSeo {...SEO} />
             <main className='flex justify-center items-center'>
                 <div className='hidden sm:block'>
                     <Image

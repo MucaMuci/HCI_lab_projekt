@@ -14,11 +14,14 @@ import Hvar from "../assets/hvar.png"
 import Jelsa from "../assets/jelsa.png"
 import Vrboska from "../assets/vrboska.png"
 import StariGrad from "../assets/stari_grad.png"
+import { NextSeo } from "next-seo";
+import SEO from '../data/next-seo.config';
 
 
 const AboutUs = () => {
     return (
         <div>
+            <NextSeo {...SEO} />
             <HeaderUser />
             <div className="flex flex-col pt-10 pb-5 bg-gradient-to-b from-hci-gradient to-white">
             </div>

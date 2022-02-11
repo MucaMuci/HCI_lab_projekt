@@ -19,8 +19,9 @@ const HeaderUser = () => {
                         <Image
                             src={LogoImg}
                             layout="fixed"
-                            width={100}
+                            width={95}
                             height={100}
+                            alt="Logo"
                         />
                     </div>
                     <div className="flex flex-col  justify-center lg:justify-end py-2">
@@ -50,6 +51,7 @@ const HeaderUser = () => {
                             src={UserImg}
                             width={70}
                             height={70}
+                            alt="User"
                         />
                     </Link>
                     {/* <Image

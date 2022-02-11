@@ -5,6 +5,8 @@ import Calendar from "react-calendar";
 import { useState } from "react";
 import Image from "next/image";
 import SunImg from "../assets/sun.png"
+import { NextSeo } from "next-seo";
+import SEO from '../data/next-seo.config';
 
 
 const BoatsSchedule = () => {
@@ -15,6 +17,7 @@ const BoatsSchedule = () => {
     }
     return (
         <div className="">
+            <NextSeo {...SEO} />
             <Header />
             <div className="">
                 <div className="flex flex-col pt-10 pb-5 bg-gradient-to-b from-hci-gradient to-white">

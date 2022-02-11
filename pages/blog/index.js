@@ -6,10 +6,13 @@ import Footer from '../../modules/footer/footer'
 import Post from '../../components/post'
 import WhitePlus from "../../assets/white_plus.png"
 import Image from 'next/image'
+import { NextSeo } from 'next-seo'
+import SEO from '../data/next-seo.config';
 
 export default function Home({ posts }) {
     return (
         <div>
+            <NextSeo {...SEO} />
             <Header />
 
             <div className="flex flex-col pt-10 pb-5 bg-gradient-to-b from-hci-gradient to-white">

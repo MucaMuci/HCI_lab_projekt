@@ -1,12 +1,15 @@
 
+import { NextSeo } from "next-seo";
 import Boats from "../modules/boats/boats";
 import Filter from "../modules/filter/filter";
 import Footer from "../modules/footer/footer";
 import Header from "../modules/header/header";
+import SEO from '../data/next-seo.config';
 
 const ListOfBoats = () => {
     return (
         <>
+            <NextSeo {...SEO} />
             <Header />
             <div>
                 <div className="flex flex-col pt-10 pb-5 bg-gradient-to-b from-hci-gradient to-white">
