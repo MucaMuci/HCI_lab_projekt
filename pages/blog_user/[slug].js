@@ -7,7 +7,7 @@ import Image from 'next/image'
 import Footer from '../../modules/footer/footer'
 import Header from '../../modules/header/header_user'
 import { NextSeo } from 'next-seo'
-import SEO from '../data/next-seo.config';
+import SEO from '../../data/next-seo.config';
 
 export default function PostPage({
     frontmatter: { title, date, image },

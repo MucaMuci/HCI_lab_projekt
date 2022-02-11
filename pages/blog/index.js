@@ -7,7 +7,7 @@ import Post from '../../components/post'
 import WhitePlus from "../../assets/white_plus.png"
 import Image from 'next/image'
 import { NextSeo } from 'next-seo'
-import SEO from '../data/next-seo.config';
+import SEO from '../../data/next-seo.config';
 
 export default function Home({ posts }) {
     return (
