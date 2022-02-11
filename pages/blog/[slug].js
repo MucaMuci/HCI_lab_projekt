@@ -32,7 +32,7 @@ export default function PostPage({
                         <Image src={cover_image}
                             width={1152}
                             height={618}
-                            alt=''
+                            alt='cover'
                         />
                     </div>
 

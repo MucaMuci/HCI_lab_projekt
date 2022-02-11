@@ -14,6 +14,7 @@ const Login = () => {
                         src={LogoImg2}
                         width={100}
                         height={100}
+                        alt="Logo2"
                     />
                 </div>
                 <div className='px-6 font-inter'>
@@ -46,6 +47,7 @@ const Login = () => {
                                         src={GoogleImg}
                                         width={25}
                                         height={25}
+                                        alt="Google"
                                     />
                                     <div className='pl-2 font-medium text-lg'>Continue with Google</div>
                                 </button>
@@ -74,6 +76,7 @@ const Login = () => {
                         src={LogoImg}
                         width={100}
                         height={100}
+                        alt="Logo1"
                     />
                 </div>
             </main>

@@ -13,10 +13,12 @@ const FormCard = ({ children, currentStep, prevFormStep }) => {
                         {currentStep < 1 ?
                             <Image src={EmptyCircle}
                                 width={40}
-                                height={40} /> :
+                                height={40}
+                                alt="Prazni krug" /> :
                             <Image src={FullCircle}
                                 width={40}
-                                height={40} />
+                                height={40}
+                                alt="Puni krug" />
                         }
                     </div>
                     {currentStep < 1 ?
@@ -28,16 +30,19 @@ const FormCard = ({ children, currentStep, prevFormStep }) => {
                         {currentStep == 0 &&
                             <Image src={EmptyGreyCircle}
                                 width={40}
-                                height={40} />}
+                                height={40}
+                                alt="Prazni sivi krug" />}
                         {currentStep == 1 &&
                             <Image src={EmptyCircle}
                                 width={40}
-                                height={40} />
+                                height={40}
+                                alt="Prazni krug" />
                         }
                         {currentStep == 2 &&
                             <Image src={FullCircle}
                                 width={40}
-                                height={40} />
+                                height={40}
+                                alt="Prazni krug" />
                         }
                     </div>
                     {currentStep < 2 ?
@@ -48,10 +53,12 @@ const FormCard = ({ children, currentStep, prevFormStep }) => {
                         {currentStep < 2 ?
                             <Image src={EmptyGreyCircle}
                                 width={40}
-                                height={40} /> :
+                                height={40}
+                                alt="Prazni sivi krug" /> :
                             <Image src={EmptyCircle}
                                 width={40}
-                                height={40} />
+                                height={40}
+                                alt="Prazni sivi krug" />
                         }
                     </div>
 

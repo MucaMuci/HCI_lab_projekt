@@ -23,6 +23,7 @@ const Filter = () => {
                             <Image src={Minus}
                                 width={10}
                                 height={3}
+                                alt="Minus"
                             />
                         </button>
                         <div className="px-4 pt-1">
@@ -31,7 +32,8 @@ const Filter = () => {
                         <button className="pt-1">
                             <Image src={Plus}
                                 width={10}
-                                height={12} />
+                                height={12}
+                                alt="Plus" />
                         </button>
                     </div>
                 </div>
@@ -57,7 +59,8 @@ const Filter = () => {
                             <Image
                                 src={DownArrow}
                                 width={20}
-                                height={12} />
+                                height={12}
+                                alt="DownArrow" />
                         </button>
                         <div className="text-lg pl-2">
                             Select

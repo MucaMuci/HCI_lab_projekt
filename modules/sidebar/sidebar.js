@@ -12,7 +12,7 @@ const SideBar = ({ NClicked, setNClicked, SClicked, setSClicked }) => {
             <div className="flex flex-row border w-full">
                 <button className="flex bg-hci-modra w-10 h-[90px] justify-start items-center"
                     onClick={() => setNClicked(!NClicked)}>
-                    <Image src={left_arrow} width={30} height={30} />
+                    <Image src={left_arrow} width={30} height={30} alt="LeftArrow" />
                 </button>
                 <div className="flex w-full text-xl self-center justify-center">
                     NOTES
@@ -22,7 +22,7 @@ const SideBar = ({ NClicked, setNClicked, SClicked, setSClicked }) => {
             <div className="flex flex-row border w-full">
                 <button className="flex bg-hci-modra w-10 h-[90px] justify-start items-center"
                     onClick={() => setSClicked(!SClicked)}>
-                    <Image src={left_arrow} width={30} height={30} />
+                    <Image src={left_arrow} width={30} height={30} alt="LeftArrow" />
                 </button>
                 <div className="flex w-full text-xl self-center justify-center">
                     SCHEDULE

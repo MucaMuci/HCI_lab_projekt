@@ -8,7 +8,7 @@ const ScheduleCard = ({ time, text, icon }) => (
         </div>
         {icon != "" &&
             <div className="px-[10px] justify-end pt-1">
-                <Image src={icon} width={30} height={30} />
+                <Image src={icon} width={30} height={30} alt="Icon" />
             </div>
         }
 

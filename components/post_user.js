@@ -9,7 +9,8 @@ export default function Post({ post }) {
                 <div className=' md:pl-2 md:pr-5 '>
                     <Image src={post.frontmatter.cover_image}
                         width={320}
-                        height={320} />
+                        height={320}
+                        alt="Cover Image" />
                 </div>
                 <div className='flex md:flex-1 flex-col md:h-80'>
                     <div className='text-lg '>
@@ -36,7 +37,8 @@ export default function Post({ post }) {
                                 <div className='pl-1'>
                                     <Image src={RightArrow}
                                         width={11}
-                                        height={11} />
+                                        height={11}
+                                        alt="RightArrow" />
                                 </div>
                             </div>
                         </Link>

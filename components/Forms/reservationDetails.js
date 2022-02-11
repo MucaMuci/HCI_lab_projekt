@@ -21,7 +21,8 @@ const ReservationDetails = ({ formStep, nextFormStep }) => {
                         <Image
                             src={CalendarImg}
                             width={20}
-                            height={20} />
+                            height={20}
+                            alt="Calendar" />
                     </div>
                 </div>
                 <div className="text-sm font-medium ">
@@ -32,7 +33,8 @@ const ReservationDetails = ({ formStep, nextFormStep }) => {
                         <Image
                             src={DownArrow}
                             width={20}
-                            height={12} />
+                            height={12}
+                            alt="DownArrow" />
                     </button>
                     <div className="font-normal text-lg pl-2 text-hci-siva-slova">
                         Type name
@@ -46,6 +48,7 @@ const ReservationDetails = ({ formStep, nextFormStep }) => {
                         <Image src={Minus}
                             width={10}
                             height={3}
+                            alt="Minus"
                         />
                     </button>
                     <div className="px-4 pt-1">
@@ -54,7 +57,8 @@ const ReservationDetails = ({ formStep, nextFormStep }) => {
                     <button className="pt-1">
                         <Image src={Plus}
                             width={10}
-                            height={12} />
+                            height={12}
+                            alt="Plus" />
                     </button>
                 </div>
                 <div className="pt-2 text-sm font-medium">
@@ -83,7 +87,8 @@ const ReservationDetails = ({ formStep, nextFormStep }) => {
                         <Image
                             src={DownArrow}
                             width={20}
-                            height={12} />
+                            height={12}
+                            alt="DownArrow" />
                     </button>
                     <div className="font-normal text-lg pl-2 text-hci-siva-slova" >
                         Type location
@@ -107,7 +112,8 @@ const ReservationDetails = ({ formStep, nextFormStep }) => {
                         <Image
                             src={DownArrow}
                             width={20}
-                            height={12} />
+                            height={12}
+                            alt="DownArrow" />
                     </button>
                     <div className="font-normal text-lg pl-2 text-hci-siva-slova" >
                         Type location
@@ -122,7 +128,8 @@ const ReservationDetails = ({ formStep, nextFormStep }) => {
                         <Image
                             src={DownArrow}
                             width={20}
-                            height={12} />
+                            height={12}
+                            alt="DownArrow" />
                     </button>
                     <div className="font-normal text-lg pl-2 text-hci-siva-slova">
                         Select

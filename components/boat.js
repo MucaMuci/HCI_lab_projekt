@@ -8,7 +8,8 @@ const Boat = ({ name, price, maxpassengers, length, currentstatus }) => (
                 <Image
                     src={Brod1}
                     height={320}
-                    width={320} />
+                    width={320}
+                    alt="Brod" />
             </div>
             <div className="pl-10 flex flex-col pt-2 md:pt-0">
                 <div className="flex text-4xl pb-5">

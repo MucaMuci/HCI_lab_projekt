@@ -8,7 +8,8 @@ const Reservation = ({ image, name, hasYetToPay, pickUpTime, pickUpPlace, needsS
                 <Image
                     src={Brod1}
                     height={320}
-                    width={320} />
+                    width={320}
+                    alt="Brod" />
             </div>
             <div className="pl-10 flex flex-col">
                 <div className="flex text-4xl pb-4">

@@ -8,7 +8,8 @@ const FormCompleted = () => {
             <div>
                 <Image src={CheckedImg}
                     width={100}
-                    height={100} />
+                    height={100}
+                    alt="Checked" />
             </div>
             <div className="text-4xl text-center font-semibold">
                 Successful reservation!

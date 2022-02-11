@@ -61,7 +61,8 @@ const BoatsSchedule = () => {
                             <div className="pt-1 flex-1 text-center ">
                                 <Image src={SunImg}
                                     width={20}
-                                    height={20} />
+                                    height={20}
+                                    alt="Sun" />
                             </div>
                             <div className="flex flex-1 justify-end">
                                 <div className="pr-2">

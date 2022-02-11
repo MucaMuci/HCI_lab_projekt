@@ -13,6 +13,7 @@ const Register = () => {
                         src={LogoImg2}
                         width={100}
                         height={100}
+                        alt="Logo2"
                     />
                 </div>
                 <div className='px-6 font-inter'>
@@ -41,6 +42,7 @@ const Register = () => {
                                         src={GoogleImg}
                                         width={25}
                                         height={25}
+                                        alt="Google"
                                     />
                                     <div className='pl-2 font-medium text-lg'>Sign up with Google</div>
                                 </button>
@@ -69,6 +71,7 @@ const Register = () => {
                         src={LogoImg}
                         width={100}
                         height={100}
+                        alt="Logo1"
                     />
                 </div>
             </main>

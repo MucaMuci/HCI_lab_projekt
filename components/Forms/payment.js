@@ -33,7 +33,8 @@ const Payment = ({ formStep, nextFormStep, prevFormStep }) => {
                             <Image
                                 src={DownArrow}
                                 width={20}
-                                height={12} />
+                                height={12}
+                                alt="DownArrow" />
                         </div>
                         <div className="font-medium text-lg pr-1">kn</div>
                     </div>
@@ -47,7 +48,8 @@ const Payment = ({ formStep, nextFormStep, prevFormStep }) => {
                             <Image
                                 src={DownArrow}
                                 width={20}
-                                height={12} />
+                                height={12}
+                                alt="DownArrow" />
                         </div>
                         <div className="font-medium text-lg pr-1">kn</div>
                     </div>
@@ -61,7 +63,8 @@ const Payment = ({ formStep, nextFormStep, prevFormStep }) => {
                             <Image
                                 src={DownArrow}
                                 width={20}
-                                height={12} />
+                                height={12}
+                                alt="DownArrow" />
                         </div>
                         <div className="font-medium text-lg pr-1">kn</div>
                     </div>

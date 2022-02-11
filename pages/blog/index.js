@@ -32,6 +32,7 @@ export default function Home({ posts }) {
                                 src={WhitePlus}
                                 width={18}
                                 height={18}
+                                alt="WhitePlus"
                             />
                         </div>
                     </div>

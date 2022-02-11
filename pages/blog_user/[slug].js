@@ -32,7 +32,7 @@ export default function PostPage({
                         <Image src={image}
                             width={1152}
                             height={618}
-                            alt=''
+                            alt='image'
                         />
                     </div>
 

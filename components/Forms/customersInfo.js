@@ -26,7 +26,8 @@ const CustomersInfo = ({ formStep, nextFormStep, prevFormStep }) => {
                         <Image
                             src={CalendarImg}
                             width={20}
-                            height={20} />
+                            height={20}
+                            alt="Calendar" />
                     </div>
                 </div>
 
@@ -43,13 +44,15 @@ const CustomersInfo = ({ formStep, nextFormStep, prevFormStep }) => {
                         <Image
                             src={FlagImg}
                             width={20}
-                            height={15} />
+                            height={15}
+                            alt="Flag" />
                     </div>
                     <button>
                         <Image
                             src={DownArrow}
                             width={20}
-                            height={12} />
+                            height={12}
+                            alt="DownArrow" />
                     </button>
                     <input className="font-normal text-lg pl-2 text-hci-siva-slova border-hci-siva rounded-md bg-hci-siva-2  " ></input>
                 </div>
@@ -81,13 +84,15 @@ const CustomersInfo = ({ formStep, nextFormStep, prevFormStep }) => {
                         <Image
                             src={FlagImg}
                             width={20}
-                            height={15} />
+                            height={15}
+                            alt="Flag" />
                     </div>
                     <button>
                         <Image
                             src={DownArrow}
                             width={20}
-                            height={12} />
+                            height={12}
+                            alt="DownArrow" />
                     </button>
                     <div className="font-normal text-lg pl-2 text-hci-siva-slova border-hci-siva rounded-md bg-hci-siva-2  " >Croatia</div>
                 </div>

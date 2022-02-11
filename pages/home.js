@@ -34,6 +34,7 @@ const Home = () => {
                                             src={LeftArrow}
                                             height={13}
                                             width={13}
+                                            alt="LeftArrow"
                                         />
                                     </button>
                                     <div className="px-5  text-lg font-semibold self-center">
@@ -44,6 +45,7 @@ const Home = () => {
                                             src={RightArrow}
                                             height={13}
                                             width={13}
+                                            alt="RightArrow"
                                         />
                                     </button>
 
@@ -66,7 +68,7 @@ const Home = () => {
 
                     <button className="flex bg-hci-modra w-10 h-full justify-center items-center fixed"
                         onClick={() => setNotesClicked(!notesClicked)}>
-                        <Image src={RightArrow} width={30} height={30} />
+                        <Image src={RightArrow} width={30} height={30} alt="RightArrow" />
                     </button>
                     <div className="flex bg-hci-modra w-10 h-full justify-center items-center">
                     </div>
@@ -79,14 +81,14 @@ const Home = () => {
                             <div className="">NOTE</div>
                             <button className=" w-full flex justify-end items-center pr-[20px] flex-nowrap">
                                 <div className="pr-[10px]">Add new note</div>
-                                <Image src={Plus} height={20} width={20}></Image>
+                                <Image src={Plus} height={20} width={20} alt="Plus"></Image>
                             </button>
                         </div>
                         <Notes />
                         <button className="flex justify-center w-full items-center"
                             onClick={() => setCompletedClicked(!completedClicked)}
                         >
-                            <Image src={DArrow} width={30} height={20}></Image>
+                            <Image src={DArrow} width={30} height={20} alt="DownArrow"></Image>
                             <div className="flex text-3xl pl-[15px] text-hci-modra">
                                 COMPLETED
                             </div>
@@ -105,7 +107,7 @@ const Home = () => {
 
                         <button className="flex bg-hci-modra w-10 h-full justify-center items-center fixed"
                             onClick={() => setScheduleClicked(!scheduleClicked)}>
-                            <Image src={RightArrow} width={30} height={30} />
+                            <Image src={RightArrow} width={30} height={30} alt="RightArrow" />
                         </button>
                         <div className="flex bg-hci-modra w-10 h-full justify-center items-center">
                         </div>
@@ -119,6 +121,7 @@ const Home = () => {
                                         src={LeftArrow}
                                         height={13}
                                         width={13}
+                                        alt="LeftArrow"
                                     />
                                 </button>
                                 <div className="mx-[10px] text-2xl">TODAY</div>
@@ -127,6 +130,7 @@ const Home = () => {
                                         src={RightArrow}
                                         height={13}
                                         width={13}
+                                        alt="RightArrow"
                                     />
                                 </button>
                             </div>
@@ -135,7 +139,7 @@ const Home = () => {
                                 <div className="">ACTIVITY</div>
                                 <button className=" w-full flex justify-end items-center pr-[20px] flex-nowrap">
                                     <div className="pr-[10px]">Add new custom activity</div>
-                                    <Image src={Plus} height={20} width={20}></Image>
+                                    <Image src={Plus} height={20} width={20} alt="Plus"></Image>
                                 </button>
                             </div>
                             <Schedule />

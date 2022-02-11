@@ -15,6 +15,7 @@ const Footer = () => {
                             src={LogoImg}
                             width={100}
                             height={100}
+                            alt="Logo"
                         />
                         <div>
                             <h1 className='text-white text-4xl'>
@@ -52,6 +53,7 @@ const Footer = () => {
                                     src={WhatsappImg}
                                     width={30}
                                     height={30}
+                                    alt="Whatsapp"
                                 />
                             </div>
                             <div className='pr-1'>
@@ -59,6 +61,7 @@ const Footer = () => {
                                     src={TwitterImg}
                                     width={30}
                                     height={30}
+                                    alt="Twitter"
                                 />
                             </div>
                             <div className='pr-1'>
@@ -66,6 +69,7 @@ const Footer = () => {
                                     src={FacebookImg}
                                     width={30}
                                     height={30}
+                                    alt="Facebook"
                                 />
                             </div>
                             <div className='pr-1'>
@@ -73,6 +77,7 @@ const Footer = () => {
                                     src={InstagramImg}
                                     width={30}
                                     height={30}
+                                    alt="Instagram"
                                 />
                             </div>
                         </div>

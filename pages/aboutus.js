@@ -39,7 +39,8 @@ const AboutUs = () => {
                     </div>
                     <div className="hidden md:flex flex-1">
                         <Image
-                            src={AboutUs1} />
+                            src={AboutUs1}
+                            alt="img1" />
                     </div>
                 </div>
 
@@ -57,14 +58,16 @@ const AboutUs = () => {
                     </div>
                     <div className="hidden md:flex flex-1">
                         <Image
-                            src={AboutUs2} />
+                            src={AboutUs2}
+                            alt="img2" />
                     </div>
                 </div>
 
                 <div className="flex pb-10">
                     <div className="hidden md:flex flex-1 pr-2">
                         <Image
-                            src={AboutUs3} />
+                            src={AboutUs3}
+                            alt="img3" />
                     </div>
                     <div className="flex flex-col flex-1">
 
@@ -90,13 +93,13 @@ const AboutUs = () => {
                     </div>
                     <div className="flex">
                         <div className="">
-                            <Image src={Vrulja} />
+                            <Image src={Vrulja} alt="Vrulja" />
                         </div>
                         <div className="px-2">
-                            <Image src={Brela} />
+                            <Image src={Brela} alt="Brela" />
                         </div>
                         <div>
-                            <Image src={Nugal} />
+                            <Image src={Nugal} alt="Nugal" />
                         </div>
                     </div>
                     <div className="flex text-center text-2xl pb-6">
@@ -112,13 +115,13 @@ const AboutUs = () => {
                     </div>
                     <div className="flex">
                         <div className="">
-                            <Image src={Postira} />
+                            <Image src={Postira} alt="Postira" />
                         </div>
                         <div className="px-2">
-                            <Image src={Bol} />
+                            <Image src={Bol} alt="Bol" />
                         </div>
                         <div>
-                            <Image src={Pucisca} />
+                            <Image src={Pucisca} alt="Pucisca" />
                         </div>
                     </div>
                     <div className="flex text-center text-2xl pb-6">
@@ -133,7 +136,7 @@ const AboutUs = () => {
                         </div>
                     </div>
                     <div>
-                        <Image src={Hvar} />
+                        <Image src={Hvar} alt="Hvar" />
                     </div>
                     <div className="text-center text-2xl pb-6">
                         Hvar
@@ -141,13 +144,13 @@ const AboutUs = () => {
 
                     <div className="flex">
                         <div className="">
-                            <Image src={Jelsa} />
+                            <Image src={Jelsa} alt="Jelsa" />
                         </div>
                         <div className="px-2">
-                            <Image src={Vrboska} />
+                            <Image src={Vrboska} alt="Vrboska" />
                         </div>
                         <div>
-                            <Image src={StariGrad} />
+                            <Image src={StariGrad} alt="StariGrad" />
                         </div>
                     </div>
                     <div className="flex text-center text-2xl ">
