@@ -1,6 +1,6 @@
 const NextSeoConfig = {
     title: 'Meduza',
-    lang: 'en'
+    description: 'Rent a Boat Company'
 };
 
 export default NextSeoConfig;
