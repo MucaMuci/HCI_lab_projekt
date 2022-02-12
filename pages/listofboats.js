@@ -8,10 +8,10 @@ import SEO from '../data/next-seo.config';
 
 const ListOfBoats = () => {
     return (
-        <>
+        <div className="min-h-screen relative">
             <NextSeo title={`${SEO.title} - List of boats`} />
             <Header />
-            <div>
+            <div className="pb-32">
                 <div className="flex flex-col pt-10 pb-5 bg-gradient-to-b from-hci-gradient to-white">
 
                 </div>
@@ -27,8 +27,10 @@ const ListOfBoats = () => {
                     <Boats />
                 </div>
             </div>
-            <Footer />
-        </>
+            <div className='absolute w-full bottom-0'>
+                <Footer />
+            </div>
+        </div>
     )
 }
 

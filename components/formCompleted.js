@@ -4,8 +4,8 @@ import CheckedImg from "../assets/checked.png"
 
 const FormCompleted = () => {
     return (
-        <div className="flex flex-col items-center">
-            <div>
+        <div className="flex flex-col pt-12 items-center">
+            <div >
                 <Image src={CheckedImg}
                     width={100}
                     height={100}

@@ -16,10 +16,10 @@ const BoatsSchedule = () => {
         setDate(nextValue);
     }
     return (
-        <div className="">
+        <div className="min-h-screen relative">
             <NextSeo title={`${SEO.title} - Boats schedule`} />
             <Header />
-            <div className="">
+            <div className="pb-32">
                 <div className="flex flex-col pt-10 pb-5 bg-gradient-to-b from-hci-gradient to-white">
 
                 </div>
@@ -158,7 +158,9 @@ const BoatsSchedule = () => {
                     </div>
                 </div>
             </div>
-            <Footer />
+            <div className='absolute w-full bottom-0'>
+                <Footer />
+            </div>
         </div>
     )
 }

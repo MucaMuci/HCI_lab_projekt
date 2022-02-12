@@ -16,27 +16,29 @@ const MakeAReservation = () => {
     const prevFormStep = () => setFormStep((currentStep) => currentStep - 1);
 
     return (
-        <div className="min-h-screen">
+        <div className="min-h-screen relative">
             <NextSeo title={`${SEO.title} - Make a reservation`} />
             <Header />
             <div className="flex flex-col pt-10 pb-5 bg-gradient-to-b from-hci-gradient to-white">
             </div>
+            <div className="pb-32">
+                <FormCard currentStep={formStep} prevFormStep={prevFormStep} >
+                    {formStep >= 0 && (
+                        <ReservationDetails formStep={formStep} nextFormStep={nextFormStep} />
+                    )}
+                    {formStep >= 1 && (
+                        <CustomersInfo formStep={formStep} nextFormStep={nextFormStep} prevFormStep={prevFormStep} />
+                    )}
+                    {formStep >= 2 && (
+                        <Payment formStep={formStep} nextFormStep={nextFormStep} prevFormStep={prevFormStep} />
+                    )}
 
-            <FormCard currentStep={formStep} prevFormStep={prevFormStep}>
-                {formStep >= 0 && (
-                    <ReservationDetails formStep={formStep} nextFormStep={nextFormStep} />
-                )}
-                {formStep >= 1 && (
-                    <CustomersInfo formStep={formStep} nextFormStep={nextFormStep} prevFormStep={prevFormStep} />
-                )}
-                {formStep >= 2 && (
-                    <Payment formStep={formStep} nextFormStep={nextFormStep} prevFormStep={prevFormStep} />
-                )}
-
-                {formStep > 2 && <FormCompleted />}
-            </FormCard>
-
-            <Footer />
+                    {formStep > 2 && <FormCompleted />}
+                </FormCard>
+            </div>
+            <div className='absolute w-full bottom-0'>
+                <Footer />
+            </div>
         </div>
     )
 }
