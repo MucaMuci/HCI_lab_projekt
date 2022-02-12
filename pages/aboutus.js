@@ -21,7 +21,7 @@ import SEO from '../data/next-seo.config';
 const AboutUs = () => {
     return (
         <div>
-            <NextSeo title={`${SEO.title} - About Us`} />
+            <NextSeo title={`${SEO.title} - About Us`} description={SEO.description} />
             <HeaderUser />
             <div className="flex flex-col pt-10 pb-5 bg-gradient-to-b from-hci-gradient to-white">
             </div>
