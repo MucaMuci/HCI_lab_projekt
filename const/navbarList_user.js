@@ -5,7 +5,7 @@ export const navigationItems = [
     },
     {
         name: 'Boats',
-        path: "/boats"
+        path: "/boatsuser"
     },
     {
         name: 'Taxi',
