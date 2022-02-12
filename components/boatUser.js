@@ -1,5 +1,7 @@
 import Image from "next/image";
 import Brod1 from "../assets/brod1user.png"
+import CreateImg from "../assets/create.png"
+
 
 const BoatUser = ({ name, price, maxpassengers, length, engineHP, soonestFreeDate }) => (
     <div className="flex py-5">
@@ -52,7 +54,7 @@ const BoatUser = ({ name, price, maxpassengers, length, engineHP, soonestFreeDat
                         </div>
 
                         <div className="flex w-full ">
-                            <div className="flex text-lg w-fit font-medium pt-2 sm:pt-4">
+                            <div className="flex text-lg w-fit font-medium pt-4">
                                 <button className="text-hci-modra">
                                     More information
                                 </button>
@@ -80,9 +82,17 @@ const BoatUser = ({ name, price, maxpassengers, length, engineHP, soonestFreeDat
 
                         </div>
                         <div className="flex">
-                            <div className="flex mt-2 sm:mt-4 border shadow-btn-sjena rounded-lg border-hci-modra bg-hci-modra w-fit px-2  text-white">
-                                <button>
-                                    Make a reservation
+                            <div className="flex mt-4 border shadow-btn-sjena rounded-lg border-hci-modra bg-hci-modra w-fit px-2  text-white">
+                                <button className="flex ">
+                                    <div>
+                                        Make a reservation
+                                    </div>
+                                    <div className="pl-2 pt-0.5 ">
+                                        <Image src={CreateImg}
+                                            alt="Create"
+                                            width={24}
+                                            height={20} />
+                                    </div>
                                 </button>
                             </div>
                         </div>
