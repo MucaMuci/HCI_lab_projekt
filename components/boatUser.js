@@ -69,9 +69,9 @@ const BoatUser = ({ name, price, maxpassengers, length, engineHP, soonestFreeDat
                             Soonest free dates:
                         </div>
                         <div className="text-hci-siva-slova flex sm:flex-col">
-                            <div className="hidden sm:block">{soonestFreeDate.map(item => {
+                            <div className="hidden sm:block">{soonestFreeDate.map((item, index) => {
 
-                                return <div className="sm:pt-2">
+                                return <div className="sm:pt-2" key={index}>
                                     {item}
                                 </div>
                             })}
