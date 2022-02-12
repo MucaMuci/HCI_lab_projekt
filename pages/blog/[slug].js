@@ -11,7 +11,7 @@ import SEO from '../../data/next-seo.config';
 
 
 export default function PostPage({
-    frontmatter: { title, date, cover_image },
+    frontmatter: { title, date, image },
     slug,
     content,
 }) {
@@ -33,7 +33,7 @@ export default function PostPage({
             <div className='max-w-4xl mx-auto'>
                 <div className='max-w-4xl '>
                     <div className="">
-                        <Image src={cover_image}
+                        <Image src={image}
                             width={1152}
                             height={618}
                             alt='cover'

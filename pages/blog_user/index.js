@@ -12,7 +12,7 @@ import SEO from '../../data/next-seo.config';
 export default function Home({ posts }) {
     return (
         <div>
-            <NextSeo {...SEO} />
+            <NextSeo title={`${SEO.title} - Blog`} />
             <Header />
 
             <div className="flex flex-col pt-10 pb-5 bg-gradient-to-b from-hci-gradient to-white">

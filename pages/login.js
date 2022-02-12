@@ -10,7 +10,7 @@ import SEO from '../data/next-seo.config';
 const Login = () => {
     return (
         <section className='h-screen flex justify-center bg-hci-bg'>
-            <NextSeo {...SEO} />
+            <NextSeo title={`${SEO.title} - Login`} />
             <main className='flex justify-center items-center'>
                 <div className='hidden sm:block'>
                     <Image

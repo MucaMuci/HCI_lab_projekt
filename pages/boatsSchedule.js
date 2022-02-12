@@ -17,7 +17,7 @@ const BoatsSchedule = () => {
     }
     return (
         <div className="">
-            <NextSeo {...SEO} />
+            <NextSeo title={`${SEO.title} - Boats schedule`} />
             <Header />
             <div className="">
                 <div className="flex flex-col pt-10 pb-5 bg-gradient-to-b from-hci-gradient to-white">
