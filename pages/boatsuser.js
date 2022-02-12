@@ -2,14 +2,14 @@ import { NextSeo } from "next-seo";
 import Boats from "../modules/boats/boats2";
 import Filter from "../modules/filter/filter";
 import Footer from "../modules/footer/footer";
-import Header from "../modules/header/header";
 import SEO from '../data/next-seo.config';
+import HeaderUser from "../modules/header/header_user";
 
 const BoatsUser = () => {
     return (
         <div className="min-h-screen relative">
             <NextSeo title={`${SEO.title} - List of boats`} description={SEO.description} />
-            <Header />
+            <HeaderUser />
             <div className="pb-32">
                 <div className="flex flex-col pt-10 pb-5 bg-gradient-to-b from-hci-gradient to-white">
 
