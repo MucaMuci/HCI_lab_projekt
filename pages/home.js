@@ -13,11 +13,13 @@ import CompletedNotes from "../modules/notes/completedNotes";
 import Schedule from "../modules/schedule/schedule";
 import { NextSeo } from "next-seo";
 import SEO from '../data/next-seo.config';
+import NewNote from "../modules/forms/addNewNote";
 
 const Home = () => {
     const [notesClicked, setNotesClicked] = useState(false);
     const [scheduleClicked, setScheduleClicked] = useState(false);
     const [completedClicked, setCompletedClicked] = useState(false);
+    const [addNewNoteClicked, setAddNewNoteClicked] = useState(false);
     return (
         <>
             <NextSeo {...SEO} />
@@ -79,11 +81,17 @@ const Home = () => {
                         <div className="flex bg-[#f2f2f2] w-full">
                             <div className="justify-start pl-[20px] pr-[50px]">PRIORITY</div>
                             <div className="">NOTE</div>
-                            <button className=" w-full flex justify-end items-center pr-[20px] flex-nowrap">
+                            <button className=" w-full flex justify-end items-center pr-[20px] flex-nowrap"
+                                onClick={() =>
+                                    setAddNewNoteClicked(addNewNoteClicked = true)
+                                }>
                                 <div className="pr-[10px]">Add new note</div>
                                 <Image src={Plus} height={20} width={20} alt="Plus"></Image>
                             </button>
                         </div>
+                        {
+                            addNewNoteClicked && <NewNote ToggleNewNote={setAddNewNoteClicked} />
+                        }
                         <Notes />
                         <button className="flex justify-center w-full items-center"
                             onClick={() => setCompletedClicked(!completedClicked)}

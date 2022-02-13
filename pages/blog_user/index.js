@@ -8,6 +8,7 @@ import WhitePlus from "../../assets/white_plus.png"
 import Image from 'next/image'
 import { NextSeo } from 'next-seo'
 import SEO from '../../data/next-seo.config';
+import "../backgroundImage.css"
 
 export default function Home({ posts }) {
     return (
