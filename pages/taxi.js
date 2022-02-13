@@ -7,7 +7,7 @@ import HeaderUser from "../modules/header/header_user";
 const Taxi = () => {
 
     return (
-        <div>
+        <div className="min-h-screen relative">
             <NextSeo title={`${SEO.title} -  Taxi`} description={SEO.description} />
             <HeaderUser />
             <div className="pb-32 flex justify-center w-full">
