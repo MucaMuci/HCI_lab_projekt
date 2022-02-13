@@ -1,7 +1,7 @@
 export const navigationItems = [
     {
         name: 'Home page',
-        path: "/homeuser"
+        path: "/"
     },
     {
         name: 'Boats',

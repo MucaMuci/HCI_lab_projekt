@@ -9,7 +9,7 @@ import Map from "../public/map.png"
 const Taxi = () => {
 
     return (
-        <div>
+        <div className="min-h-screen relative">
             <NextSeo title={`${SEO.title} -  Taxi`} description={SEO.description} />
             <HeaderUser />
             <div className="pb-32 flex justify-center w-full min-h-screen relative">
