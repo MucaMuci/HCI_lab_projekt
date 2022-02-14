@@ -174,7 +174,7 @@ const DailyBoatTrips = () => {
 
                     <div className="sm:w-1/2">
                         <Image src={Luke}
-                            alt="Povlja" />
+                            alt="Luke" />
                     </div>
                 </div>
 
@@ -210,7 +210,7 @@ const DailyBoatTrips = () => {
 
                     <div className="sm:w-1/2">
                         <Image src={Pucisca}
-                            alt="Povlja" />
+                            alt="Pucisca" />
                     </div>
                 </div>
 
@@ -244,8 +244,8 @@ const DailyBoatTrips = () => {
                     </div>
 
                     <div className="sm:w-1/2">
-                        <Image src={Luke}
-                            alt="Povlja" />
+                        <Image src={Vruja}
+                            alt="Vruja" />
                     </div>
                 </div>
 
