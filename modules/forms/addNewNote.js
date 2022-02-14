@@ -3,11 +3,11 @@ import Image from "next/image";
 import { useState } from "react";
 import ColorSelector from "../../components/colorSelector"
 
-const NewNote = ({ ToggleNewNote }) => {
+const NewNote = ({ ToggleNewNote, NewNoteClick }) => {
     const [ColorSelected, setColorSelected] = useState("red");
     const [ColorSelectorClicked, setColorSelectorClicked] = useState(false);
     return (
-        <div className="flex content-start bg-[#f2f2f2] my-5 mx-5 py-3 px-2 rounded-xl">
+        <div className={NewNoteClick ? "flex content-start bg-[#f2f2f2] my-5 mx-5 py-3 px-2 rounded-xl" : "hidden"}>
             <div className="w-[10%] flex content-start">
                 <div className="flex flex-col">
                     <div className="flex flex-col">

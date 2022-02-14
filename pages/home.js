@@ -89,9 +89,9 @@ const Home = () => {
                                 <Image src={Plus} height={20} width={20} alt="Plus"></Image>
                             </button>
                         </div>
-                        {
-                            addNewNoteClicked && <NewNote ToggleNewNote={setAddNewNoteClicked} />
-                        }
+
+                        <NewNote ToggleNewNote={setAddNewNoteClicked} NewNoteClick={addNewNoteClicked} />
+
                         <Notes />
                         <button className="flex justify-center w-full items-center"
                             onClick={() => setCompletedClicked(!completedClicked)}
