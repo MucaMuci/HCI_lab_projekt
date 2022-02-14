@@ -52,8 +52,8 @@ const BoatsSchedule = () => {
                                 WEATHER
                             </div>
                         </div>
-                        <div className="flex px-3 py-2 text-lg">
-                            <div className="flex flex-1">
+                        <div className="flex justify-between px-3 py-2 text-lg">
+                            <div className="flex ">
                                 <div className="pr-2 ">
                                     Temperature:
                                 </div>
@@ -61,13 +61,13 @@ const BoatsSchedule = () => {
                                     33°C
                                 </div>
                             </div>
-                            <div className="pt-1 flex-1 text-center ">
+                            <div className="pt-1  text-center ">
                                 <Image src={SunImg}
                                     width={20}
                                     height={20}
                                     alt="Sun" />
                             </div>
-                            <div className="flex flex-1 justify-end">
+                            <div className="flex  justify-end">
                                 <div className="pr-2">
                                     Wind:
                                 </div>
