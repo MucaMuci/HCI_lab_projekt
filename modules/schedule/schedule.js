@@ -3,7 +3,7 @@ import { scheduleList } from "../../const/scheduleList";
 
 const Schedule = () => {
     return (
-        <div className="flex flex-col px-5 border pb-5">
+        <div className="flex flex-col w-full px-5 border pb-5">
             {scheduleList.map((el) => {
                 return (
                     <div>

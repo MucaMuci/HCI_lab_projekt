@@ -4,14 +4,14 @@ import Brod1 from "../assets/brod1.png"
 const Reservation = ({ image, name, hasYetToPay, pickUpTime, pickUpPlace, needsSkipper, additionalEquipment, phoneNumber }) => (
     <div className="flex py-5">
         <div className="flex flex-col md:flex-row shadow-btn-sjena rounded-2xl px-5 py-5">
-            <div className="flex ">
+            <div className="flex h-fit">
                 <Image
                     src={Brod1}
                     height={320}
                     width={320}
                     alt="Brod" />
             </div>
-            <div className="pl-10 flex flex-col">
+            <div className="md:pl-10 flex flex-col">
                 <div className="flex text-4xl pb-4">
                     {name}
                 </div>

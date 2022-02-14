@@ -27,7 +27,7 @@ const Home = () => {
                 <Header />
                 <main className="font-merriweather">
                     <div className="flex flex-row h-full">
-                        <div className="flex flex-col justify-center w-9/12">
+                        <div className="flex flex-col w-full sm:w-9/12">
 
                             <div className="flex flex-col pt-10 pb-2 bg-gradient-to-b from-hci-gradient to-white">
                                 <div className="flex flex-row justify-center pb-2">
@@ -60,13 +60,16 @@ const Home = () => {
                                 </div>
                             </div>
                         </div>
+
                         <SideBar NClicked={notesClicked} setNClicked={setNotesClicked} SClicked={scheduleClicked} setSClicked={setScheduleClicked} />
+
                     </div>
+
                 </main>
                 <Footer />
             </div>
             {notesClicked && (
-                <div className="absolute top-0 right-0 bottom-0 w-[70%] h-full bg-white flex overflow-auto">
+                <div className="absolute top-0 right-0 bottom-0 w-full md:w-[70%] h-full bg-white flex overflow-auto">
 
                     <button className="flex bg-hci-modra w-10 h-full justify-center items-center fixed"
                         onClick={() => setNotesClicked(!notesClicked)}>
@@ -111,7 +114,7 @@ const Home = () => {
             }
             {
                 scheduleClicked && (
-                    <div className="absolute top-0 right-0 bottom-0 w-[70%] h-full bg-white flex overflow-auto">
+                    <div className="absolute top-0 right-0 bottom-0 w-full md:w-[70%] h-full bg-white flex overflow-auto">
 
                         <button className="flex bg-hci-modra w-10 h-full justify-center items-center fixed"
                             onClick={() => setScheduleClicked(!scheduleClicked)}>

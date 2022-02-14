@@ -4,7 +4,7 @@ import Brod1 from "../assets/brod1.png"
 const Boat = ({ name, price, maxpassengers, length, currentstatus }) => (
     <div className="flex py-5">
         <div className="flex flex-col md:flex-row shadow-btn-sjena rounded-2xl px-5 py-5">
-            <div className="flex ">
+            <div className="flex h-fit">
                 <Image
                     src={Brod1}
                     height={320}

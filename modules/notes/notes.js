@@ -4,7 +4,7 @@ import { NoteRed, NoteYellow, NoteGreen } from "../../components/noteCard";
 
 const Notes = () => {
     return (
-        <div className="flex flex-col border">
+        <div className="flex flex-col w-full border">
             <div className="flex flex-col content-center">
                 {notesRed.map((el) => {
                     return (
