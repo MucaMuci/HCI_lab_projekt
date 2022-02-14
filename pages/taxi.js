@@ -12,14 +12,14 @@ const Taxi = () => {
         <div className="min-h-screen relative">
             <NextSeo title={`${SEO.title} -  Taxi`} description={SEO.description} />
             <HeaderUser />
-            <div className="pb-32 flex justify-center w-full min-h-screen relative">
+            {/* <div className="pb-32 flex justify-center w-full min-h-screen relative">
                 <div className="absolute z-[1]">
                     <Image src={Map}
                         width={1030}
                         height={860}
                     />
                 </div>
-            </div>
+            </div> */}
 
             <div className='absolute w-full bottom-0'>
                 <Footer />
