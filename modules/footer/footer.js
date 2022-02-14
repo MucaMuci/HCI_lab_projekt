@@ -8,7 +8,7 @@ import Image from 'next/image';
 const Footer = () => {
     return (
         <section className=' bg-hci-header'>
-            <main className=' max-w-6xl mx-auto '>
+            <main className=' max-w-5xl mx-auto '>
                 <div className=" flex  items-center flex-row justify-around sm:justify-between ">
                     <div className='hidden sm:flex items-center py-2'>
                         <Image

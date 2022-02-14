@@ -20,7 +20,7 @@ export default function Home({ posts }) {
             </div>
 
 
-            <div className='max-w-4xl mx-auto text-lg'>
+            <div className='max-w-5xl mx-auto text-lg'>
 
                 <div className='pb-4'>
                     {posts.map((post, index) => (

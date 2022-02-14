@@ -11,7 +11,7 @@ import SEO from '../../data/next-seo.config';
 
 export default function Home({ posts }) {
     return (
-        <div>
+        <div className='min-h-screen relative'>
             <NextSeo title={`${SEO.title} - Blog`} description={SEO.description} />
             <Header />
 
@@ -24,7 +24,7 @@ export default function Home({ posts }) {
                 </div>
             </div>
 
-            <div className='max-w-6xl mx-auto text-lg'>
+            <div className='max-w-5xl mx-auto text-lg pb-32'>
                 <div className='pt-4'>
                     <div className='border shadow-btn-sjena rounded-2xl border-hci-modra bg-hci-modra items-center  justify-center flex'>
                         <div className='flex text-white justify-center pr-2'>

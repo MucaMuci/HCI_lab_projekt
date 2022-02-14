@@ -20,10 +20,10 @@ const ListOfBoats = () => {
                         SEARCH BY
                     </div>
                 </div>
-                <div className=" flex max-w-6xl mx-auto justify-center pt-5 pb-10">
+                <div className=" flex max-w-5xl mx-auto justify-center pt-5 pb-10">
                     <Filter />
                 </div>
-                <div className="flex max-w-6xl mx-auto justify-center">
+                <div className="flex max-w-5xl mx-auto justify-center">
                     <Boats />
                 </div>
             </div>

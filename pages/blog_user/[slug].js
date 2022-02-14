@@ -20,7 +20,7 @@ export default function PostPage({
             <Header />
             <div className="flex flex-col pt-10 pb-4 bg-gradient-to-b from-hci-gradient to-white"></div>
             <div className=" bg-hci-siva-2 w-full  py-2 mb-4">
-                <div className='max-w-4xl mx-auto flex flex-col sm:flex-row justify-between items-end'>
+                <div className='max-w-5xl mx-auto flex flex-col sm:flex-row justify-between items-end'>
                     <div className="text-4xl">
                         {title}
                     </div>
@@ -29,8 +29,8 @@ export default function PostPage({
                     </div>
                 </div>
             </div>
-            <div className='max-w-4xl mx-auto'>
-                <div className='max-w-4xl '>
+            <div className='max-w-5xl mx-auto'>
+                <div className='max-w-5xl '>
                     <div className="">
                         <Image src={image}
                             width={1152}

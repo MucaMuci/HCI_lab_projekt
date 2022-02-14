@@ -28,7 +28,7 @@ const BoatsSchedule = () => {
                         SEARCH BY
                     </div>
                 </div>
-                <div className=" flex max-w-6xl mx-auto justify-center pt-5 pb-10">
+                <div className=" flex max-w-5xl mx-auto justify-center pt-5 pb-10">
                     <Filter />
                 </div>
                 <div className="bg-hci-siva-2 flex justify-center py-2">
@@ -36,13 +36,13 @@ const BoatsSchedule = () => {
                         CALENDAR
                     </div>
                 </div>
-                <div className="italic max-w-6xl mx-auto pb-4">
+                <div className="italic max-w-5xl mx-auto pb-4">
                     <span>This is a calendar that let&apos;s you view every specific month.</span>
                     <span className="font-semibold"> To find more information</span>
                     <span> about specific date&apos;s reservations </span>
                     <span className="font-medium"> click on the wanted day in calendar.</span>
                 </div>
-                <div className="flex-col flex sm:flex-row max-w-6xl mx-auto justify-center pb-5 ">
+                <div className="flex-col flex sm:flex-row max-w-5xl mx-auto justify-center pb-5 ">
                     <div className="border border-hci-siva shadow-btn-sjena rounded-3xl sm:w-2/5 mb-5 h-fit mr-3">
                         <Calendar className="text-center" onChange={onChange} value={date} />
                     </div>

@@ -11,7 +11,7 @@ const ReservationDetails = ({ formStep, nextFormStep }) => {
 
     return (
         <div className={formStep === 0 ? "flex" : "hidden"}>
-            <div className="flex flex-col px-5 sm:px-20 py-3 font-medium max-w-6xl border border-hci-siva rounded-xl">
+            <div className="flex flex-col px-5 sm:px-20 py-3 font-medium max-w-5xl border border-hci-siva rounded-xl">
                 <div className="text-sm">
                     Date
                 </div>

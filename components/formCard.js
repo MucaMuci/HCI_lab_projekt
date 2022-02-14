@@ -65,7 +65,7 @@ const FormCard = ({ children, currentStep, prevFormStep }) => {
 
                 </div>
             }
-            <div className="max-w-6xl mx-auto ">
+            <div className="max-w-5xl mx-auto ">
                 {children}
             </div>
 

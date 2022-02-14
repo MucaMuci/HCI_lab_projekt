@@ -26,7 +26,7 @@ const AboutUs = () => {
             <div className="flex flex-col pt-10 pb-5 bg-gradient-to-b from-hci-gradient to-white">
             </div>
 
-            <div className="flex flex-col max-w-4xl mx-auto">
+            <div className="flex flex-col max-w-5xl mx-auto">
                 <div className="flex pb-10">
                     <div className="flex flex-col flex-1">
                         <div className="text-3xl pb-4">
