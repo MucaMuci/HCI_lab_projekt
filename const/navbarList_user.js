@@ -12,8 +12,8 @@ export const navigationItems = [
         path: "/taxi"
     },
     {
-        name: 'Organized trips',
-        path: "/organizedtrips"
+        name: 'Daily boat trips',
+        path: "/dailyboattrips"
     },
     {
         name: 'About Us',
