@@ -123,7 +123,7 @@ const DailyBoatTrips = () => {
                         <div className="pb-6">
                             Povlja is an old coastal town located in a bay on the
                             north-east side of Brač island. The town is mostly
-                            known for it's rich cultural and historical heritage.
+                            known for its rich cultural and historical heritage.
                             With so many sights, anyone interested in history
                             should be able to find something they would like to
                             see. The most popular places to visit are the old
@@ -193,8 +193,8 @@ const DailyBoatTrips = () => {
                             managed to successfully defend themselves against
                             pirates and the Ottoman Empire. Well, this little
                             town named Pučišća did. Pučišća, also known as
-                            “Luka Kula”, which translates to “Towerred
-                            Harbour”, is located on the northern coast of island
+                            &quot;Luka Kula&quot;, which translates to &quot;Towerred
+                            Harbour&quot;, is located on the northern coast of island
                             Brač. Made mostly from stone it is an interesting
                             place to visit, not only because of its history, but
                             because of its present as well. Today city is most
