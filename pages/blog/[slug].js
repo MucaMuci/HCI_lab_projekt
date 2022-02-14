@@ -8,6 +8,7 @@ import Footer from '../../modules/footer/footer'
 import Header from '../../modules/header/header'
 import { NextSeo } from 'next-seo'
 import SEO from '../../data/next-seo.config';
+import EditImg from "../../assets/edit.png"
 
 
 export default function PostPage({
@@ -32,6 +33,21 @@ export default function PostPage({
             </div>
             <div className='max-w-5xl mx-auto'>
                 <div className='max-w-5xl '>
+                    <div className='w-full flex justify-end'>
+                        <button className='border shadow-btn-sjena rounded-lg border-hci-modra bg-hci-modra items-center w-fit px-3 mb-3  flex '>
+                            <div className='flex text-white justify-center pr-2'>
+                                Edit
+                            </div>
+                            <div className='pt-1'>
+                                <Image
+                                    src={EditImg}
+                                    width={18}
+                                    height={18}
+                                    alt="Edit"
+                                />
+                            </div>
+                        </button>
+                    </div>
                     <div className="">
                         <Image src={image}
                             width={1152}
