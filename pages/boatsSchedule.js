@@ -45,7 +45,7 @@ const BoatsSchedule = () => {
                 </div>
                 <div className="flex-col flex sm:flex-row max-w-5xl mx-auto justify-center pb-5 ">
                     <div className="border border-hci-siva shadow-btn-sjena rounded-3xl sm:w-2/5 mb-5 h-fit mr-3">
-                        <Calendar className="text-center" onChange={onChange} value={date} />
+                        <Calendar className="text-center w-full" onChange={onChange} value={date} />
                     </div>
                     <div className="flex flex-col border font-medium border-hci-siva shadow-btn-sjena rounded-3xl grow ">
                         <div className="bg-hci-siva-2 flex justify-center border-t border-hci-siva py-2 rounded-t-3xl">
