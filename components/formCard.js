@@ -70,18 +70,19 @@ const FormCard = ({ children, currentStep, prevFormStep }) => {
 
                 </div>
             }
-
-            <div className="hidden sm:flex max-w-5xl mx-auto w-11/12 ">
-                <div className="flex-1 text-center">
-                    Reservation details
+            {currentStep < 3 &&
+                <div className="hidden sm:flex max-w-5xl mx-auto w-11/12 ">
+                    <div className="flex-1 pl-4 text-center">
+                        Reservation details
+                    </div>
+                    <div className="flex-1 text-center">
+                        Customers information
+                    </div>
+                    <div className="flex-1  pr-4 text-center">
+                        Payment
+                    </div>
                 </div>
-                <div className="flex-1 text-center">
-                    Customers information
-                </div>
-                <div className="flex-1  pr-2 text-center">
-                    Payment
-                </div>
-            </div>
+            }
 
             <div className="max-w-5xl mx-auto ">
                 {children}
