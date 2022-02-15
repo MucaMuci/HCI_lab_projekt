@@ -7,6 +7,7 @@ import Image from "next/image";
 import SunImg from "../assets/sun.png"
 import { NextSeo } from "next-seo";
 import SEO from '../data/next-seo.config';
+import 'react-calendar/dist/Calendar.css';
 
 
 const BoatsSchedule = () => {

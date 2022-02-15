@@ -19,7 +19,7 @@ const Boat = ({ name, price, maxpassengers, length, currentstatus }) => (
                     <div className="flex flex-col items-start ">
                         <div className="flex pb-3">
                             <div className="flex pr-2 font-medium">
-                                Price
+                                Price:
                             </div>
                             <div className="flex text-hci-siva2">
                                 {price}
@@ -27,21 +27,30 @@ const Boat = ({ name, price, maxpassengers, length, currentstatus }) => (
                         </div>
                         <div className="flex pb-3">
                             <div className="flex pr-2 font-medium">
-                                Max number of passengers
+                                Max number of passengers:
                             </div>
                             <div className="flex text-hci-siva2">
                                 {maxpassengers}
                             </div>
                         </div>
-                        <div className="flex pb-3 md:pb-8">
+                        <div className="flex pb-3 md:pb-3">
                             <div className="flex pr-2 font-medium">
-                                Length
+                                Length:
                             </div>
                             <div className="flex text-hci-siva2">
                                 {length}
                             </div>
                         </div>
-                        <div className="flex pb-4 md:pb-16">
+                        <div className="flex pb-3 md:pb-8">
+                            <div className="flex pr-2 font-medium">
+                                Engine HP:
+                            </div>
+                            <div className="flex text-hci-siva2">
+                                180 HP
+                            </div>
+                        </div>
+
+                        <div className="flex pb-4 md:pb-8">
                             <div className="flex pr-2 font-medium">
                                 Current status
                             </div>
