@@ -22,7 +22,7 @@ const CustomersInfo = ({ formStep, nextFormStep, prevFormStep }) => {
 
                 <div className="flex items-center pb-2">
                     <input className="  text-center border border-hci-siva rounded-md bg-hci-siva-2 text-lg placeholder-hci-siva-slova" placeholder="DD/MM/YY"></input>
-                    <div className="pl-2">
+                    <div className="pl-2 hover:cursor-pointer">
                         <Image
                             src={CalendarImg}
                             width={20}

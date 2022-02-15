@@ -29,7 +29,7 @@ const Payment = ({ formStep, nextFormStep, prevFormStep }) => {
                     </div>
                     <div className="flex items-center border border-hci-siva rounded-md bg-hci-siva-2">
                         <input className="font-normal text-lg pl-2 text-hci-siva-slova border-hci-siva rounded-md bg-hci-siva-2  " ></input>
-                        <div className="px-1">
+                        <div className="px-1 hover:cursor-pointer ">
                             <Image
                                 src={DownArrow}
                                 width={20}
@@ -44,7 +44,7 @@ const Payment = ({ formStep, nextFormStep, prevFormStep }) => {
                     </div>
                     <div className="flex items-center border border-hci-siva rounded-md bg-hci-siva-2">
                         <input className="font-normal text-lg pl-2 text-hci-siva-slova border-hci-siva rounded-md bg-hci-siva-2  " ></input>
-                        <div className="px-1">
+                        <div className="px-1 hover:cursor-pointer ">
                             <Image
                                 src={DownArrow}
                                 width={20}
@@ -59,7 +59,7 @@ const Payment = ({ formStep, nextFormStep, prevFormStep }) => {
                     </div>
                     <div className="flex items-center border border-hci-siva rounded-md bg-hci-siva-2">
                         <input className="font-normal text-lg pl-2 text-hci-siva-slova border-hci-siva rounded-md bg-hci-siva-2  " ></input>
-                        <div className="px-1">
+                        <div className="px-1 hover:cursor-pointer ">
                             <Image
                                 src={DownArrow}
                                 width={20}
