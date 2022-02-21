@@ -3,7 +3,7 @@ import Brod1 from "../assets/brod1user.png"
 import CreateImg from "../assets/create.png"
 
 
-const BoatUser = ({ name, price, maxpassengers, length, engineHP, soonestFreeDate }) => (
+const BoatUser = ({ name, price, maxpassengers, length, engineHP }) => (
     <div className="flex py-5">
         <div className="flex flex-col shadow-btn-sjena rounded-2xl px-5 py-5">
             <div className="flex text-4xl self-center pb-4 font-semibold">
@@ -68,7 +68,7 @@ const BoatUser = ({ name, price, maxpassengers, length, engineHP, soonestFreeDat
                         <div className="flex">
                             Soonest free dates:
                         </div>
-                        <div className="text-hci-siva-slova flex sm:flex-col">
+                        {/* <div className="text-hci-siva-slova flex sm:flex-col">
                             <div className="hidden sm:block">{soonestFreeDate.map((item, index) => {
 
                                 return <div className="sm:pt-2" key={index}>
@@ -80,7 +80,7 @@ const BoatUser = ({ name, price, maxpassengers, length, engineHP, soonestFreeDat
                                 {soonestFreeDate.join(", ")}
                             </div>
 
-                        </div>
+                        </div> */}
                         <div className="flex">
                             <div className="flex mt-4 border shadow-btn-sjena rounded-lg border-hci-modra bg-hci-modra w-fit px-2  text-white">
                                 <button className="flex ">
