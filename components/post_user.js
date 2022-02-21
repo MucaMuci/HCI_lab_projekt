@@ -30,7 +30,7 @@ export default function Post({ post }) {
                     <div className='flex'>
                         <Link href={`/blog_user/${post.slug}`}>
 
-                            <div className='flex'>
+                            <button className='flex'>
                                 <div className='text-hci-modra'>
                                     Learn more
                                 </div>
@@ -40,7 +40,7 @@ export default function Post({ post }) {
                                         height={11}
                                         alt="RightArrow" />
                                 </div>
-                            </div>
+                            </button>
                         </Link>
                     </div>
                 </div>

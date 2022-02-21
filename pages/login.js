@@ -64,7 +64,7 @@ const Login = () => {
                             <input className='border border-gray-300 w-11/12 rounded py-2 px-1 bg-hci-bg' value={password} onInput={e => setPassword(e.target.value)} placeholder='Password' type="password" required></input>
                             <div className='flex justify-end w-11/12'>
                                 <div className=''>
-                                    <bottun className='text-hci-modra font-medium '>
+                                    <bottun className='text-hci-modra font-medium hover:cursor-pointer'>
                                         Forgotten your password?
                                     </bottun>
                                 </div>

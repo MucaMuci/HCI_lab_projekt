@@ -5,7 +5,7 @@ export default function Post({ post }) {
         <div className='border shadow-btn-sjena rounded-2xl mb-4'>
 
             <Link href={`/blog/${post.slug}`}>
-                <div className='flex '>
+                <div className='flex hover:cursor-pointer '>
                     <div className='flex w-2/6 font-medium pl-2'>
                         <div>{post.frontmatter.author}</div>
                     </div>

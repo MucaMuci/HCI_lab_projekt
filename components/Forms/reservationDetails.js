@@ -17,7 +17,7 @@ const ReservationDetails = ({ formStep, nextFormStep }) => {
                 </div>
                 <div className="flex items-center pb-2">
                     <input className=" w-1/3 text-center border border-hci-siva rounded-md bg-hci-siva-2 text-lg placeholder-hci-siva-slova" placeholder="DD/MM/YY"></input>
-                    <div className="pl-2">
+                    <div className="pl-2 hover:cursor-pointer">
                         <Image
                             src={CalendarImg}
                             width={20}
@@ -65,9 +65,9 @@ const ReservationDetails = ({ formStep, nextFormStep }) => {
                     Needs a skipper
                 </div>
                 <div className="flex">
-                    <div className="font-normal border px-1 text-lg text-hci-modra border-hci-siva rounded-md bg-hci-siva-2 w-fit"> Yes</div>
+                    <div className="hover:cursor-pointer font-normal border px-1 text-lg text-hci-modra border-hci-siva rounded-md bg-hci-siva-2 w-fit"> Yes</div>
                     <div className="px-1"></div>
-                    <div className="font-normal border px-1 text-lg text-hci-modra border-hci-siva rounded-md bg-hci-siva-2 w-fit">No</div>
+                    <div className="hover:cursor-pointer font-normal border px-1 text-lg text-hci-modra border-hci-siva rounded-md bg-hci-siva-2 w-fit">No</div>
                 </div>
 
                 <div className="pt-6 text-sm font-medium">

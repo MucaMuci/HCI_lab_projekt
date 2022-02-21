@@ -26,7 +26,7 @@ export default function Home({ posts }) {
 
             <div className='max-w-5xl mx-auto text-lg pb-32'>
                 <div className='pt-4'>
-                    <div className='border shadow-btn-sjena rounded-2xl border-hci-modra bg-hci-modra items-center  justify-center flex'>
+                    <div className='hover:cursor-pointer border shadow-btn-sjena rounded-2xl border-hci-modra bg-hci-modra items-center  justify-center flex'>
                         <div className='flex text-white justify-center pr-2'>
                             Create new blog
                         </div>
