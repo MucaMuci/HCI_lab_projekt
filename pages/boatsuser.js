@@ -4,8 +4,14 @@ import Filter from "../modules/filter/filter";
 import Footer from "../modules/footer/footer";
 import SEO from '../data/next-seo.config';
 import HeaderUser from "../modules/header/header_user";
+import { useEffect, useState } from "react";
 
 const BoatsUser = () => {
+    const [maxPassengersFilter, setMaxPassengersFilter] = useState(0);
+    const [nameSearchFilter, setNameSearchFilter] = useState("");
+    const [boatsLengthFilter, setBoatsLengthFilter] = useState(0);
+    const [boatsHorsePowerFilter, setHorsePowerFilter] = useState(0);
+
     return (
         <div className="min-h-screen relative">
             <NextSeo title={`${SEO.title} - List of boats`} description={SEO.description} />
@@ -20,10 +26,22 @@ const BoatsUser = () => {
                     </div>
                 </div>
                 <div className=" flex max-w-5xl mx-auto justify-center pt-5 pb-10">
-                    <Filter />
+                    <Filter
+                        MPFilter={maxPassengersFilter}
+                        setMPFilter={setMaxPassengersFilter}
+                        setNSF={setNameSearchFilter}
+                        setBLF={setBoatsLengthFilter}
+                        setHP={setHorsePowerFilter}
+                    />
                 </div>
                 <div className="flex max-w-5xl mx-auto justify-center">
-                    <Boats />
+                    <Boats
+                        MPFilter={maxPassengersFilter}
+                        NSFilter={nameSearchFilter}
+                        BLFilter={boatsLengthFilter}
+                        BHPFilter={boatsHorsePowerFilter}
+
+                    />
                 </div>
             </div>
             <div className='absolute w-full bottom-0'>

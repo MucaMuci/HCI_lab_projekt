@@ -50,3 +50,9 @@ p {
   border-width: 1px;
   border-radius: 1.5rem;
 }
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

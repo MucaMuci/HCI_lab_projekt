@@ -7,21 +7,39 @@ import { useUser } from '../../firebase/useUser'
 import { async } from "@firebase/util"
 import { useEffect, useRef, useState } from "react"
 
-const Boats = () => {
+const Boats = ({ MPFilter, NSFilter, BLFilter, BHPFilter }) => {
 
-    const [boats, setBoats] = useState([])
+    const [boats, setBoats] = useState([]);
+    const [copy, setCopy] = useState([])
+
+    //boat.id.toLowerCase().contains(NSFilter.toLowerCase())
 
     useEffect(() => {
-        let ListOfBoats = []
+        const ListOfBoats = [];
         getDocs(collection(db, "Boats")).then((snapshot) => {
             snapshot.docs.forEach(doc => {
                 // boats.push({ ...doc.data(), id: doc.id })
                 ListOfBoats.push({ ...doc.data(), id: doc.id })
             })
-            setBoats(ListOfBoats)
+            setBoats(ListOfBoats);
+            setCopy(ListOfBoats);
         })
     }, [])
 
+    useEffect(() => {
+        const passengerFilter = (boat) => boat.MaxPassengers >= MPFilter
+        const nameFilter = (boat) => boat.id.toLowerCase().includes(NSFilter.toLowerCase())
+        const lengthFilter = (boat) => BLFilter ? boat.Length >= BLFilter - 0.3 && boat.Length <= BLFilter + 0.3 : {}
+        const hpFilter = (boat) => BHPFilter ? boat.EngineHP >= BHPFilter - 30 && boat.EngineHP <= BHPFilter + 30 : {}
+
+        setBoats(copy
+            .filter(passengerFilter)
+            .filter(nameFilter)
+            .filter(lengthFilter)
+            .filter(hpFilter)
+        )
+
+    }, [MPFilter, NSFilter, BLFilter, BHPFilter])
 
 
     return (
@@ -39,18 +57,19 @@ const Boats = () => {
                         soonestFreeDate={el.soonestFreeDate} />
                 ))} */}
 
+                {
+                    boats.map(el => (
+                        <Boat
+                            name={el.id}
+                            key={el.id}
+                            price={el.Price}
+                            maxpassengers={el.MaxPassengers}
+                            length={el.Length}
+                            engineHP={el.EngineHP}
+                        />
 
-
-
-                {boats.map(el => (
-                    <Boat
-                        name={el.id}
-                        price={el.Price}
-                        maxpassengers={el.MaxPassengers}
-                        length={el.Length}
-                        engineHP={el.EngineHP} />
-
-                ))}
+                    ))
+                }
             </div>
         </div>
     )

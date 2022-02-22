@@ -31,7 +31,7 @@ const Home = () => {
 
                             <div className="flex flex-col pt-10 pb-2 bg-gradient-to-b from-hci-gradient to-white">
                                 <div className="flex flex-row justify-center pb-2">
-                                    <button className="px-2   bg-hci-gradient rounded-full">
+                                    <button className="px-2 bg-hci-gradient rounded-full">
                                         <Image
                                             src={LeftArrow}
                                             height={13}

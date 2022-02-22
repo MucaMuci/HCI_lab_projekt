@@ -47,12 +47,14 @@ const HeaderUser = () => {
                 </div>
                 <div className="hidden md:flex md:self-center md:pr-3 hover:cursor-pointer">
                     <Link href={"/login"}>
-                        <Image
-                            src={UserImg}
-                            width={70}
-                            height={70}
-                            alt="User"
-                        />
+                        <>
+                            <Image
+                                src={UserImg}
+                                width={70}
+                                height={70}
+                                alt="User"
+                            />
+                        </>
                     </Link>
                     {/* <Image
                         src={UserManImg}

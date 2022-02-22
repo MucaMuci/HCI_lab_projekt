@@ -17,6 +17,9 @@ module.exports = {
         'hci-modra': {
           DEFAULT: '#3C47A9'
         },
+        'hci-modra-cool': {
+          DEFAULT: 'rgba(60,71,169,0.5)'
+        },
         'hci-bg': {
           DEFAULT: '#F6F6F6'
         },
