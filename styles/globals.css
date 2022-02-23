@@ -56,3 +56,23 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+
+.slick-slider .slick-initialized {
+  max-width: 50% !important;
+  /* transform: none !important; */
+}
+/* .slick-track {
+  width: 100% !important;
+} */
+ /* .slick-slide {
+  width: 100% !important;
+  height: 100% !important;
+}   */
+
+.slick-prev {
+  left: 0px !important;
+}
+
+.slick-next {
+  right:0px !important;
+}

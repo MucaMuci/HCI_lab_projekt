@@ -12,6 +12,7 @@ import Povlja from "../assets/povlja_trips.png"
 import Luke from "../assets/luke_trips.png"
 import Pucisca from "../assets/pucisca_trips.png"
 import Vruja from "../assets/vruja_trips.png"
+import PictureSlider from "../modules/pictureSlider/pictureSlider";
 
 
 const DailyBoatTrips = () => {
@@ -141,8 +142,9 @@ const DailyBoatTrips = () => {
                     </div>
 
                     <div className="sm:w-1/2">
-                        <Image src={Povlja}
-                            alt="Povlja" />
+                        <PictureSlider listOfPictures={["/images/boat-icons/boat-darkBlue.png", "/images/boat-icons/boat-green.png"]} />
+                        {/* <Image src={Povlja}
+                            alt="Povlja" /> */}
                     </div>
                 </div>
 

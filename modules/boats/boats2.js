@@ -10,7 +10,7 @@ import { useEffect, useRef, useState } from "react"
 const Boats = ({ MPFilter, NSFilter, BLFilter, BHPFilter }) => {
 
     const [boats, setBoats] = useState([]);
-    const [copy, setCopy] = useState([])
+    const [copy, setCopy] = useState([]);
 
     //boat.id.toLowerCase().contains(NSFilter.toLowerCase())
 
