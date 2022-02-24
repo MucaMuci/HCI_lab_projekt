@@ -55,27 +55,30 @@ const Reviews = () => {
                 <div className="flex flex-col pt-10 pb-5 bg-gradient-to-b from-hci-gradient to-white">
                 </div>
                 <div className=" flex flex-col max-w-5xl mx-auto justify-center pt-5 pb-10 ">
-                    <div className="px-5 py-3 border shadow-btn-sjena w-full flex flex-col rounded-lg mb-10">
-                        <div className="flex justify-between pb-2">
-                            <div>
-                                {date}
+                    {user != undefined &&
+                        <div className="px-5 py-3 border shadow-btn-sjena w-full flex flex-col rounded-lg mb-10">
+                            <div className="flex justify-between pb-2">
+                                <div className="">
+                                    {date}
+                                </div>
+                                <div className="flex-1 text-right">
+                                    <StarRatings rating={rating} changeRating={handleRating} numberOfStars={5} starRatedColor="#ECCD2F" starHoverColor="#ECCD2F" starDimension="30px" />
+                                </div >
+                                {user != undefined &&
+                                    <div className="flex-1 text-right">
+                                        <div></div>
+                                        <div>{user.email}</div>
+                                    </div>}
                             </div>
-                            <div>
-                                <StarRatings rating={rating} changeRating={handleRating} numberOfStars={5} starRatedColor="#ECCD2F" starHoverColor="#ECCD2F" starDimension="30px" />
+                            <div className="border-t border-t-black w-full pb-2">
                             </div>
-                            {user != undefined && <div>
-                                <div></div>
-                                <div>{user.email}</div>
-                            </div>}
-                        </div>
-                        <div className="border-t border-t-black w-full pb-2">
-                        </div>
-                        <textarea value={text} onChange={handleText} className="bg-hci-svijetlo-siva py-1 rounded-lg px-1 text-black " placeholder="Write your experience" />
+                            <textarea value={text} onChange={handleText} className="bg-hci-svijetlo-siva py-1 rounded-lg px-1 text-black " placeholder="Write your experience" />
 
-                        <button onClick={shareReview} className="self-end text-hci-modra pt-1">
-                            SHARE
-                        </button>
-                    </div>
+                            <button onClick={shareReview} className="self-end text-hci-modra pt-1">
+                                SHARE
+                            </button>
+                        </div>
+                    }
 
                     <ReviewList />
 

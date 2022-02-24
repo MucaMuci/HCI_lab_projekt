@@ -13,9 +13,11 @@ const ReviewList = () => {
         let ListOfReviews = []
         getDocs(collection(db, "Reviews")).then((snapshot) => {
             snapshot.docs.forEach(doc => {
-                ListOfReviews.push({ ...doc.data() })
+                ListOfReviews.push({ ...doc.data(), id: doc.id })
+
             })
             setReviews(ListOfReviews)
+
         })
     })
 
@@ -29,7 +31,8 @@ const ReviewList = () => {
                             date={el.date}
                             rating={el.rating}
                             email={el.email}
-                            text={el.text} />
+                            text={el.text}
+                            id={el.id} />
 
                     ))
                 }
