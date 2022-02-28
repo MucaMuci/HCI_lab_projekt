@@ -7,9 +7,13 @@ import UserManImg from '../../assets/user_man.png';
 import Hamburger from '../../assets/hamburger.png'
 import BurgerNavigation from '../../components/burgerNavigation'
 import Link from "next/link";
+import UseUser from "../../firebase/useUser";
+import { useRouter } from "next/router";
 
 const HeaderUser = () => {
     const [isClicked, setIsClicked] = useState(false);
+    const { user, logout } = UseUser();
+    const router = useRouter()
 
     return (
         <header className="bg-hci-header">
@@ -45,24 +49,51 @@ const HeaderUser = () => {
                     </div>
                     <NavBar />
                 </div>
-                <div className="hidden md:flex md:self-center md:pr-3 hover:cursor-pointer">
-                    <Link href={"/login"}>
-                        <>
-                            <Image
-                                src={UserImg}
-                                width={70}
-                                height={70}
-                                alt="User"
-                            />
-                        </>
-                    </Link>
-                    {/* <Image
+
+
+
+                {
+                    user != undefined ?
+                        <div onClick={() => logout()} className="hidden md:flex md:self-center md:pr-3 hover:cursor-pointer">
+
+                            <>
+                                <Image
+                                    src={UserImg}
+                                    width={70}
+                                    height={70}
+                                    alt="User"
+                                />
+                            </>
+
+                            {/* <Image
                         src={UserManImg}
                         width={70}
                         height={70}
                     /> */}
 
-                </div>
+                        </div>
+                        :
+                        <div onClick={() => router.push('/login')} className="hidden md:flex md:self-center md:pr-3 hover:cursor-pointer">
+
+                            <>
+                                <Image
+                                    src={UserImg}
+                                    width={70}
+                                    height={70}
+                                    alt="User"
+                                />
+                            </>
+
+                            {/* <Image
+                        src={UserManImg}
+                        width={70}
+                        height={70}
+                    /> */}
+
+                        </div>
+
+                }
+
                 <div className=" md:hidden self-center pr-3">
                     {/* <BurgerNavigation isOpen={isClicked}
                         className={`cursor-pointer z-50 transition-all ease-linear duration-500 ${isClicked ? 'transform rotate-90' : ''
