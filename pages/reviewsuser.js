@@ -61,7 +61,7 @@ const Reviews = () => {
                                 <div className="">
                                     {date}
                                 </div>
-                                <div className="flex-1 text-right">
+                                <div className="flex-1 hidden sm:block text-right">
                                     <StarRatings rating={rating} changeRating={handleRating} numberOfStars={5} starRatedColor="#ECCD2F" starHoverColor="#ECCD2F" starDimension="30px" />
                                 </div >
                                 {user != undefined &&
@@ -69,6 +69,9 @@ const Reviews = () => {
                                         <div></div>
                                         <div>{user.email}</div>
                                     </div>}
+                            </div>
+                            <div className="flex-1 sm:hidden pb-1">
+                                <StarRatings rating={rating} numberOfStars={5} starRatedColor="#ECCD2F" starHoverColor="#ECCD2F" starDimension="30px" />
                             </div>
                             <div className="border-t border-t-black w-full pb-2">
                             </div>

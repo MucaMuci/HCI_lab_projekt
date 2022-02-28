@@ -54,17 +54,20 @@ const Review = ({ date, rating, email, text, id }) => {
         <>
             {edit == 0 &&
                 <div className="px-5 py-3 border shadow-btn-sjena w-full flex flex-col rounded-lg mb-6">
-                    <div className="flex justify-between pb-2">
+                    <div className="flex  justify-between pb-2">
                         <div className="">
                             {date}
                         </div>
-                        <div className="flex-1 text-right">
+                        <div className="flex-1 hidden sm:block text-right">
                             <StarRatings rating={rating} numberOfStars={5} starRatedColor="#ECCD2F" starHoverColor="#ECCD2F" starDimension="30px" />
                         </div>
                         <div className="flex-1 text-right">
                             <div></div>
                             <div>{email}</div>
                         </div>
+                    </div>
+                    <div className="flex-1 sm:hidden pb-1">
+                        <StarRatings rating={rating} numberOfStars={5} starRatedColor="#ECCD2F" starHoverColor="#ECCD2F" starDimension="30px" />
                     </div>
                     <div className="border-t border-t-black w-full pb-2">
                     </div>
@@ -91,13 +94,16 @@ const Review = ({ date, rating, email, text, id }) => {
                         <div className="">
                             {date}
                         </div>
-                        <div className="flex-1 text-right">
+                        <div className="flex-1 hidden sm:block text-right">
                             <StarRatings rating={editRating} changeRating={handleRating} numberOfStars={5} starRatedColor="#ECCD2F" starHoverColor="#ECCD2F" starDimension="30px" />
                         </div>
                         <div className="flex-1 text-right">
                             <div></div>
                             <div>{email}</div>
                         </div>
+                    </div>
+                    <div className="flex-1 sm:hidden pb-1">
+                        <StarRatings rating={rating} numberOfStars={5} starRatedColor="#ECCD2F" starHoverColor="#ECCD2F" starDimension="30px" />
                     </div>
                     <div className="border-t border-t-black w-full pb-2">
                     </div>
