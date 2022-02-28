@@ -65,7 +65,10 @@ const Boats = ({ MPFilter, NSFilter, BLFilter, BHPFilter }) => {
                             price={el.Price}
                             maxpassengers={el.MaxPassengers}
                             length={el.Length}
+                            width={el.Width}
                             engineHP={el.EngineHP}
+                            fuel={el.Fuel}
+                            additional={el.Additional}
                         />
 
                     ))
