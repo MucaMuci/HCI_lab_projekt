@@ -58,3 +58,17 @@ input::-webkit-inner-spin-button {
 .swiper-slide {
   width: inherit !important;
 }
+
+.react-datepicker__input-container {
+  border-radius: 6px !important;
+  text-align: center !important;
+  
+    --tw-bg-opacity: 1 !important;
+    background-color: rgb(242 242 242)  !important;
+}
+
+input {
+  background-color: rgb(242 242 242) ;
+  border-radius: 6px;
+  --tw-bg-opacity: 1
+}
