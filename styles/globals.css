@@ -58,3 +58,9 @@ input::-webkit-inner-spin-button {
 .swiper-slide {
   width: inherit !important;
 }
+
+.leaflet-container {
+  width: 100%;
+  height: 688px;
+  position: absolute;
+}
