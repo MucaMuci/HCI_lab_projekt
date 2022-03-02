@@ -72,3 +72,27 @@ input {
   border-radius: 6px;
   --tw-bg-opacity: 1
 }
+
+.rc-time-picker-input {
+  border: 1 !important;
+  background-color: rgb(242 242 242) !important;
+  border-radius: 6px !important;
+  --tw-bg-opacity: 1 !important;
+  font-size: 18px !important;
+  border-width: 1px;
+  
+    --tw-border-opacity: 1 !important;
+    border-color: rgb(182 182 182 / var(--tw-border-opacity)) !important;
+}
+
+select {
+  border: 1 !important;
+  background-color: rgb(242 242 242) !important;
+  border-radius: 6px !important;
+  --tw-bg-opacity: 1 !important;
+  font-size: 18px !important;
+  border-width: 1px;
+  
+    --tw-border-opacity: 1 !important;
+    border-color: rgb(182 182 182 / var(--tw-border-opacity)) !important;
+}

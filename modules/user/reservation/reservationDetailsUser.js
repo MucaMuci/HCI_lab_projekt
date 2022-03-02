@@ -9,8 +9,10 @@ import "react-datepicker/dist/react-datepicker.css";
 import { useState } from "react";
 import { registerLocale, setDefaultLocale } from "react-datepicker";
 import hr from 'date-fns/locale/hr';
-import TimePicker from 'rc-time-picker';
+import TimePicker from "rc-time-picker";
 import 'rc-time-picker/assets/index.css';
+import moment from "moment"
+import { CountryDropdown } from "react-country-region-selector";
 
 
 
@@ -22,13 +24,19 @@ const ReservationDetailsUser = ({ formStep, nextFormStep, name }) => {
         nextFormStep();
     }
 
+
     const [startDate, setStartDate] = useState(new Date());
 
     const [numberOfPeolple, setNumberOfPeople] = useState(1);
 
     const [needDriver, setNeedDriver] = useState("Yes");
 
-    const [pickUpTime, setPickUpTime] = useState('09:30');
+    const [pickUpTime, setPickUpTime] = useState(moment());
+
+    const [country, setCountry] = useState("")
+
+    const [category, setCategory] = useState("")
+    const [licenceNumber, setLicenceNumber] = useState("")
 
 
 
@@ -72,7 +80,7 @@ const ReservationDetailsUser = ({ formStep, nextFormStep, name }) => {
 
                 <div className="pt-6 text-sm font-medium">Pick-up time</div>
                 <div className="flex">
-                    <input
+                    {/*<input
                         className="border  border-hci-siva rounded-md bg-hci-siva-2 w-1/12 text-lg placeholder-hci-siva-slova text-center"
                         placeholder="9"
                     ></input>
@@ -80,7 +88,11 @@ const ReservationDetailsUser = ({ formStep, nextFormStep, name }) => {
                     <input
                         className="border  border-hci-siva rounded-md bg-hci-siva-2 w-1/12 text-lg placeholder-hci-siva-slova text-center"
                         placeholder="30"
-                    ></input>
+                    ></input> */}
+                    <TimePicker minuteStep={10} showSecond={false} value={pickUpTime} onChange={(value) => setPickUpTime(value)} />
+                </div>
+
+                <div>
 
                 </div>
 
@@ -118,6 +130,11 @@ const ReservationDetailsUser = ({ formStep, nextFormStep, name }) => {
                         Select
                     </div>
                 </div>
+                <select >
+                    <option>Tube</option>
+                    <option>Water ski</option>
+                    <option>Tube</option>
+                </select>
 
                 <div className="pt-2 text-sm font-medium">Needs a skipper</div>
                 <div className="flex">
@@ -137,7 +154,7 @@ const ReservationDetailsUser = ({ formStep, nextFormStep, name }) => {
                         </div>
 
                         <div className="text-sm pt-2 font-medium">Issuing country</div>
-                        <div className="flex items-center border border-hci-siva rounded-md bg-hci-siva-2">
+                        {/* <div className="flex items-center border border-hci-siva rounded-md bg-hci-siva-2">
                             <div className="px-1">
                                 <Image src={FlagImg} width={20} height={15} alt="Flag" />
                             </div>
@@ -147,20 +164,24 @@ const ReservationDetailsUser = ({ formStep, nextFormStep, name }) => {
                             <div className="font-normal text-lg pl-2 text-hci-siva-slova border-hci-siva rounded-md bg-hci-siva-2  ">
                                 Croatia
                             </div>
-                        </div>
+
+
+                        </div> */}
+
+                        <CountryDropdown value={country} onChange={(val) => setCountry(val)} />
 
                         <div className="text-sm pt-2 font-medium">Category</div>
-                        <input className="border  border-hci-siva rounded-md bg-hci-siva-2  text-lg placeholder-hci-siva-slova "></input>
+                        <input value={category} onChange={(event) => setCategory(event.target.value)} className="border  border-hci-siva rounded-md bg-hci-siva-2  text-lg placeholder-hci-siva-slova "></input>
 
                         <div className="text-sm pt-2 font-medium">Licence number</div>
-                        <input className="border  border-hci-siva rounded-md bg-hci-siva-2  text-lg placeholder-hci-siva-slova "></input>
+                        <input value={licenceNumber} onChange={(event) => setLicenceNumber(event.target.value)} className="border  border-hci-siva rounded-md bg-hci-siva-2  text-lg placeholder-hci-siva-slova "></input>
                     </>
                 }
                 <div className="pt-2 flex justify-end text-hci-modra ">
                     <button onClick={handleSubmit}>Next</button>
                 </div>
             </div>
-        </div>
+        </div >
     );
 };
 export default ReservationDetailsUser;
