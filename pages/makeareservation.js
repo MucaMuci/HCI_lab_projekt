@@ -24,21 +24,21 @@ const MakeAReservation = () => {
       <Header />
       <div className="flex flex-col pt-10 pb-5 bg-gradient-to-b from-hci-gradient to-white"></div>
       <div className="pb-32">
-        <FormCard currentStep={formStep} prevFormStep={prevFormStep}>
-          {formStep >= 0 && (
+        <FormCard currentStep={formStep}>
+          {formStep == 0 && (
             <ReservationDetails
               formStep={formStep}
               nextFormStep={nextFormStep}
             />
           )}
-          {formStep >= 1 && (
+          {formStep == 1 && (
             <CustomersInfo
               formStep={formStep}
               nextFormStep={nextFormStep}
               prevFormStep={prevFormStep}
             />
           )}
-          {formStep >= 2 && (
+          {formStep == 2 && (
             <Payment
               formStep={formStep}
               nextFormStep={nextFormStep}

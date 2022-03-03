@@ -5,12 +5,24 @@ import Footer from "../modules/footer/footer";
 import HeaderUser from "../modules/header/header_user";
 import Karta from "../assets/karta.png";
 import DownArrow from "../assets/down_arrow.png";
-import Minus from "../assets/minus.png";
-import Plus from "../assets/plus.png";
 import CreateImg from "../assets/create.png";
 import Image from "next/image";
+import { useState } from "react";
+import CitiesSelector from "../modules/user/taxiPage/listOfAvailableCities/CitiesSelector";
 
 const Taxi = () => {
+  const [listOfAvailableCitiesClicked, setlistOfAvailableCitiesClicked] =
+    useState(false);
+  const [selectedCity, setselectedCity] = useState("Type location");
+  const [price, setPrice] = useState("0€");
+  const [estimatedTime, setestimatedTime] = useState("0 minutes");
+
+  function citySelectionHandler(city, time, price) {
+    setselectedCity(city);
+    setPrice(price);
+    setestimatedTime(time);
+    setlistOfAvailableCitiesClicked(!listOfAvailableCitiesClicked);
+  }
   return (
     <div className="min-h-screen relative">
       <NextSeo title={`${SEO.title} -  Taxi`} description={SEO.description} />
@@ -23,10 +35,17 @@ const Taxi = () => {
               <div className=" text-sm font-semibold">From:</div>
               <div className="flex font-semibold text-lg w-fit">MAKARSKA</div>
             </div>
-            <div className="w-fit">
+            <div className="w-[170px]">
               <div className="text-sm font-semibold ">To:</div>
+
               <div className="flex border  border-hci-siva rounded-md bg-hci-siva-2">
-                <button>
+                <button
+                  onClick={() => {
+                    setlistOfAvailableCitiesClicked(
+                      !listOfAvailableCitiesClicked
+                    );
+                  }}
+                >
                   <Image
                     src={DownArrow}
                     width={20}
@@ -35,14 +54,18 @@ const Taxi = () => {
                   />
                 </button>
                 <div className="font-normal text-lg pl-2 pr-2 text-hci-siva-slova">
-                  Type location
+                  {selectedCity}
                 </div>
               </div>
+              <CitiesSelector
+                toggleList={listOfAvailableCitiesClicked}
+                setCity={citySelectionHandler}
+              />
             </div>
             <div className="w-fit">
               <div className="text-sm  font-semibold">Price:</div>
               <div className="pl-1 font-medium rounded-md  text-lg border  border-hci-siva bg-hci-siva-2 ">
-                70€
+                {price}
               </div>
               <div className="text-xs text-center">
                 <div>Driver and fuel are</div>
@@ -54,7 +77,7 @@ const Taxi = () => {
                 Estimated travel time:
               </div>
               <div className="pl-1 font-medium rounded-md  text-lg border  border-hci-siva bg-hci-siva-2 ">
-                30 minutes
+                {estimatedTime}
               </div>
             </div>
             <div className="flex h-fit px-1 mt-5 border shadow-btn-sjena rounded-lg  border-hci-modra bg-hci-modra justify-center  text-white">
