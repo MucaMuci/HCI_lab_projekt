@@ -13,15 +13,62 @@ import TimePicker from "rc-time-picker";
 import 'rc-time-picker/assets/index.css';
 import moment from "moment"
 import { CountryDropdown } from "react-country-region-selector";
-
+import Select from "react-select"
+import countryList from "../../../const/countryList";
 
 
 registerLocale('hr', hr)
 
 
-const ReservationDetailsUser = ({ formStep, nextFormStep, name }) => {
+const ReservationDetailsUser = ({ formStep, nextFormStep, name, handleData }) => {
     function handleSubmit() {
-        nextFormStep();
+
+        if (startDate && numberOfPeolple && pickUpTime && pickUpPlace && checkOutPlace) {
+
+            let data = {};
+
+            let addEquipment = additionalEquipment.map((el) => el.value)
+
+
+            if (needDriver == "No" && country && category && licenceNumber) {
+                data = {
+                    StartDate: new Date(startDate).toISOString().split('T')[0],
+                    NumberOfPeolple: numberOfPeolple,
+                    PickUpTime: new Date(pickUpTime._d).toISOString().split('T')[1],
+                    PickUpPlace: pickUpPlace.value,
+                    CheckOutPlace: checkOutPlace.value,
+                    AdditionalEquipment: addEquipment,
+                    NeedDriver: needDriver,
+                    Country: country.value,
+                    Category: category,
+                    LicenceNumber: licenceNumber
+
+                }
+
+                handleData(data)
+                nextFormStep();
+            }
+            else {
+                data = {
+                    StartDate: new Date(startDate).toISOString().split('T')[0],
+                    NumberOfPeolple: numberOfPeolple,
+                    PickUpTime: new Date(pickUpTime._d).toISOString().split('T')[1],
+                    PickUpPlace: pickUpPlace.value,
+                    CheckOutPlace: checkOutPlace.value,
+                    AdditionalEquipment: addEquipment,
+                    NeedDriver: needDriver,
+
+                }
+
+                handleData(data)
+                nextFormStep();
+            }
+
+
+        }
+        else {
+            console.log("Unesite podatke")
+        }
     }
 
 
@@ -31,13 +78,35 @@ const ReservationDetailsUser = ({ formStep, nextFormStep, name }) => {
 
     const [needDriver, setNeedDriver] = useState("Yes");
 
-    const [pickUpTime, setPickUpTime] = useState(moment());
+    const [pickUpTime, setPickUpTime] = useState();
 
     const [country, setCountry] = useState("")
 
     const [category, setCategory] = useState("")
+
     const [licenceNumber, setLicenceNumber] = useState("")
 
+    const [pickUpPlace, setPickUpPlace] = useState("");
+
+    const [checkOutPlace, setCheckOutPlace] = useState("");
+
+    const [additionalEquipment, setAdditionalEquipment] = useState("")
+
+    const pickUpOptions = [
+        { value: 'Makarska', label: 'Makarska' },
+        { value: 'Krvavica', label: 'Krvavica' },
+        { value: 'Promajna', label: 'Promajna' },
+        { value: 'Baška Voda', label: 'Baška Voda' },
+        { value: 'Brela', label: 'Brela' },
+        { value: 'Tučepi', label: 'Tučepi' },
+        { value: 'Podgora', label: 'Podgora' },
+    ]
+
+    const equipment = [
+        { value: "tubes", label: "Tubes" },
+        { value: "water skies", label: "Water skies" },
+        { value: "wakeboard", label: "Wakeboard" },
+    ]
 
 
     return (
@@ -50,17 +119,9 @@ const ReservationDetailsUser = ({ formStep, nextFormStep, name }) => {
                 <div className="flex items-center text-center border border-hci-siva rounded-md bg-hci-siva-2 text-lg w-fit">
                     <DatePicker locale={hr} dateFormat="dd/MM/yyyy" selected={startDate} onChange={(date) => setStartDate(date)} />
                 </div>
-                {/* <div className="flex items-center pb-2">
-                    <input
-                        className=" w-1/3 text-center border border-hci-siva rounded-md bg-hci-siva-2 text-lg placeholder-hci-siva-slova"
-                        placeholder="DD/MM/YY"
-                    ></input>
-                    <div className="pl-2 hover:cursor-pointer">
-                        <Image src={CalendarImg} width={20} height={20} alt="Calendar" />
-                    </div>
-                </div> */}
 
-                <div className=" text-sm font-medium pt-1">Number of people</div>
+
+                <div className=" text-sm font-medium pt-2">Number of people</div>
                 <div className="flex px-2 border  border-hci-siva rounded-md bg-hci-siva-2 w-fit">
 
                     <button className={`my-auto text-2xl font-bold ${numberOfPeolple !== 1 ? "text-hci-modra" : "text-hci-modra-cool"}`}
@@ -80,20 +141,8 @@ const ReservationDetailsUser = ({ formStep, nextFormStep, name }) => {
 
                 <div className="pt-6 text-sm font-medium">Pick-up time</div>
                 <div className="flex">
-                    {/*<input
-                        className="border  border-hci-siva rounded-md bg-hci-siva-2 w-1/12 text-lg placeholder-hci-siva-slova text-center"
-                        placeholder="9"
-                    ></input>
-                    <div>:</div>
-                    <input
-                        className="border  border-hci-siva rounded-md bg-hci-siva-2 w-1/12 text-lg placeholder-hci-siva-slova text-center"
-                        placeholder="30"
-                    ></input> */}
-                    <TimePicker minuteStep={10} showSecond={false} value={pickUpTime} onChange={(value) => setPickUpTime(value)} />
-                </div>
 
-                <div>
-
+                    <TimePicker minuteStep={10} showSecond={false} value={pickUpTime} onChange={(value) => setPickUpTime(moment(value, "hh:mm"))} />
                 </div>
 
 
@@ -101,40 +150,17 @@ const ReservationDetailsUser = ({ formStep, nextFormStep, name }) => {
 
 
                 <div className="pt-2 text-sm font-medium">Pick-up place</div>
-                <div className="flex border w-1/2 border-hci-siva rounded-md bg-hci-siva-2">
-                    <button>
-                        <Image src={DownArrow} width={20} height={12} alt="DownArrow" />
-                    </button>
-                    <div className="font-normal text-lg pl-2 text-hci-siva-slova">
-                        Type location
-                    </div>
-                </div>
+
+                <Select value={pickUpPlace} onChange={(val) => setPickUpPlace(val)} options={pickUpOptions} />
 
 
                 <div className="pt-2 text-sm font-medium">Check-out place</div>
-                <div className="flex border w-1/2 border-hci-siva rounded-md bg-hci-siva-2">
-                    <button>
-                        <Image src={DownArrow} width={20} height={12} alt="DownArrow" />
-                    </button>
-                    <div className="font-normal text-lg pl-2 text-hci-siva-slova">
-                        Type location
-                    </div>
-                </div>
+
+                <Select value={checkOutPlace} onChange={(val) => setCheckOutPlace(val)} options={pickUpOptions} />
 
                 <div className="text-sm pt-6 font-medium">Additional equipment</div>
-                <div className="flex border w-1/2 border-hci-siva rounded-md bg-hci-siva-2">
-                    <button>
-                        <Image src={DownArrow} width={20} height={12} alt="DownArrow" />
-                    </button>
-                    <div className="font-normal text-lg pl-2 text-hci-siva-slova">
-                        Select
-                    </div>
-                </div>
-                <select >
-                    <option>Tube</option>
-                    <option>Water ski</option>
-                    <option>Tube</option>
-                </select>
+
+                <Select value={additionalEquipment} onChange={(val) => setAdditionalEquipment(val)} isMulti options={equipment} closeMenuOnSelect={false} />
 
                 <div className="pt-2 text-sm font-medium">Needs a skipper</div>
                 <div className="flex">
@@ -168,7 +194,8 @@ const ReservationDetailsUser = ({ formStep, nextFormStep, name }) => {
 
                         </div> */}
 
-                        <CountryDropdown value={country} onChange={(val) => setCountry(val)} />
+
+                        <Select options={countryList} value={country} onChange={(val) => setCountry(val)} />
 
                         <div className="text-sm pt-2 font-medium">Category</div>
                         <input value={category} onChange={(event) => setCategory(event.target.value)} className="border  border-hci-siva rounded-md bg-hci-siva-2  text-lg placeholder-hci-siva-slova "></input>

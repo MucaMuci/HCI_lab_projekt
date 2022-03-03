@@ -15,6 +15,13 @@ const Reservation = (name) => {
     const nextFormStep = () => setFormStep((currentStep) => currentStep + 1);
     const prevFormStep = () => setFormStep((currentStep) => currentStep - 1);
 
+    const [reservationData, setReservationData] = useState({});
+
+    const handleData = (data) => {
+        setReservationData({ ...reservationData, ...data })
+    }
+    console.log(reservationData)
+
     return (
         <div className="min-h-screen relative">
             <NextSeo
@@ -30,6 +37,7 @@ const Reservation = (name) => {
                             formStep={formStep}
                             nextFormStep={nextFormStep}
                             name={name}
+                            handleData={handleData}
                         />
                     )}
                     {formStep >= 1 && (
@@ -37,6 +45,7 @@ const Reservation = (name) => {
                             formStep={formStep}
                             nextFormStep={nextFormStep}
                             prevFormStep={prevFormStep}
+                            handleData={handleData}
                         />
                     )}
                     {formStep >= 2 && (
@@ -44,6 +53,7 @@ const Reservation = (name) => {
                             formStep={formStep}
                             nextFormStep={nextFormStep}
                             prevFormStep={prevFormStep}
+                            handleData={handleData}
                         />
                     )}
 
