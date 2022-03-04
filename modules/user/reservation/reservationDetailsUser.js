@@ -26,8 +26,11 @@ const ReservationDetailsUser = ({ formStep, nextFormStep, name, handleData }) =>
         if (startDate && numberOfPeolple && pickUpTime && pickUpPlace && checkOutPlace) {
 
             let data = {};
+            let addEquipment = []
 
-            let addEquipment = additionalEquipment.map((el) => el.value)
+            if (additionalEquipment) {
+                addEquipment = additionalEquipment.map((el) => el.value);
+            }
 
 
             if (needDriver == "No" && country && category && licenceNumber) {
@@ -39,9 +42,10 @@ const ReservationDetailsUser = ({ formStep, nextFormStep, name, handleData }) =>
                     CheckOutPlace: checkOutPlace.value,
                     AdditionalEquipment: addEquipment,
                     NeedDriver: needDriver,
-                    Country: country.value,
+                    IssuingCountry: issuingCountry.value,
                     Category: category,
-                    LicenceNumber: licenceNumber
+                    LicenceNumber: licenceNumber,
+                    BoatName: "Brod"
 
                 }
 
@@ -57,6 +61,7 @@ const ReservationDetailsUser = ({ formStep, nextFormStep, name, handleData }) =>
                     CheckOutPlace: checkOutPlace.value,
                     AdditionalEquipment: addEquipment,
                     NeedDriver: needDriver,
+                    BoatName: "Brod"
 
                 }
 
@@ -80,7 +85,7 @@ const ReservationDetailsUser = ({ formStep, nextFormStep, name, handleData }) =>
 
     const [pickUpTime, setPickUpTime] = useState();
 
-    const [country, setCountry] = useState("")
+    const [issuingCountry, setIssuingCountry] = useState("")
 
     const [category, setCategory] = useState("")
 
@@ -195,7 +200,7 @@ const ReservationDetailsUser = ({ formStep, nextFormStep, name, handleData }) =>
                         </div> */}
 
 
-                        <Select options={countryList} value={country} onChange={(val) => setCountry(val)} />
+                        <Select options={countryList} value={issuingCountry} onChange={(val) => setIssuingCountry(val)} />
 
                         <div className="text-sm pt-2 font-medium">Category</div>
                         <input value={category} onChange={(event) => setCategory(event.target.value)} className="border  border-hci-siva rounded-md bg-hci-siva-2  text-lg placeholder-hci-siva-slova "></input>

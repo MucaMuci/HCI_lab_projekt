@@ -8,6 +8,7 @@ import { NextSeo } from "next-seo";
 import SEO from "../data/next-seo.config";
 import CustomersInfoUser from "../modules/user/reservation/customersInfoUser";
 import ReservationDetailsUser from "../modules/user/reservation/reservationDetailsUser";
+import PaymentUser from "../modules/user/reservation/paymentUser";
 
 const Reservation = (name) => {
     const [formStep, setFormStep] = useState(0);
@@ -20,7 +21,7 @@ const Reservation = (name) => {
     const handleData = (data) => {
         setReservationData({ ...reservationData, ...data })
     }
-    console.log(reservationData)
+
 
     return (
         <div className="min-h-screen relative">
@@ -53,7 +54,7 @@ const Reservation = (name) => {
                             formStep={formStep}
                             nextFormStep={nextFormStep}
                             prevFormStep={prevFormStep}
-                            handleData={handleData}
+                            reservationData={reservationData}
                         />
                     )}
 
