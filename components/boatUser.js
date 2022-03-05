@@ -26,9 +26,8 @@ const BoatUser = ({
     setInformation(0);
   };
 
-  useEffect(() => {
+  const value = useContext(AppContext)
 
-  }, [])
   let soonestFreeDate = [];
   let i = 0;
   let day = new Date();
@@ -42,10 +41,12 @@ const BoatUser = ({
   }
   const router = useRouter();
 
-  const value = useContext(AppContext)
 
-  value.setInfo("aaaaa")
-  console.log(value.state.info)
+  function newPage() {
+    value.setInfo(dates)
+    router.push(`/reservation/${name}`)
+  }
+
 
 
   return (
@@ -109,7 +110,7 @@ const BoatUser = ({
                 </div>
                 <div className="flex">
                   <div className="flex mt-4 border shadow-btn-sjena rounded-lg border-hci-modra bg-hci-modra w-fit px-2  text-white">
-                    <button onClick={() => router.push(`/reservation/${name}`)} className="flex ">
+                    <button onClick={newPage} className="flex ">
                       <div>Make a reservation</div>
                       <div className="pl-2 pt-0.5 ">
                         <Image

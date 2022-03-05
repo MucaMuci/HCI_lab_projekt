@@ -6,7 +6,7 @@ import Plus from "../../../assets/plus.png";
 import FlagImg from "../../../assets/flag.png";
 import DatePicker from "react-datepicker"
 import "react-datepicker/dist/react-datepicker.css";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { registerLocale, setDefaultLocale } from "react-datepicker";
 import hr from 'date-fns/locale/hr';
 import TimePicker from "rc-time-picker";
@@ -17,12 +17,17 @@ import Select from "react-select"
 import countryList from "../../../const/countryList";
 import { collection, query, where } from "firebase/firestore";
 import { db } from "../../../firebase/initFirebase";
+import AppContext from "../../../components/AppContext";
+
 
 
 registerLocale('hr', hr)
 
 
 const ReservationDetailsUser = ({ formStep, nextFormStep, name, handleData }) => {
+
+    const value = useContext(AppContext)
+
     function handleSubmit() {
 
         if (startDate && numberOfPeolple && pickUpTime && pickUpPlace && checkOutPlace) {
@@ -116,6 +121,10 @@ const ReservationDetailsUser = ({ formStep, nextFormStep, name, handleData }) =>
         { value: "wakeboard", label: "Wakeboard" },
     ]
 
+    const disableDates = [...value.state.info]
+
+    disableDates = disableDates.map(el => new Date(el))
+
 
     return (
         <div className={formStep === 0 ? "flex" : "hidden"}>
@@ -126,7 +135,7 @@ const ReservationDetailsUser = ({ formStep, nextFormStep, name, handleData }) =>
                 <div className="text-sm">Date</div>
                 <div className="flex items-center text-center border border-hci-siva rounded-md bg-hci-siva-2 text-lg w-fit">
                     <DatePicker
-                        minDate={new Date()} locale={hr} dateFormat="dd/MM/yyyy" selected={startDate} onChange={(date) => setStartDate(date)} />
+                        excludeDates={disableDates} minDate={new Date()} locale={hr} dateFormat="dd/MM/yyyy" selected={startDate} onChange={(date) => setStartDate(date)} />
                 </div>
 
 
