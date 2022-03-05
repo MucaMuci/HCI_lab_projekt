@@ -6,7 +6,7 @@ import Plus from "../../../assets/plus.png";
 import FlagImg from "../../../assets/flag.png";
 import DatePicker from "react-datepicker"
 import "react-datepicker/dist/react-datepicker.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { registerLocale, setDefaultLocale } from "react-datepicker";
 import hr from 'date-fns/locale/hr';
 import TimePicker from "rc-time-picker";
@@ -15,6 +15,8 @@ import moment from "moment"
 import { CountryDropdown } from "react-country-region-selector";
 import Select from "react-select"
 import countryList from "../../../const/countryList";
+import { collection, query, where } from "firebase/firestore";
+import { db } from "../../../firebase/initFirebase";
 
 
 registerLocale('hr', hr)
@@ -33,7 +35,7 @@ const ReservationDetailsUser = ({ formStep, nextFormStep, name, handleData }) =>
             }
 
 
-            if (needDriver == "No" && country && category && licenceNumber) {
+            if (needDriver == "No" && issuingCountry && category && licenceNumber) {
                 data = {
                     StartDate: new Date(startDate).toISOString().split('T')[0],
                     NumberOfPeolple: numberOfPeolple,
@@ -45,7 +47,7 @@ const ReservationDetailsUser = ({ formStep, nextFormStep, name, handleData }) =>
                     IssuingCountry: issuingCountry.value,
                     Category: category,
                     LicenceNumber: licenceNumber,
-                    BoatName: "Brod"
+                    BoatName: name
 
                 }
 
@@ -61,7 +63,7 @@ const ReservationDetailsUser = ({ formStep, nextFormStep, name, handleData }) =>
                     CheckOutPlace: checkOutPlace.value,
                     AdditionalEquipment: addEquipment,
                     NeedDriver: needDriver,
-                    BoatName: "Brod"
+                    BoatName: name
 
                 }
 
@@ -75,6 +77,7 @@ const ReservationDetailsUser = ({ formStep, nextFormStep, name, handleData }) =>
             console.log("Unesite podatke")
         }
     }
+
 
 
     const [startDate, setStartDate] = useState(new Date());
@@ -122,7 +125,8 @@ const ReservationDetailsUser = ({ formStep, nextFormStep, name, handleData }) =>
                 </div>
                 <div className="text-sm">Date</div>
                 <div className="flex items-center text-center border border-hci-siva rounded-md bg-hci-siva-2 text-lg w-fit">
-                    <DatePicker locale={hr} dateFormat="dd/MM/yyyy" selected={startDate} onChange={(date) => setStartDate(date)} />
+                    <DatePicker
+                        minDate={new Date()} locale={hr} dateFormat="dd/MM/yyyy" selected={startDate} onChange={(date) => setStartDate(date)} />
                 </div>
 
 

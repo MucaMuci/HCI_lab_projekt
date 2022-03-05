@@ -2,6 +2,7 @@ import Image from "next/image";
 import { useState } from "react";
 import Brod1 from "../assets/brod1user.png";
 import CreateImg from "../assets/create.png";
+import { useRouter } from 'next/router'
 
 const BoatUser = ({
   name,
@@ -21,6 +22,8 @@ const BoatUser = ({
   const hideInfo = () => {
     setInformation(0);
   };
+
+  const router = useRouter();
 
   return (
     <div className="flex py-5">
@@ -83,7 +86,7 @@ const BoatUser = ({
                         </div> */}
                 <div className="flex">
                   <div className="flex mt-4 border shadow-btn-sjena rounded-lg border-hci-modra bg-hci-modra w-fit px-2  text-white">
-                    <button className="flex ">
+                    <button onClick={() => router.push(`/reservation/${name}`)} className="flex ">
                       <div>Make a reservation</div>
                       <div className="pl-2 pt-0.5 ">
                         <Image
@@ -162,7 +165,7 @@ const BoatUser = ({
 
                 <div className="flex">
                   <div className="flex mt-4 border shadow-btn-sjena rounded-lg border-hci-modra bg-hci-modra w-fit px-2  text-white">
-                    <button className="flex ">
+                    <button onClick={() => router.push("/reservation")} className="flex ">
                       <div>Make a reservation</div>
                       <div className="pl-2 pt-0.5 ">
                         <Image

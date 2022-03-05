@@ -2,7 +2,7 @@ import PaypalImg from "../../../assets/paypal.png"
 import RevolutImg from "../../../assets/revolut.png"
 import VisaImg from "../../../assets/visa.png"
 import Image from "next/image"
-import { addDoc, collection, document, setDoc, doc } from "firebase/firestore"
+import { addDoc, collection, document, setDoc, doc, query, where } from "firebase/firestore"
 import { db } from "../../../firebase/initFirebase"
 
 //doc(db, "Dates").document(reservationData.date).collection("Boats")
@@ -14,6 +14,8 @@ const PaymentUser = ({ formStep, nextFormStep, prevFormStep, reservationData }) 
 
         nextFormStep();
     }
+
+
 
     const saveReservation = async () => {
         if (reservationData.NeedDriver == "Yes")

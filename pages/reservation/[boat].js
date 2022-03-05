@@ -1,16 +1,16 @@
 import { useState } from "react";
-import Footer from "../modules/footer/footer";
-import Header from "../modules/header/header";
-import FormCard from "../components/formCard";
-
-import FormCompleted from "../components/formCompleted";
+import Footer from "../../modules/footer/footer";
+import Header from "../../modules/header/header";
+import FormCard from "../../components/formCard";
+import { useRouter } from "next/router";
+import FormCompleted from "../../components/formCompleted";
 import { NextSeo } from "next-seo";
-import SEO from "../data/next-seo.config";
-import CustomersInfoUser from "../modules/user/reservation/customersInfoUser";
-import ReservationDetailsUser from "../modules/user/reservation/reservationDetailsUser";
-import PaymentUser from "../modules/user/reservation/paymentUser";
+import SEO from "../../data/next-seo.config";
+import CustomersInfoUser from "../../modules/user/reservation/customersInfoUser";
+import ReservationDetailsUser from "../../modules/user/reservation/reservationDetailsUser";
+import PaymentUser from "../../modules/user/reservation/paymentUser";
 
-const Reservation = (name) => {
+const Reservation = () => {
     const [formStep, setFormStep] = useState(0);
 
     const nextFormStep = () => setFormStep((currentStep) => currentStep + 1);
@@ -22,6 +22,7 @@ const Reservation = (name) => {
         setReservationData({ ...reservationData, ...data })
     }
 
+    const name = useRouter().query.boat
 
     return (
         <div className="min-h-screen relative">

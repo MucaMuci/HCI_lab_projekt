@@ -1,8 +1,21 @@
 import Image from "next/image"
+import { useEffect } from "react"
 import CheckedImg from "../assets/checked.png"
+import { useRouter } from "next/router"
 
 
 const FormCompleted = () => {
+
+    const router = useRouter();
+
+    useEffect(() => {
+        setTimeout(() => {
+
+            router.push("/")
+        }, 5000)
+    }, [])
+
+
     return (
         <div className="flex flex-col pt-12 items-center">
             <div >
