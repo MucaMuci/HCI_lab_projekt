@@ -1,18 +1,18 @@
 import { NextSeo } from "next-seo";
 import Image from "next/image";
-import SEO from "../data/next-seo.config";
-import Footer from "../modules/footer/footer";
-import HeaderUser from "../modules/header/header_user";
-import Karta from "../assets/karta_trips.png";
-import DownArrow from "../assets/down_arrow.png";
-import Minus from "../assets/minus.png";
-import Plus from "../assets/plus.png";
-import CreateImg from "../assets/create.png";
-import PictureSlider from "../modules/pictureSlider/pictureSlider";
-import { povlja_pictures } from "../const/trips/povlja";
-import { pucisca_pictures } from "../const/trips/pucisca";
-import { luke_pictures } from "../const/trips/luke";
-import { vrulja_pictures } from "../const/trips/vrulja";
+import SEO from "../../data/next-seo.config";
+import Footer from "../../modules/footer/footer";
+import HeaderUser from "../../modules/header/header_user";
+import Karta from "../../assets/karta_trips.png";
+import DownArrow from "../../assets/down_arrow.png";
+import Minus from "../../assets/minus.png";
+import Plus from "../../assets/plus.png";
+import CreateImg from "../../assets/create.png";
+import PictureSlider from "../../modules/pictureSlider/pictureSlider";
+import { povlja_pictures } from "../../const/trips/povlja";
+import { pucisca_pictures } from "../../const/trips/pucisca";
+import { luke_pictures } from "../../const/trips/luke";
+import { vrulja_pictures } from "../../const/trips/vrulja";
 
 const DailyBoatTrips = () => {
   return (

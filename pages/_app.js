@@ -1,7 +1,12 @@
 import '../styles/globals.css'
 import Head from 'next/head'
+import AppContext from "../components/AppContext"
+import { useState } from 'react'
 
 function MyApp({ Component, pageProps }) {
+
+  const [info, setInfo] = useState("");
+
   return (
     <>
       <Head>
@@ -9,8 +14,15 @@ function MyApp({ Component, pageProps }) {
         <link rel="icon" href="/images/favicon.ico" key="icon" />
 
       </Head>
-
-      <Component {...pageProps} />
+      <AppContext.Provider
+        value={{
+          state: {
+            info: info
+          },
+          setInfo: setInfo
+        }}>
+        <Component {...pageProps} />
+      </AppContext.Provider>
     </>
   )
 }
