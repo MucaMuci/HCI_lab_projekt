@@ -121,7 +121,7 @@ const ReservationDetailsUser = ({ formStep, nextFormStep, name, handleData }) =>
         { value: "wakeboard", label: "Wakeboard" },
     ]
 
-    const disableDates = [...value.state.info]
+    let disableDates = [...value.state.info]
 
     disableDates = disableDates.map(el => new Date(el))
 
