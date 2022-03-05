@@ -21,6 +21,7 @@ const Boats = ({ MPFilter, NSFilter, BLFilter, BHPFilter }) => {
         ListOfBoats.push({ ...doc.data(), id: doc.id });
       });
       setBoats(ListOfBoats);
+
       setCopy(ListOfBoats);
     });
   }, []);
@@ -72,6 +73,7 @@ const Boats = ({ MPFilter, NSFilter, BLFilter, BHPFilter }) => {
             engineHP={el.EngineHP}
             fuel={el.Fuel}
             additional={el.Additional}
+            dates={el.Dates}
           />
         ))}
       </div>

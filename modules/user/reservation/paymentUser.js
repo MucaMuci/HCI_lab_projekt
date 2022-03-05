@@ -2,7 +2,7 @@ import PaypalImg from "../../../assets/paypal.png"
 import RevolutImg from "../../../assets/revolut.png"
 import VisaImg from "../../../assets/visa.png"
 import Image from "next/image"
-import { addDoc, collection, document, setDoc, doc, query, where } from "firebase/firestore"
+import { addDoc, collection, document, setDoc, doc, query, where, updateDoc, arrayUnion } from "firebase/firestore"
 import { db } from "../../../firebase/initFirebase"
 
 //doc(db, "Dates").document(reservationData.date).collection("Boats")
@@ -21,13 +21,22 @@ const PaymentUser = ({ formStep, nextFormStep, prevFormStep, reservationData }) 
         if (reservationData.NeedDriver == "Yes")
             try {
                 console.log(reservationData)
+
+                const boatRef = doc(db, "Boats", reservationData.BoatName)
+
                 await setDoc(doc(db, "Dates", reservationData.StartDate, "Boats", reservationData.BoatName), reservationData)
+
+                await updateDoc(boatRef, {
+                    Dates: arrayUnion(reservationData.StartDate)
+                })
             }
             catch (error) {
                 console.log(error)
             }
         else
             try {
+                const boatRef = doc(db, "Boats", reservationData.BoatName)
+
                 await setDoc(doc(db, "Dates", reservationData.StartDate, "Boats", reservationData.BoatName), {
                     AdditionalEquipment: reservationData.AdditionalEquipment,
                     Address: reservationData.Address,
@@ -46,6 +55,10 @@ const PaymentUser = ({ formStep, nextFormStep, prevFormStep, reservationData }) 
                     IssuingCountry: reservationData.IssuingCountry,
                     Category: reservationData.Category,
                     LicenceNumber: reservationData.LicenceNumber
+                })
+
+                await updateDoc(boatRef, {
+                    Dates: arrayUnion(reservationData.StartDate)
                 })
             }
             catch (error) {

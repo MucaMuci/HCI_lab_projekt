@@ -1,8 +1,10 @@
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Brod1 from "../assets/brod1user.png";
 import CreateImg from "../assets/create.png";
 import { useRouter } from 'next/router'
+import AppContext from "./AppContext";
+import { useContext } from "react";
 
 const BoatUser = ({
   name,
@@ -13,6 +15,7 @@ const BoatUser = ({
   engineHP,
   fuel,
   additional,
+  dates
 }) => {
   const [information, setInformation] = useState(0);
 
@@ -23,7 +26,27 @@ const BoatUser = ({
     setInformation(0);
   };
 
+  useEffect(() => {
+
+  }, [])
+  let soonestFreeDate = [];
+  let i = 0;
+  let day = new Date();
+  while (i < 3) {
+    if (dates.includes(day.toISOString().split('T')[0])) { }
+    else {
+      soonestFreeDate.push(day.toLocaleDateString("hr-HR"))
+      i++
+    }
+    day.setDate(day.getDate() + 1)
+  }
   const router = useRouter();
+
+  const value = useContext(AppContext)
+
+  value.setInfo("aaaaa")
+  console.log(value.state.info)
+
 
   return (
     <div className="flex py-5">
@@ -71,19 +94,19 @@ const BoatUser = ({
               </div>
               <div className="flex pt-10 sm:pt-2 flex-col">
                 <div className="flex">Soonest free dates:</div>
-                {/* <div className="text-hci-siva-slova flex sm:flex-col">
-                            <div className="hidden sm:block">{soonestFreeDate.map((item, index) => {
+                <div className="text-hci-siva-slova flex sm:flex-col">
+                  <div className="hidden sm:block">{soonestFreeDate.map((item, index) => {
 
-                                return <div className="sm:pt-2" key={index}>
-                                    {item}
-                                </div>
-                            })}
-                            </div>
-                            <div className="sm:hidden">
-                                {soonestFreeDate.join(", ")}
-                            </div>
+                    return <div className="sm:pt-2" key={index}>
+                      {item}
+                    </div>
+                  })}
+                  </div>
+                  <div className="sm:hidden">
+                    {soonestFreeDate.join(", ")}
+                  </div>
 
-                        </div> */}
+                </div>
                 <div className="flex">
                   <div className="flex mt-4 border shadow-btn-sjena rounded-lg border-hci-modra bg-hci-modra w-fit px-2  text-white">
                     <button onClick={() => router.push(`/reservation/${name}`)} className="flex ">
