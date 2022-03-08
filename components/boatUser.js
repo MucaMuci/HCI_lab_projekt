@@ -185,7 +185,22 @@ const BoatUser = ({
                 </div>
               </div>
               <div className="flex pt-10 sm:pt-2 flex-col">
-                <div className="flex">Soonest free dates:</div>
+                <div className="flex">
+                  Soonest free dates:
+                </div>
+                <div className="text-hci-siva-slova flex sm:flex-col">
+                  <div className="hidden sm:block">{soonestFreeDate.map((item, index) => {
+
+                    return <div className="sm:pt-2" key={index}>
+                      {item}
+                    </div>
+                  })}
+                  </div>
+                  <div className="sm:hidden">
+                    {soonestFreeDate.join(", ")}
+                  </div>
+
+                </div>
 
                 <div className="flex">
                   <div className="flex mt-4 border shadow-btn-sjena rounded-lg border-hci-modra bg-hci-modra w-fit px-2  text-white">

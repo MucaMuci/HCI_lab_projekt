@@ -160,7 +160,7 @@ const ReservationDetailsUser = ({ formStep, nextFormStep, name, handleData }) =>
                 <div className="pt-6 text-sm font-medium">Pick-up time</div>
                 <div className="flex">
 
-                    <TimePicker minuteStep={10} showSecond={false} value={pickUpTime} onChange={(value) => setPickUpTime(moment(value, "hh:mm"))} />
+                    <TimePicker minuteStep={10} showSecond={false} onChange={(value) => setPickUpTime(moment(value, "hh:mm"))} allowEmpty={false} />
                 </div>
 
 
