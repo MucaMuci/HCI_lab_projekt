@@ -5,8 +5,6 @@ import Footer from "../../modules/footer/footer";
 import HeaderUser from "../../modules/header/header_user";
 import Karta from "../../assets/karta_trips.png";
 import DownArrow from "../../assets/down_arrow.png";
-import Minus from "../../assets/minus.png";
-import Plus from "../../assets/plus.png";
 import CreateImg from "../../assets/create.png";
 import PictureSlider from "../../modules/pictureSlider/pictureSlider";
 import { povlja_pictures } from "../../const/trips/povlja";
@@ -124,7 +122,7 @@ const DailyBoatTrips = () => {
               <div className="pl-1 font-medium rounded-md  text-lg border  border-hci-siva bg-hci-siva-2 w-[70px] ">
                 {tripPrice}€
               </div>
-              <div className="text-sm">
+              <div className="text-sm position md:absolute">
                 <div>350€ Trip</div>
                 {explanation == 1 && <div> + 60€ for {boatSelected}</div>}
               </div>
@@ -165,8 +163,6 @@ const DailyBoatTrips = () => {
 
           <div className="sm:w-1/2">
             <PictureSlider listOfPictures={povlja_pictures} />
-            {/* <Image src={Povlja}
-                            alt="Povlja" /> */}
           </div>
         </div>
 
