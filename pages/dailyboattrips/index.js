@@ -13,8 +13,32 @@ import { povlja_pictures } from "../../const/trips/povlja";
 import { pucisca_pictures } from "../../const/trips/pucisca";
 import { luke_pictures } from "../../const/trips/luke";
 import { vrulja_pictures } from "../../const/trips/vrulja";
+import { useState } from "react";
+import BoatsSelector from "../../modules/user/trips/boatsSelector";
 
 const DailyBoatTrips = () => {
+  const [listOfBoatsClicked, setListOfBoatsClicked] = useState(false);
+  const [numberOfPeople, setNumberOfPeople] = useState(1);
+  const [boatSelected, setBoatSelected] = useState("Select a boat");
+  const [tripPrice, setTripPrice] = useState(350);
+  const [maxNumberOfPassengers, setMaxNumberOfPassengers] = useState(9);
+  const [explanation, setExplanation] = useState(0);
+
+  function BoatSelectionHandler(name, maxPass) {
+    if (name == boatSelected) return;
+    setListOfBoatsClicked(false);
+    setBoatSelected(name);
+    setMaxNumberOfPassengers(maxPass - 1);
+    if (numberOfPeople > maxPass - 1) setNumberOfPeople(maxPass - 1);
+    if (maxPass >= 6) {
+      setExplanation(1);
+      setTripPrice(350 + 60);
+    } else {
+      setTripPrice(350);
+      setExplanation(0);
+    }
+  }
+
   return (
     <div className="min-h-screen relative">
       <NextSeo
@@ -40,41 +64,69 @@ const DailyBoatTrips = () => {
             <div>
               <div className=" text-sm font-medium">Number of people</div>
               <div className="flex px-2 border  border-hci-siva rounded-md bg-hci-siva-2 w-fit">
-                <button className="pb-1">
-                  <Image src={Minus} width={10} height={3} alt="Minus" />
+                <button
+                  className={`my-auto text-2xl font-bold ${
+                    numberOfPeople !== 1
+                      ? "text-hci-modra"
+                      : "text-hci-modra-cool"
+                  }`}
+                  disabled={numberOfPeople === 1}
+                  onClick={() => {
+                    setNumberOfPeople(numberOfPeople - 1);
+                  }}
+                >
+                  -
                 </button>
-                <div className="px-4 pt-1">0</div>
-                <button className="pt-1">
-                  <Image src={Plus} width={10} height={12} alt="Plus" />
+                <div className="px-4 pt-1">{numberOfPeople}</div>
+                <button
+                  className={`my-auto text-2xl font-bold ${
+                    numberOfPeople !== maxNumberOfPassengers
+                      ? "text-hci-modra"
+                      : "text-hci-modra-cool"
+                  }`}
+                  disabled={numberOfPeople === maxNumberOfPassengers}
+                  onClick={() => {
+                    setNumberOfPeople(numberOfPeople + 1);
+                  }}
+                >
+                  +
                 </button>
               </div>
             </div>
             <div className="w-fit">
               <div className="text-sm font-medium ">Select a boat</div>
-              <div className="flex border  border-hci-siva rounded-md bg-hci-siva-2">
-                <button>
-                  <Image
-                    src={DownArrow}
-                    width={20}
-                    height={12}
-                    alt="DownArrow"
-                  />
-                </button>
-                <div className="font-normal text-lg pl-2 pr-2 text-hci-siva-slova">
-                  Type name
+              <div className="w-[200px]">
+                <div className="flex border  border-hci-siva rounded-md bg-hci-siva-2">
+                  <button
+                    onClick={() => {
+                      setListOfBoatsClicked(!listOfBoatsClicked);
+                    }}
+                  >
+                    <Image
+                      src={DownArrow}
+                      width={20}
+                      height={12}
+                      alt="DownArrow"
+                    />
+                  </button>
+                  <div className="font-normal text-lg pl-2 pr-2 text-hci-siva-slova">
+                    {boatSelected}
+                  </div>
                 </div>
+                <BoatsSelector
+                  toggleList={listOfBoatsClicked}
+                  setBoat={BoatSelectionHandler}
+                />
               </div>
             </div>
-            <div className="w-fit">
+            <div className="">
               <div className="text-sm  font-medium">Total price</div>
-              <div className="pl-1 font-medium rounded-md  text-lg border  border-hci-siva bg-hci-siva-2 ">
-                410€
+              <div className="pl-1 font-medium rounded-md  text-lg border  border-hci-siva bg-hci-siva-2 w-[70px] ">
+                {tripPrice}€
               </div>
               <div className="text-sm">
-                <span>Trip</span>
-                <span className="font-medium"> 350€</span>
-                <span> + Cap Camarat</span>
-                <span className="font-medium"> 60€</span>
+                <div>350€ Trip</div>
+                {explanation == 1 && <div> + 60€ for {boatSelected}</div>}
               </div>
             </div>
             <div className="flex h-fit px-1 mt-5 border shadow-btn-sjena rounded-lg  border-hci-modra bg-hci-modra justify-center  text-white">
