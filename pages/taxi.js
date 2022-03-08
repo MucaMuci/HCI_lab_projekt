@@ -9,6 +9,7 @@ import CreateImg from "../assets/create.png";
 import Image from "next/image";
 import { useState } from "react";
 import CitiesSelector from "../modules/user/taxiPage/listOfAvailableCities/CitiesSelector";
+import { useRouter } from "next/router";
 
 const Taxi = () => {
   const [listOfAvailableCitiesClicked, setlistOfAvailableCitiesClicked] =
@@ -16,6 +17,8 @@ const Taxi = () => {
   const [selectedCity, setselectedCity] = useState("Type location");
   const [price, setPrice] = useState("0€");
   const [estimatedTime, setestimatedTime] = useState("0 minutes");
+
+  const router = useRouter();
 
   function citySelectionHandler(city, time, price) {
     setselectedCity(city);
@@ -81,8 +84,12 @@ const Taxi = () => {
               </div>
             </div>
             <div className="flex h-fit px-1 mt-5 border shadow-btn-sjena rounded-lg  border-hci-modra bg-hci-modra justify-center  text-white">
-              <button className="flex self-center">
+              <button
+                onClick={() => router.push("/taxiReservation")}
+                className="flex self-center"
+              >
                 <div>Request a transfer</div>
+
                 <div className="pl-2 pt-0.5 ">
                   <Image src={CreateImg} alt="Create" width={24} height={20} />
                 </div>

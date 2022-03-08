@@ -8,71 +8,57 @@ const TaxiFormCard = ({ children, currentStep }) => {
     <div className="flex flex-col max-w-5xl mx-auto pb-10">
       {currentStep < 4 && (
         <div className="flex items-center justify-center">
-          <div className="flex flex-col items-end">
-            <div className="">
-              <Image
-                width={40}
-                height={40}
-                alt="Prvi krug"
-                src={currentStep == 0 ? EmptyCircle : FullCircle}
-              />
-            </div>
-          </div>
+          <Image
+            width={40}
+            height={40}
+            alt="Prvi krug"
+            src={currentStep == 0 ? EmptyCircle : FullCircle}
+          />
           <div
             className={`self-center mb-1 border border-solid w-1/6 h-0 ${
               currentStep == 0 ? "border-hci-siva" : "border-hci-modra"
             }`}
           ></div>
-          <div>
-            <div>
-              <Image
-                width={40}
-                height={40}
-                alt="krug2"
-                src={
-                  currentStep == 0
-                    ? EmptyGreyCircle
-                    : currentStep == 1
-                    ? EmptyCircle
-                    : FullCircle
-                }
-              />
-            </div>
-          </div>
+          <Image
+            width={40}
+            height={40}
+            alt="krug2"
+            src={
+              currentStep == 0
+                ? EmptyGreyCircle
+                : currentStep == 1
+                ? EmptyCircle
+                : FullCircle
+            }
+          />
           <div
             className={`self-center mb-1 border border-solid w-1/6 h-0 ${
               currentStep == 0 ? "border-hci-siva" : "border-hci-modra"
             }`}
           ></div>
-          <div>
-            <div>
-              <Image
-                width={40}
-                height={40}
-                alt="krug2"
-                src={
-                  currentStep == 0
-                    ? EmptyGreyCircle
-                    : currentStep == 1
-                    ? EmptyCircle
-                    : FullCircle
-                }
-              />
-            </div>
-          </div>
+          <Image
+            width={40}
+            height={40}
+            alt="krug2"
+            src={
+              currentStep == 0
+                ? EmptyGreyCircle
+                : currentStep == 1
+                ? EmptyCircle
+                : FullCircle
+            }
+          />
           <div
             className={`self-center mb-1 border border-solid w-1/6 h-0 ${
               currentStep < 2 ? "border-hci-siva" : "border-hci-modra"
             }`}
           ></div>
-          <div>
-            <Image
-              width={40}
-              height={40}
-              alt="krug3"
-              src={currentStep < 2 ? EmptyGreyCircle : EmptyCircle}
-            />
-          </div>
+          <Image
+            width={40}
+            height={40}
+            alt="krug3"
+            src={currentStep < 2 ? EmptyGreyCircle : EmptyCircle}
+          />
         </div>
       )}
       {currentStep < 4 && (
@@ -84,7 +70,7 @@ const TaxiFormCard = ({ children, currentStep }) => {
         </div>
       )}
 
-      <div className="max-w-5xl mx-auto ">{children}</div>
+      <div className="max-w-5xl mx-auto w-full ">{children}</div>
     </div>
   );
 };
