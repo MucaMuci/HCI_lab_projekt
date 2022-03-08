@@ -4,14 +4,14 @@ import CreateImg from "../assets/create.png"
 
 
 const FreeBoat = ({ name, price, maxpassengers, length, engineHP, soonestFreeDate }) => (
-    <div className="flex flex-col py-5">
+    <div className="flex flex-col py-5 px-4">
 
         <div className="flex flex-col shadow-btn-sjena rounded-2xl  pt-5">
             <div className="px-5 flex flex-col">
                 <div className="flex text-4xl self-center pb-4 font-semibold">
                     {name}
                 </div>
-                <div className="flex ">
+                <div className="flex justify-center">
                     <Image
                         src={Brod1}
                         height={320}
