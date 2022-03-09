@@ -6,6 +6,8 @@ import { db } from "../../firebase/initFirebase";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 import 'swiper/css';
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 const FreeBoats = () => {
 
@@ -32,14 +34,17 @@ const FreeBoats = () => {
         <div className="max-w-3xl">
             <div className="flex flex-col">
                 <Swiper
-                    modules={[Navigation, Pagination, Scrollbar, A11y]}
+                    cssMode={true}
+                    className="w-screen sm:w-auto"
+                    pagination={true}
+                    navigation={true}
+                    modules={[Navigation, Pagination]}
                     spaceBetween={50}
                     slidesPerView={1}
-                    navigation
                 >
                     {boats.map(el => (
 
-                        <SwiperSlide>
+                        <SwiperSlide className="flex justify-center">
                             <FreeBoat
                                 name={el.id}
                                 price={el.Price}
