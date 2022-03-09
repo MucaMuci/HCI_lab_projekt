@@ -2,11 +2,11 @@ import { useRouter } from "next/router";
 import { navigationItems } from "../const/navbarList_user";
 import Link from "next/link";
 
-const NavBarUser = () => {
+const HamburgerNavBar = () => {
   const router = useRouter();
 
   return (
-    <nav className="flex list-none bg-hci-header">
+    <nav className="flex flex-col list-none bg-hci-header  h-full w-full justify-center items-center">
       {navigationItems.map((link, index) => (
         <ul
           className={
@@ -25,4 +25,4 @@ const NavBarUser = () => {
   );
 };
 
-export default NavBarUser;
+export default HamburgerNavBar;
