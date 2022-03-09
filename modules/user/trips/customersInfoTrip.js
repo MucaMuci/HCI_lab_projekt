@@ -5,6 +5,8 @@ import { registerLocale, setDefaultLocale } from "react-datepicker";
 import hr from "date-fns/locale/hr";
 import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
+import { useContext } from "react";
+import AppContext from "../../../components/AppContext";
 
 registerLocale("hr", hr);
 
@@ -14,6 +16,8 @@ const CustomersInfoTrip = ({
   prevFormStep,
   handleData,
 }) => {
+
+
   function handleSubmit() {
     let data = {};
 
@@ -27,6 +31,7 @@ const CustomersInfoTrip = ({
       address
     ) {
       data = {
+        ...value.state.info,
         FullName: fullName,
         DateOfBirth: new Date(dateOfBirth).toISOString().split("T")[0],
         Email: email,
@@ -36,6 +41,7 @@ const CustomersInfoTrip = ({
         Address: address,
       };
 
+      console.log(data)
       handleData(data);
       nextFormStep();
     } else console.log("Unesite podatke");
@@ -54,6 +60,9 @@ const CustomersInfoTrip = ({
   const [city, setCity] = useState();
 
   const [address, setAddress] = useState();
+
+  const value = useContext(AppContext)
+
 
   return (
     <div className={formStep === 0 ? "flex" : "hidden"}>

@@ -13,6 +13,10 @@ import { luke_pictures } from "../../const/trips/luke";
 import { vrulja_pictures } from "../../const/trips/vrulja";
 import { useState } from "react";
 import BoatsSelector from "../../modules/user/trips/boatsSelector";
+import { useRouter } from 'next/router'
+
+import { useContext } from "react";
+import AppContext from "../../components/AppContext";
 
 const DailyBoatTrips = () => {
   const [listOfBoatsClicked, setListOfBoatsClicked] = useState(false);
@@ -35,6 +39,22 @@ const DailyBoatTrips = () => {
       setTripPrice(350);
       setExplanation(0);
     }
+  }
+
+  const value = useContext(AppContext)
+
+  const router = useRouter();
+
+
+
+  function newPage() {
+    value.setInfo({
+      NumberOfPeople: numberOfPeople,
+      BoatName: boatSelected,
+      Price: tripPrice
+    })
+    if (boatSelected != "Select a boat")
+      router.push(`/dailyboattrips/${boatSelected}`)
   }
 
   return (
@@ -63,11 +83,10 @@ const DailyBoatTrips = () => {
               <div className=" text-sm font-medium">Number of people</div>
               <div className="flex px-2 border  border-hci-siva rounded-md bg-hci-siva-2 w-fit">
                 <button
-                  className={`my-auto text-2xl font-bold ${
-                    numberOfPeople !== 1
-                      ? "text-hci-modra"
-                      : "text-hci-modra-cool"
-                  }`}
+                  className={`my-auto text-2xl font-bold ${numberOfPeople !== 1
+                    ? "text-hci-modra"
+                    : "text-hci-modra-cool"
+                    }`}
                   disabled={numberOfPeople === 1}
                   onClick={() => {
                     setNumberOfPeople(numberOfPeople - 1);
@@ -77,11 +96,10 @@ const DailyBoatTrips = () => {
                 </button>
                 <div className="px-4 pt-1">{numberOfPeople}</div>
                 <button
-                  className={`my-auto text-2xl font-bold ${
-                    numberOfPeople !== maxNumberOfPassengers
-                      ? "text-hci-modra"
-                      : "text-hci-modra-cool"
-                  }`}
+                  className={`my-auto text-2xl font-bold ${numberOfPeople !== maxNumberOfPassengers
+                    ? "text-hci-modra"
+                    : "text-hci-modra-cool"
+                    }`}
                   disabled={numberOfPeople === maxNumberOfPassengers}
                   onClick={() => {
                     setNumberOfPeople(numberOfPeople + 1);
@@ -128,7 +146,7 @@ const DailyBoatTrips = () => {
               </div>
             </div>
             <div className="flex h-fit px-1 mt-5 border shadow-btn-sjena rounded-lg  border-hci-modra bg-hci-modra justify-center  text-white">
-              <button className="flex self-center">
+              <button onClick={newPage} className="flex self-center">
                 <div>Make a reservation</div>
                 <div className="pl-2 pt-0.5 ">
                   <Image src={CreateImg} alt="Create" width={24} height={20} />
