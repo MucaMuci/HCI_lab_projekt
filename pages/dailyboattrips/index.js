@@ -11,12 +11,14 @@ import { povlja_pictures } from "../../const/trips/povlja";
 import { pucisca_pictures } from "../../const/trips/pucisca";
 import { luke_pictures } from "../../const/trips/luke";
 import { vrulja_pictures } from "../../const/trips/vrulja";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import BoatsSelector from "../../modules/user/trips/boatsSelector";
 import { useRouter } from 'next/router'
 
 import { useContext } from "react";
 import AppContext from "../../components/AppContext";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../../firebase/initFirebase";
 
 const DailyBoatTrips = () => {
   const [listOfBoatsClicked, setListOfBoatsClicked] = useState(false);
@@ -25,6 +27,7 @@ const DailyBoatTrips = () => {
   const [tripPrice, setTripPrice] = useState(350);
   const [maxNumberOfPassengers, setMaxNumberOfPassengers] = useState(9);
   const [explanation, setExplanation] = useState(0);
+  const [boats, setBoats] = useState([]);
 
   function BoatSelectionHandler(name, maxPass) {
     if (name == boatSelected) return;
@@ -45,10 +48,25 @@ const DailyBoatTrips = () => {
 
   const router = useRouter();
 
+  useEffect(() => {
+    const ListOfBoats = [];
+    getDocs(collection(db, "Boats")).then((snapshot) => {
+      snapshot.docs.forEach((doc) => {
+        // boats.push({ ...doc.data(), id: doc.id })
+        ListOfBoats.push({ ...doc.data(), id: doc.id });
+      });
+      setBoats(ListOfBoats);
+
+
+    });
+  }, []);
+
 
 
   function newPage() {
+    let boat = boats.find(el => el.id = boatSelected);
     value.setInfo({
+      DisabledDates: boat.Dates,
       NumberOfPeople: numberOfPeople,
       BoatName: boatSelected,
       Price: tripPrice
@@ -110,7 +128,7 @@ const DailyBoatTrips = () => {
               </div>
             </div>
             <div className="w-fit">
-              <div className="text-sm font-medium ">Select a boat</div>
+              <div className="text-sm font-medium pt-2 md:pt-0">Select a boat</div>
               <div className="w-[200px]">
                 <div className="flex border  border-hci-siva rounded-md bg-hci-siva-2">
                   <button
@@ -136,7 +154,7 @@ const DailyBoatTrips = () => {
               </div>
             </div>
             <div className="">
-              <div className="text-sm  font-medium">Total price</div>
+              <div className="text-sm  font-medium pt-2 md:pt-0">Total price</div>
               <div className="pl-1 font-medium rounded-md  text-lg border  border-hci-siva bg-hci-siva-2 w-[70px] ">
                 {tripPrice}€
               </div>

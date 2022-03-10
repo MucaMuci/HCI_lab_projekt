@@ -17,6 +17,7 @@ const CustomersInfoTrip = ({
   handleData,
 }) => {
 
+  const value = useContext(AppContext)
 
   function handleSubmit() {
     let data = {};
@@ -31,7 +32,9 @@ const CustomersInfoTrip = ({
       address
     ) {
       data = {
-        ...value.state.info,
+        NumberOfPeople: value.state.info.NumberOfPeople,
+        BoatName: value.state.info.BoatName,
+        Price: value.state.info.Price,
         FullName: fullName,
         DateOfBirth: new Date(dateOfBirth).toISOString().split("T")[0],
         Email: email,
@@ -39,6 +42,7 @@ const CustomersInfoTrip = ({
         Country: country,
         City: city,
         Address: address,
+        StartDate: new Date(startDate).toISOString().split("T")[0]
       };
 
       console.log(data)
@@ -61,13 +65,23 @@ const CustomersInfoTrip = ({
 
   const [address, setAddress] = useState();
 
-  const value = useContext(AppContext)
+  const [startDate, setStartDate] = useState(new Date());
+
+  let disableDates = [...value.state.info.DisabledDates]
+
+  disableDates = disableDates.map(el => new Date(el))
 
 
   return (
     <div className={formStep === 0 ? "flex" : "hidden"}>
       <div className="flex flex-col px-5 sm:px-20 md:px-32 py-3 border border-hci-siva rounded-xl">
-        <div className="text-sm pt-2 font-medium">Full Name</div>
+        <div className="text-sm">Date of trip</div>
+        <div className="flex items-center text-center border border-hci-siva rounded-md bg-hci-siva-2 text-lg w-fit">
+          <DatePicker
+            excludeDates={disableDates} minDate={new Date()} locale={hr} dateFormat="dd/MM/yyyy" selected={startDate} onChange={(date) => setStartDate(date)} />
+        </div>
+
+        <div className="text-sm pt-6 font-medium">Full Name</div>
         <input
           value={fullName}
           onChange={(event) => setFullName(event.target.value)}
