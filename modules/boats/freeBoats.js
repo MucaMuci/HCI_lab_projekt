@@ -36,7 +36,6 @@ const FreeBoats = () => {
                 <Swiper
                     cssMode={true}
                     className="w-screen sm:w-auto"
-                    pagination={true}
                     navigation={true}
                     modules={[Navigation, Pagination]}
                     spaceBetween={50}
