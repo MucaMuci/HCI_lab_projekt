@@ -73,30 +73,9 @@ const Home = () => {
           </div>
 
           <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-center">
-            <div className="block">
-              <button className="sm:hidden px-2 mr-10 h-fit bg-hci-gradient rounded-full">
-                <Image src={LeftArrow} height={13} width={13} alt="LeftArrow" />
-              </button>
-
-              <button className="sm:hidden px-2 ml-10 h-fit bg-hci-gradient rounded-full">
-                <Image
-                  src={RightArrow}
-                  height={13}
-                  width={13}
-                  alt="RightArrow"
-                />
-              </button>
-            </div>
-
-            <button className="sm:block hidden px-2 mr-10 h-fit bg-hci-gradient rounded-full">
-              <Image src={LeftArrow} height={13} width={13} alt="LeftArrow" />
-            </button>
 
             <FreeBoats />
 
-            <button className="sm:block hidden px-2 ml-10 h-fit bg-hci-gradient rounded-full">
-              <Image src={RightArrow} height={13} width={13} alt="RightArrow" />
-            </button>
           </div>
         </div>
         <div className="absolute w-full bottom-0">
