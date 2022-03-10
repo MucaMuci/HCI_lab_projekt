@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { registerLocale, setDefaultLocale } from "react-datepicker";
@@ -15,9 +15,11 @@ const CustomersInfoTrip = ({
   nextFormStep,
   prevFormStep,
   handleData,
+  reservationData
 }) => {
 
   const value = useContext(AppContext)
+
 
   function handleSubmit() {
     let data = {};
@@ -67,9 +69,18 @@ const CustomersInfoTrip = ({
 
   const [startDate, setStartDate] = useState(new Date());
 
-  let disableDates = [...value.state.info.DisabledDates]
+  let data = { ...value.state.info }
 
-  disableDates = disableDates.map(el => new Date(el))
+  let disableDates = reservationData.DisabledDates
+
+  console.log(reservationData)
+
+  useEffect(() => {
+    disableDates = data.DisabledDates
+    handleData(data)
+  }, [])
+
+
 
 
   return (
@@ -78,7 +89,7 @@ const CustomersInfoTrip = ({
         <div className="text-sm">Date of trip</div>
         <div className="flex items-center text-center border border-hci-siva rounded-md bg-hci-siva-2 text-lg w-fit">
           <DatePicker
-            excludeDates={disableDates} minDate={new Date()} locale={hr} dateFormat="dd/MM/yyyy" selected={startDate} onChange={(date) => setStartDate(date)} />
+            excludeDates={reservationData.DisabledDates} minDate={new Date()} locale={hr} dateFormat="dd/MM/yyyy" selected={startDate} onChange={(date) => setStartDate(date)} />
         </div>
 
         <div className="text-sm pt-6 font-medium">Full Name</div>

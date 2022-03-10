@@ -64,9 +64,10 @@ const DailyBoatTrips = () => {
 
 
   function newPage() {
-    let boat = boats.find(el => el.id = boatSelected);
+    let boat = boats.find(el => el.id == boatSelected);
+    let disabledBoat = boat.Dates.map(el => new Date(el))
     value.setInfo({
-      DisabledDates: boat.Dates,
+      DisabledDates: disabledBoat,
       NumberOfPeople: numberOfPeople,
       BoatName: boatSelected,
       Price: tripPrice

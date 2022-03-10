@@ -42,6 +42,7 @@ const Trip = () => {
                             nextFormStep={nextFormStep}
                             name={name}
                             handleData={handleData}
+                            reservationData={reservationData}
                         />
                     )}
                     {formStep >= 1 && (
