@@ -18,7 +18,7 @@ const FreeBoats = () => {
         getDocs(collection(db, "Boats")).then((snapshot) => {
             snapshot.docs.forEach((doc) => {
                 // boats.push({ ...doc.data(), id: doc.id })
-                console.log(doc.data())
+
                 if (!doc.data().Dates.includes(new Date().toISOString().split('T')[0]))
                     ListOfBoats.push({ ...doc.data(), id: doc.id });
             });

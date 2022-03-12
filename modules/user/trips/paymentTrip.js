@@ -2,7 +2,7 @@ import PaypalImg from "../../../assets/paypal.png"
 import RevolutImg from "../../../assets/revolut.png"
 import VisaImg from "../../../assets/visa.png"
 import Image from "next/image"
-import { addDoc, collection, document, setDoc, doc, query, where } from "firebase/firestore"
+import { addDoc, collection, document, setDoc, doc, query, where, updateDoc, arrayUnion } from "firebase/firestore"
 import { db } from "../../../firebase/initFirebase"
 
 //doc(db, "Dates").document(reservationData.date).collection("Boats")
@@ -18,21 +18,19 @@ const PaymentTrip = ({ formStep, nextFormStep, prevFormStep, reservationData }) 
 
 
     const saveReservation = async () => {
-        if (reservationData.NeedDriver == "Yes")
-            try {
-                console.log(reservationData)
-                await setDoc(doc(db, "Dates", reservationData.StartDate, "Boats", reservationData.BoatName), reservationData)
-            }
-            catch (error) {
-                console.log(error)
-            }
-        else
-            try {
-                await setDoc(doc(db, "Dates", reservationData.StartDate, "Boats", reservationData.BoatName), reservationData)
-            }
-            catch (error) {
-                console.log(error)
-            }
+
+        try {
+            const boatRef = doc(db, "Boats", reservationData.BoatName)
+            await setDoc(doc(db, "Dates", reservationData.StartDate, "Boats", reservationData.BoatName), reservationData)
+            await updateDoc(boatRef, {
+                Dates: arrayUnion(reservationData.StartDate)
+            })
+            await addDoc(collection(db, "Users", reservationData.Email, "Reservations"), reservationData)
+        }
+        catch (error) {
+            console.log(error)
+        }
+
     }
 
     return (
