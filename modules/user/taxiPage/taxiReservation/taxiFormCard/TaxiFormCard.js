@@ -33,7 +33,7 @@ const TaxiFormCard = ({ children, currentStep }) => {
           />
           <div
             className={`self-center mb-1 border border-solid w-1/6 h-0 ${
-              currentStep == 0 ? "border-hci-siva" : "border-hci-modra"
+              currentStep <= 1 ? "border-hci-siva" : "border-hci-modra"
             }`}
           ></div>
           <Image
@@ -41,28 +41,28 @@ const TaxiFormCard = ({ children, currentStep }) => {
             height={40}
             alt="krug2"
             src={
-              currentStep == 0
+              currentStep <= 1
                 ? EmptyGreyCircle
-                : currentStep == 1
+                : currentStep == 2
                 ? EmptyCircle
                 : FullCircle
             }
           />
           <div
             className={`self-center mb-1 border border-solid w-1/6 h-0 ${
-              currentStep < 2 ? "border-hci-siva" : "border-hci-modra"
+              currentStep < 3 ? "border-hci-siva" : "border-hci-modra"
             }`}
           ></div>
           <Image
             width={40}
             height={40}
             alt="krug3"
-            src={currentStep < 2 ? EmptyGreyCircle : EmptyCircle}
+            src={currentStep < 3 ? EmptyGreyCircle : EmptyCircle}
           />
         </div>
       )}
       {currentStep < 4 && (
-        <div className="hidden sm:flex max-w-5xl mx-auto w-11/12 ">
+        <div className="hidden sm:flex max-w-5xl mx-auto w-[85%] ">
           <div className="flex-1 pl-4 text-center">Reservation details</div>
           <div className="flex-1 text-center">Personal information</div>
           <div className="flex-1  pr-4 text-center">Confirmation</div>

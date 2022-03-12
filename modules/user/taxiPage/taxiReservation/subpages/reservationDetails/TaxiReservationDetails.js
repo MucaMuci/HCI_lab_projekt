@@ -1,9 +1,23 @@
 import { useState } from "react";
+import TimePicker from "rc-time-picker";
+import "rc-time-picker/assets/index.css";
+import moment from "moment";
 
-const TaxiReservationDetails = () => {
+const TaxiReservationDetails = ({ nextFormStep, currentStep }) => {
   const [numberOfPeople, setNumberOfPeople] = useState(1);
+  const [pickUpTime, setPickUpTime] = useState();
+
+  function handleSubmit() {
+    nextFormStep();
+    console.log(currentStep);
+  }
   return (
-    <div className="flex flex-col px-5 sm:px-20 md:px-32 py-3 border border-hci-siva rounded-xl w-[80%] mx-auto">
+    <div
+      className={`flex-col px-5 sm:px-20 md:px-32 py-3 border 
+    border-hci-siva rounded-xl w-[80%] mx-auto ${
+      currentStep === 0 ? "flex" : "hidden"
+    }`}
+    >
       <div className="flex ">
         <div className="flex-1">
           <div className="text-sm pt-6 font-medium text-hci-siva-slova">
@@ -58,6 +72,25 @@ const TaxiReservationDetails = () => {
       </div>
       <div>
         <div className="text-sm pt-6 font-medium ">Pickup time</div>
+        <div className="flex">
+          <TimePicker
+            minuteStep={10}
+            showSecond={false}
+            onChange={(value) => setPickUpTime(moment(value, "hh:mm"))}
+            allowEmpty={false}
+          />
+        </div>
+        <div className="flex text-sm">
+          <div className="text-hci-siva-slova">Transfers are&nbsp;</div>
+          <div> only &nbsp;</div>
+          <div className="text-hci-siva-slova">available for&nbsp;</div>
+          <div>current day. &nbsp;</div>
+          <div className="text-hci-siva-slova">From &nbsp;</div>
+          <div>8:00 - 18:00</div>
+        </div>
+      </div>
+      <div className="pt-2 flex justify-end text-hci-modra ">
+        <button onClick={handleSubmit}>Next</button>
       </div>
     </div>
   );
