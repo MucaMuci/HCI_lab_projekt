@@ -204,7 +204,7 @@ const BoatUser = ({
 
                 <div className="flex">
                   <div className="flex mt-4 border shadow-btn-sjena rounded-lg border-hci-modra bg-hci-modra w-fit px-2  text-white">
-                    <button onClick={() => router.push("/reservation")} className="flex ">
+                    <button onClick={newPage} className="flex ">
                       <div>Make a reservation</div>
                       <div className="pl-2 pt-0.5 ">
                         <Image

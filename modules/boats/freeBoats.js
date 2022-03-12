@@ -49,7 +49,11 @@ const FreeBoats = () => {
                                 price={el.Price}
                                 maxpassengers={el.MaxPassengers}
                                 length={el.Length}
-                                engineHP={el.EngineHP} />
+                                width={el.Width}
+                                engineHP={el.EngineHP}
+                                fuel={el.Fuel}
+                                additional={el.Additional}
+                                dates={el.Dates} />
                         </SwiperSlide>
 
                     ))}
