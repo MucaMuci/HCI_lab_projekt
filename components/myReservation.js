@@ -29,7 +29,7 @@ const MyReservation = ({ date, name, pickUpTime, pickUpPlace, checkOutPlace, add
                                     Pick-up time:
                                 </div>
                                 <div className="flex text-hci-siva-slova">
-                                    {pickUpTime}
+                                    {pickUpTime || "09:00"}
                                 </div>
                             </div>
                             <div className="flex pb-4">
