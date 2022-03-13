@@ -1,5 +1,12 @@
-const TaxiConfirmation = ({ currentStep, nextFormStep, prevFormStep }) => {
-  function handleSubmit() {}
+const TaxiConfirmation = ({
+  currentStep,
+  nextFormStep,
+  prevFormStep,
+  reservationData,
+}) => {
+  function handleSubmit() {
+    nextFormStep();
+  }
   return (
     <div className=" flex flex-col">
       <div className=" flex py-6 mx-auto w-[80%] justify-center">
@@ -9,7 +16,14 @@ const TaxiConfirmation = ({ currentStep, nextFormStep, prevFormStep }) => {
         <div className="font-black">
           to confirm your transfer request &nbsp;
         </div>
-        <div className="text-hci-modra font-black">click here!</div>
+        <button
+          className="text-hci-modra font-black"
+          onClick={() => {
+            handleSubmit();
+          }}
+        >
+          click here!
+        </button>
       </div>
       <div
         className={`flex-col px-5 sm:px-20 md:px-32 py-3 border 
@@ -28,40 +42,40 @@ const TaxiConfirmation = ({ currentStep, nextFormStep, prevFormStep }) => {
             <div className="text-sm pt-6 font-medium text-hci-siva-slova">
               To
             </div>
-            <div>Baška Voda</div>
+            <div>{reservationData.Destination}</div>
           </div>
           <div className="flex-1">
             <div className="text-sm pt-6 font-medium text-hci-siva-slova">
               Estimated time
             </div>
-            <div>20 minutes</div>
+            <div>{reservationData.EstimatedTravelTime}</div>
           </div>
           <div className="flex-1">
             <div className="text-sm pt-6 font-medium flex-1 text-hci-siva-slova">
               Price
             </div>
-            <div>80</div>
+            <div>{reservationData.Price}</div>
           </div>
         </div>
         <div className="flex pt-6 content-">
           <div className="text-sm text-hci-siva-slova">For&nbsp;</div>
-          <div className="">7&nbsp;</div>
+          <div className="">{reservationData.NumberOfPeople}&nbsp;</div>
           <div className="text-sm text-hci-siva-slova">
             people on name &nbsp;
           </div>
-          <div className="">Dante Stipica</div>
+          <div className="">{reservationData.FullName}</div>
         </div>
         <div className="flex pt-6">
           <div className="text-sm text-hci-siva-slova">
             contact number&nbsp;
           </div>
-          <div>+385 99 861 5031</div>
+          <div>{reservationData.PhoneNumber}</div>
         </div>
         <div className="flex pt-6">
           <div className="text-sm text-hci-siva-slova">
             Contact e-mail&nbsp;
           </div>
-          <div>damijeBitiStipoANeStipica@gmail.com</div>
+          <div>{reservationData.Email}</div>
         </div>
         <div className="flex flex-row text-hci-modra justify-between pt-6 pb-2">
           <button className="" onClick={prevFormStep} type="button">

@@ -14,7 +14,7 @@ import UseUser from "../firebase/useUser";
 const Home = () => {
   const { user, useUser } = UseUser();
 
-  console.log(user);
+
 
   if (user) {
     return (

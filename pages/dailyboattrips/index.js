@@ -13,7 +13,7 @@ import { luke_pictures } from "../../const/trips/luke";
 import { vrulja_pictures } from "../../const/trips/vrulja";
 import { useEffect, useState } from "react";
 import BoatsSelector from "../../modules/user/trips/boatsSelector";
-import { useRouter } from 'next/router'
+import { useRouter } from "next/router";
 
 import { useContext } from "react";
 import AppContext from "../../components/AppContext";
@@ -44,7 +44,7 @@ const DailyBoatTrips = () => {
     }
   }
 
-  const value = useContext(AppContext)
+  const value = useContext(AppContext);
 
   const router = useRouter();
 
@@ -56,24 +56,20 @@ const DailyBoatTrips = () => {
         ListOfBoats.push({ ...doc.data(), id: doc.id });
       });
       setBoats(ListOfBoats);
-
-
     });
   }, []);
 
-
-
   function newPage() {
-    let boat = boats.find(el => el.id == boatSelected);
-    let disabledBoat = boat.Dates.map(el => new Date(el))
+    let boat = boats.find((el) => el.id == boatSelected);
+    let disabledBoat = boat.Dates.map((el) => new Date(el));
     value.setInfo({
       DisabledDates: disabledBoat,
       NumberOfPeople: numberOfPeople,
       BoatName: boatSelected,
-      Price: tripPrice
-    })
+      Price: tripPrice,
+    });
     if (boatSelected != "Select a boat")
-      router.push(`/dailyboattrips/${boatSelected}`)
+      router.push(`/dailyboattrips/${boatSelected}`);
   }
 
   return (
@@ -102,10 +98,11 @@ const DailyBoatTrips = () => {
               <div className=" text-sm font-medium">Number of people</div>
               <div className="flex px-2 border  border-hci-siva rounded-md bg-hci-siva-2 w-fit">
                 <button
-                  className={`my-auto text-2xl font-bold ${numberOfPeople !== 1
-                    ? "text-hci-modra"
-                    : "text-hci-modra-cool"
-                    }`}
+                  className={`my-auto text-2xl font-bold ${
+                    numberOfPeople !== 1
+                      ? "text-hci-modra"
+                      : "text-hci-modra-cool"
+                  }`}
                   disabled={numberOfPeople === 1}
                   onClick={() => {
                     setNumberOfPeople(numberOfPeople - 1);
@@ -115,10 +112,11 @@ const DailyBoatTrips = () => {
                 </button>
                 <div className="px-4 pt-1">{numberOfPeople}</div>
                 <button
-                  className={`my-auto text-2xl font-bold ${numberOfPeople !== maxNumberOfPassengers
-                    ? "text-hci-modra"
-                    : "text-hci-modra-cool"
-                    }`}
+                  className={`my-auto text-2xl font-bold ${
+                    numberOfPeople !== maxNumberOfPassengers
+                      ? "text-hci-modra"
+                      : "text-hci-modra-cool"
+                  }`}
                   disabled={numberOfPeople === maxNumberOfPassengers}
                   onClick={() => {
                     setNumberOfPeople(numberOfPeople + 1);
@@ -129,7 +127,9 @@ const DailyBoatTrips = () => {
               </div>
             </div>
             <div className="w-fit">
-              <div className="text-sm font-medium pt-2 md:pt-0">Select a boat</div>
+              <div className="text-sm font-medium pt-2 md:pt-0">
+                Select a boat
+              </div>
               <div className="w-[200px]">
                 <div className="flex border  border-hci-siva rounded-md bg-hci-siva-2">
                   <button
@@ -155,7 +155,9 @@ const DailyBoatTrips = () => {
               </div>
             </div>
             <div className="">
-              <div className="text-sm  font-medium pt-2 md:pt-0">Total price</div>
+              <div className="text-sm  font-medium pt-2 md:pt-0">
+                Total price
+              </div>
               <div className="pl-1 font-medium rounded-md  text-lg border  border-hci-siva bg-hci-siva-2 w-[70px] ">
                 {tripPrice}€
               </div>

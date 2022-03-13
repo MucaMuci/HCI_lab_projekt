@@ -15,11 +15,9 @@ const CustomersInfoTrip = ({
   nextFormStep,
   prevFormStep,
   handleData,
-  reservationData
+  reservationData,
 }) => {
-
-  const value = useContext(AppContext)
-
+  const value = useContext(AppContext);
 
   function handleSubmit() {
     let data = {};
@@ -44,10 +42,10 @@ const CustomersInfoTrip = ({
         Country: country,
         City: city,
         Address: address,
-        StartDate: new Date(startDate).toISOString().split("T")[0]
+        StartDate: new Date(startDate).toISOString().split("T")[0],
       };
 
-      console.log(data)
+      console.log(data);
       handleData(data);
       nextFormStep();
     } else console.log("Unesite podatke");
@@ -69,19 +67,16 @@ const CustomersInfoTrip = ({
 
   const [startDate, setStartDate] = useState(new Date());
 
-  let data = { ...value.state.info }
+  let data = { ...value.state.info };
 
-  let disableDates = reservationData.DisabledDates
+  let disableDates = reservationData.DisabledDates;
 
-  console.log(reservationData)
+  console.log(reservationData);
 
   useEffect(() => {
-    disableDates = data.DisabledDates
-    handleData(data)
-  }, [])
-
-
-
+    disableDates = data.DisabledDates;
+    handleData(data);
+  }, []);
 
   return (
     <div className={formStep === 0 ? "flex" : "hidden"}>
@@ -89,7 +84,13 @@ const CustomersInfoTrip = ({
         <div className="text-sm">Date of trip</div>
         <div className="flex items-center text-center border border-hci-siva rounded-md bg-hci-siva-2 text-lg w-fit">
           <DatePicker
-            excludeDates={reservationData.DisabledDates} minDate={new Date()} locale={hr} dateFormat="dd/MM/yyyy" selected={startDate} onChange={(date) => setStartDate(date)} />
+            excludeDates={reservationData.DisabledDates}
+            minDate={new Date()}
+            locale={hr}
+            dateFormat="dd/MM/yyyy"
+            selected={startDate}
+            onChange={(date) => setStartDate(date)}
+          />
         </div>
 
         <div className="text-sm pt-6 font-medium">Full Name</div>

@@ -10,6 +10,8 @@ import Image from "next/image";
 import { useState } from "react";
 import CitiesSelector from "../modules/user/taxiPage/listOfAvailableCities/CitiesSelector";
 import { useRouter } from "next/router";
+import { useContext } from "react";
+import AppContext from "/components/AppContext";
 
 const Taxi = () => {
   const [listOfAvailableCitiesClicked, setlistOfAvailableCitiesClicked] =
@@ -17,14 +19,17 @@ const Taxi = () => {
   const [selectedCity, setselectedCity] = useState("Type location");
   const [price, setPrice] = useState("0€");
   const [estimatedTime, setestimatedTime] = useState("0 minutes");
+  const [infoEnteredFlag, setInfoEnteredFlag] = useState(0);
 
   const router = useRouter();
+  const value = useContext(AppContext);
 
   function citySelectionHandler(city, time, price) {
     setselectedCity(city);
     setPrice(price);
     setestimatedTime(time);
     setlistOfAvailableCitiesClicked(!listOfAvailableCitiesClicked);
+    setInfoEnteredFlag(1);
   }
   return (
     <div className="min-h-screen relative">
@@ -85,7 +90,15 @@ const Taxi = () => {
             </div>
             <div className="flex h-fit px-1 mt-5 border shadow-btn-sjena rounded-lg  border-hci-modra bg-hci-modra justify-center  text-white">
               <button
-                onClick={() => router.push("/taxiReservation")}
+                onClick={() => {
+                  value.setInfo({
+                    City: selectedCity,
+                    Price: price,
+                    Time: estimatedTime,
+                    Flag: infoEnteredFlag,
+                  });
+                  router.push("/taxiReservation");
+                }}
                 className="flex self-center"
               >
                 <div>Request a transfer</div>

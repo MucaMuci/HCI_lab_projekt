@@ -18,7 +18,7 @@ const FreeBoats = () => {
         getDocs(collection(db, "Boats")).then((snapshot) => {
             snapshot.docs.forEach((doc) => {
                 // boats.push({ ...doc.data(), id: doc.id })
-                console.log(doc.data())
+
                 if (!doc.data().Dates.includes(new Date().toISOString().split('T')[0]))
                     ListOfBoats.push({ ...doc.data(), id: doc.id });
             });
@@ -49,7 +49,11 @@ const FreeBoats = () => {
                                 price={el.Price}
                                 maxpassengers={el.MaxPassengers}
                                 length={el.Length}
-                                engineHP={el.EngineHP} />
+                                width={el.Width}
+                                engineHP={el.EngineHP}
+                                fuel={el.Fuel}
+                                additional={el.Additional}
+                                dates={el.Dates} />
                         </SwiperSlide>
 
                     ))}

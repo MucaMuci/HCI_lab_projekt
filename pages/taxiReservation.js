@@ -7,9 +7,17 @@ import TaxiFormCard from "../modules/user/taxiPage/taxiReservation/taxiFormCard/
 import TaxiReservationDetails from "../modules/user/taxiPage/taxiReservation/subpages/reservationDetails/TaxiReservationDetails";
 import TaxiPersonalInformation from "../modules/user/taxiPage/taxiReservation/subpages/personalInformation/TaxiPersonalReservation";
 import TaxiConfirmation from "../modules/user/taxiPage/taxiReservation/subpages/confirmation/taxiConfirmation";
+import TaxiPayment from "../modules/user/taxiPage/taxiReservation/subpages/payment/taxiPayment";
 
 const TaxiReservation = () => {
   const [formStep, setFormStep] = useState(0);
+
+  const [reservationData, setReservationData] = useState({});
+
+  const handleData = (data) => {
+    setReservationData({ ...reservationData, ...data });
+  };
+  console.log(reservationData);
 
   const nextFormStep = () => setFormStep((currentStep) => currentStep + 1);
   const prevFormStep = () => setFormStep((currentStep) => currentStep - 1);
@@ -25,6 +33,7 @@ const TaxiReservation = () => {
           <TaxiReservationDetails
             currentStep={formStep}
             nextFormStep={nextFormStep}
+            handleData={handleData}
           />
         )}
         {formStep == 1 && (
@@ -32,6 +41,7 @@ const TaxiReservation = () => {
             currentStep={formStep}
             nextFormStep={nextFormStep}
             prevFormStep={prevFormStep}
+            handleData={handleData}
           />
         )}
         {formStep == 2 && (
@@ -39,8 +49,10 @@ const TaxiReservation = () => {
             currentStep={formStep}
             nextFormStep={nextFormStep}
             prevFormStep={prevFormStep}
+            reservationData={reservationData}
           />
         )}
+        {formStep == 3 && <TaxiPayment />}
       </TaxiFormCard>
       <div className="pb-32"></div>
     </div>

@@ -2,8 +2,9 @@ import PaypalImg from "../../../assets/paypal.png"
 import RevolutImg from "../../../assets/revolut.png"
 import VisaImg from "../../../assets/visa.png"
 import Image from "next/image"
-import { addDoc, collection, document, setDoc, doc, query, where, updateDoc, arrayUnion } from "firebase/firestore"
+import { addDoc, collection, document, setDoc, doc, query, where, updateDoc, arrayUnion, documentId } from "firebase/firestore"
 import { db } from "../../../firebase/initFirebase"
+
 
 //doc(db, "Dates").document(reservationData.date).collection("Boats")
 
@@ -28,6 +29,25 @@ const PaymentUser = ({ formStep, nextFormStep, prevFormStep, reservationData }) 
 
                 await updateDoc(boatRef, {
                     Dates: arrayUnion(reservationData.StartDate)
+                })
+
+                await addDoc(collection(db, "Users", reservationData.Email, "Reservations"), {
+                    AdditionalEquipment: reservationData.AdditionalEquipment,
+                    Address: reservationData.Address,
+                    BoatName: reservationData.BoatName,
+                    CheckOutPlace: reservationData.CheckOutPlace,
+                    City: reservationData.City,
+                    Country: reservationData.Country,
+                    DateOfBirth: reservationData.DateOfBirth,
+                    Email: reservationData.Email,
+                    FullName: reservationData.FullName,
+                    NeedDriver: reservationData.NeedDriver,
+                    NumberOfPeolple: reservationData.NumberOfPeolple,
+                    PhoneNumber: reservationData.PhoneNumber,
+                    PickUpPlace: reservationData.PickUpPlace,
+                    PickUpTime: reservationData.PickUpTime,
+                    StartDate: reservationData.StartDate,
+
                 })
             }
             catch (error) {
@@ -60,6 +80,28 @@ const PaymentUser = ({ formStep, nextFormStep, prevFormStep, reservationData }) 
                 await updateDoc(boatRef, {
                     Dates: arrayUnion(reservationData.StartDate)
                 })
+
+                await addDoc(collection(db, "Users", reservationData.Email, "Reservations"), {
+                    AdditionalEquipment: reservationData.AdditionalEquipment,
+                    Address: reservationData.Address,
+                    BoatName: reservationData.BoatName,
+                    CheckOutPlace: reservationData.CheckOutPlace,
+                    City: reservationData.City,
+                    Country: reservationData.Country,
+                    DateOfBirth: reservationData.DateOfBirth,
+                    Email: reservationData.Email,
+                    FullName: reservationData.FullName,
+                    NeedDriver: reservationData.NeedDriver,
+                    NumberOfPeolple: reservationData.NumberOfPeolple,
+                    PhoneNumber: reservationData.PhoneNumber,
+                    PickUpPlace: reservationData.PickUpPlace,
+                    PickUpTime: reservationData.PickUpTime,
+                    StartDate: reservationData.StartDate,
+                    IssuingCountry: reservationData.IssuingCountry,
+                    Category: reservationData.Category,
+                    LicenceNumber: reservationData.LicenceNumber
+                })
+
             }
             catch (error) {
                 console.log(error)

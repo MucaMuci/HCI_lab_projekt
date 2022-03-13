@@ -12,9 +12,34 @@ const TaxiPersonalInformation = ({
   currentStep,
   prevFormStep,
   nextFormStep,
+  handleData,
 }) => {
   function handleSubmit() {
-    nextFormStep();
+    let data = {};
+
+    if (
+      fullName &&
+      dateOfBirth &&
+      email &&
+      phoneNumber &&
+      country &&
+      city &&
+      address
+    ) {
+      data = {
+        FullName: fullName,
+        DateOfBirth: new Date(dateOfBirth).toISOString().split("T")[0],
+        Email: email,
+        PhoneNumber: phoneNumber,
+        Country: country,
+        City: city,
+        Address: address,
+      };
+
+      console.log(data);
+      handleData(data);
+      nextFormStep();
+    } else console.log("Unesite podatke");
   }
   const [fullName, setFullName] = useState("");
 

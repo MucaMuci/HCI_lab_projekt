@@ -48,7 +48,10 @@ const ReservationDetailsUser = ({
         data = {
           StartDate: new Date(startDate).toISOString().split("T")[0],
           NumberOfPeolple: numberOfPeolple,
-          PickUpTime: new Date(pickUpTime._d).toISOString().split("T")[1],
+          PickUpTime: new Date(pickUpTime._d)
+            .toISOString()
+            .split("T")[1]
+            .slice(0, 5),
           PickUpPlace: pickUpPlace.value,
           CheckOutPlace: checkOutPlace.value,
           AdditionalEquipment: addEquipment,
