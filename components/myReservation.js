@@ -2,7 +2,7 @@ import Image from "next/image";
 import { useEffect } from "react";
 import Brod1 from "../assets/brod1.png"
 
-const MyReservation = ({ date, name, pickUpTime, pickUpPlace, checkOutPlace, additionalEquipment }) => {
+const MyReservation = ({ date, name, pickUpTime, pickUpPlace, checkOutPlace, numberOfPeople, additionalEquipment }) => {
 
     return (
         <div className="flex py-5">
@@ -58,6 +58,14 @@ const MyReservation = ({ date, name, pickUpTime, pickUpPlace, checkOutPlace, add
                             </div>
                             <div className="flex pb-4">
                                 <div className="flex pr-2 font-medium">
+                                    Number of people:
+                                </div>
+                                <div className="flex text-hci-siva-slova">
+                                    {numberOfPeople}
+                                </div>
+                            </div>
+                            <div className="flex pb-4">
+                                <div className="flex pr-2 font-medium">
                                     Additional equipment:
                                 </div>
                                 <div className="flex text-hci-siva-slova">
@@ -67,11 +75,11 @@ const MyReservation = ({ date, name, pickUpTime, pickUpPlace, checkOutPlace, add
 
                         </div>
                     </div>
-                    <div className="flex text-lg font-medium">
+                    {/* <div className="flex text-lg font-medium">
                         <button className="text-hci-modra">
                             More information
                         </button>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </div>
