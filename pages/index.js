@@ -45,20 +45,20 @@ const Home = () => {
 
           </div>
 
-          <div className="bg-hci-siva-2 flex justify-center py-2 mt-10 my-6">
+          {/* <div className="bg-hci-siva-2 flex justify-center py-2 mt-10 my-6">
             <div className="text-4xl">PAST RIDES</div>
           </div>
 
           <div className="max-w-5xl mx-auto">
             <PastRides />
-          </div>
+          </div> */}
         </div>
         <Footer />
       </div>
     );
   } else {
     return (
-      <div className="min-h-screen relative">
+      <div classN="min-h-screen relative">
         <NextSeo title={`${SEO.title}`} description={SEO.description} />
         <HeaderUser />
         <div className="pb-32 flex flex-col w-full">

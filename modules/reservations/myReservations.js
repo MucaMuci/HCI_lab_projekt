@@ -56,6 +56,7 @@ const MyReservations = () => {
                   pickUpTime={el.PickUpTime}
                   pickUpPlace={el.PickUpPlace}
                   checkOutPlace={el.CheckOutPlace}
+                  numberOfPeople={el.NumberOfPeople}
                   additionalEquipment={el.AdditionalEquipment}
                 />
               </SwiperSlide>

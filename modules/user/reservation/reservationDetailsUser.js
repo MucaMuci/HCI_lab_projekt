@@ -32,7 +32,7 @@ const ReservationDetailsUser = ({
   function handleSubmit() {
     if (
       startDate &&
-      numberOfPeolple &&
+      numberOfPeople &&
       pickUpTime &&
       pickUpPlace &&
       checkOutPlace
@@ -47,7 +47,7 @@ const ReservationDetailsUser = ({
       if (needDriver == "No" && issuingCountry && category && licenceNumber) {
         data = {
           StartDate: new Date(startDate).toISOString().split("T")[0],
-          NumberOfPeolple: numberOfPeolple,
+          NumberOfPeople: numberOfPeople,
           PickUpTime: new Date(pickUpTime._d)
             .toISOString()
             .split("T")[1]
@@ -67,7 +67,7 @@ const ReservationDetailsUser = ({
       } else {
         data = {
           StartDate: new Date(startDate).toISOString().split("T")[0],
-          NumberOfPeolple: numberOfPeolple,
+          NumberOfPeople: numberOfPeople,
           PickUpTime: new Date(pickUpTime._d).toISOString().split("T")[1],
           PickUpPlace: pickUpPlace.value,
           CheckOutPlace: checkOutPlace.value,
@@ -86,7 +86,7 @@ const ReservationDetailsUser = ({
 
   const [startDate, setStartDate] = useState(new Date());
 
-  const [numberOfPeolple, setNumberOfPeople] = useState(1);
+  const [numberOfPeople, setNumberOfPeople] = useState(1);
 
   const [needDriver, setNeedDriver] = useState("Yes");
 
@@ -145,24 +145,22 @@ const ReservationDetailsUser = ({
         <div className=" text-sm font-medium pt-2">Number of people</div>
         <div className="flex px-2 border  border-hci-siva rounded-md bg-hci-siva-2 w-fit">
           <button
-            className={`my-auto text-2xl font-bold ${
-              numberOfPeolple !== 1 ? "text-hci-modra" : "text-hci-modra-cool"
-            }`}
-            disabled={numberOfPeolple === 1}
+            className={`my-auto text-2xl font-bold ${numberOfPeople !== 1 ? "text-hci-modra" : "text-hci-modra-cool"
+              }`}
+            disabled={numberOfPeople === 1}
             onClick={() => {
-              setNumberOfPeople(numberOfPeolple - 1);
+              setNumberOfPeople(numberOfPeople - 1);
             }}
           >
             -
           </button>
-          <div className="px-4 pt-1">{numberOfPeolple}</div>
+          <div className="px-4 pt-1">{numberOfPeople}</div>
           <button
-            className={`my-auto text-2xl font-bold ${
-              numberOfPeolple !== 9 ? "text-hci-modra" : "text-hci-modra-cool"
-            }`}
-            disabled={numberOfPeolple === 9}
+            className={`my-auto text-2xl font-bold ${numberOfPeople !== 9 ? "text-hci-modra" : "text-hci-modra-cool"
+              }`}
+            disabled={numberOfPeople === 9}
             onClick={() => {
-              setNumberOfPeople(numberOfPeolple + 1);
+              setNumberOfPeople(numberOfPeople + 1);
             }}
           >
             +
@@ -209,9 +207,8 @@ const ReservationDetailsUser = ({
         <div className="flex">
           <button
             onClick={() => setNeedDriver("Yes")}
-            className={`hover:cursor-pointer font-normal border px-1 text-lg  border-hci-siva rounded-md bg-hci-siva-2 w-fit  ${
-              needDriver == "Yes" ? "text-white bg-hci-modra" : "text-hci-modra"
-            }`}
+            className={`hover:cursor-pointer font-normal border px-1 text-lg  border-hci-siva rounded-md bg-hci-siva-2 w-fit  ${needDriver == "Yes" ? "text-white bg-hci-modra" : "text-hci-modra"
+              }`}
           >
             {" "}
             Yes
@@ -219,9 +216,8 @@ const ReservationDetailsUser = ({
           <div className="px-1"></div>
           <button
             onClick={() => setNeedDriver("No")}
-            className={`hover:cursor-pointer font-normal border px-1 text-lg  border-hci-siva rounded-md bg-hci-siva-2 w-fit  ${
-              needDriver == "No" ? "text-white bg-hci-modra" : "text-hci-modra"
-            }`}
+            className={`hover:cursor-pointer font-normal border px-1 text-lg  border-hci-siva rounded-md bg-hci-siva-2 w-fit  ${needDriver == "No" ? "text-white bg-hci-modra" : "text-hci-modra"
+              }`}
           >
             No
           </button>
