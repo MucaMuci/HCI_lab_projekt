@@ -110,7 +110,18 @@ const Taxi = () => {
             </div>
           </div>
           <div className="flex md:hidden mb-4 h-fit px-1  border shadow-btn-sjena rounded-lg  border-hci-modra bg-hci-modra justify-center  text-white">
-            <button className="flex self-center">
+            <button
+              className="flex self-center"
+              onClick={() => {
+                value.setInfo({
+                  City: selectedCity,
+                  Price: price,
+                  Time: estimatedTime,
+                  Flag: infoEnteredFlag,
+                });
+                router.push("/taxiReservation");
+              }}
+            >
               <div>Request a transfer</div>
               <div className="pl-2 pt-0.5 ">
                 <Image src={CreateImg} alt="Create" width={24} height={20} />
