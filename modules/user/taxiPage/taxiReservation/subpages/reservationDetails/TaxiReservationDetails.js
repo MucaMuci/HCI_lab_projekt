@@ -53,9 +53,8 @@ const TaxiReservationDetails = ({ nextFormStep, currentStep, handleData }) => {
   return (
     <div
       className={`flex-col px-5 sm:px-20 md:px-32 py-3 border 
-    border-hci-siva rounded-xl w-[80%] mx-auto ${
-      currentStep === 0 ? "flex" : "hidden"
-    }`}
+    border-hci-siva rounded-xl w-[80%] mx-auto ${currentStep === 0 ? "flex" : "hidden"
+        }`}
     >
       {flag == 0 && (
         <div className="flex flex-col">
@@ -140,9 +139,8 @@ const TaxiReservationDetails = ({ nextFormStep, currentStep, handleData }) => {
         <div className="text-sm pt-6 font-medium ">Number of people</div>
         <div className="flex px-2 border  border-hci-siva rounded-md bg-hci-siva-2 w-fit">
           <button
-            className={`my-auto text-2xl font-bold ${
-              numberOfPeople !== 1 ? "text-hci-modra" : "text-hci-modra-cool"
-            }`}
+            className={`my-auto text-2xl font-bold ${numberOfPeople !== 1 ? "text-hci-modra" : "text-hci-modra-cool"
+              }`}
             disabled={numberOfPeople === 1}
             onClick={() => {
               setNumberOfPeople(numberOfPeople - 1);
@@ -152,9 +150,8 @@ const TaxiReservationDetails = ({ nextFormStep, currentStep, handleData }) => {
           </button>
           <div className="px-4 pt-1">{numberOfPeople}</div>
           <button
-            className={`my-auto text-2xl font-bold ${
-              numberOfPeople !== 9 ? "text-hci-modra" : "text-hci-modra-cool"
-            }`}
+            className={`my-auto text-2xl font-bold ${numberOfPeople !== 9 ? "text-hci-modra" : "text-hci-modra-cool"
+              }`}
             disabled={numberOfPeople === 9}
             onClick={() => {
               setNumberOfPeople(numberOfPeople + 1);
@@ -174,13 +171,16 @@ const TaxiReservationDetails = ({ nextFormStep, currentStep, handleData }) => {
             allowEmpty={false}
           />
         </div>
-        <div className="flex text-sm">
+        {/* <div className="flex text-sm">
           <div className="text-hci-siva-slova">Transfers are&nbsp;</div>
           <div> only &nbsp;</div>
           <div className="text-hci-siva-slova">available for&nbsp;</div>
           <div>current day. &nbsp;</div>
           <div className="text-hci-siva-slova">From &nbsp;</div>
           <div>8:00 - 18:00</div>
+        </div> */}
+        <div className="flex text-sm text-hci-siva-slova">
+          Transfers are&nbsp; only &nbsp;available for&nbsp;current day. &nbsp;From &nbsp;8:00 - 18:00
         </div>
       </div>
       <div className="pt-2 flex justify-end text-hci-modra ">
