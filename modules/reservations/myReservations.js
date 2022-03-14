@@ -38,30 +38,34 @@ const MyReservations = () => {
     return (
       <div>
         <div className="flex flex-col">
-
-          <Swiper
-            cssMode={true}
-            className="w-screen sm:w-auto"
-            navigation={true}
-            modules={[Navigation, Pagination]}
-            spaceBetween={50}
-            slidesPerView={1}
-          >
-            {boats.map((el) => (
-              <SwiperSlide className="flex justify-center">
-                <MyReservation
-                  key={el.id}
-                  date={el.StartDate}
-                  name={el.BoatName}
-                  pickUpTime={el.PickUpTime}
-                  pickUpPlace={el.PickUpPlace}
-                  checkOutPlace={el.CheckOutPlace}
-                  numberOfPeople={el.NumberOfPeople}
-                  additionalEquipment={el.AdditionalEquipment}
-                />
-              </SwiperSlide>
-            ))}
-          </Swiper>
+          {boats &&
+            <Swiper
+              cssMode={true}
+              className="w-screen sm:w-auto"
+              navigation={true}
+              modules={[Navigation, Pagination]}
+              spaceBetween={50}
+              slidesPerView={1}
+            >
+              {boats.map((el) => (
+                <SwiperSlide className="flex justify-center">
+                  <MyReservation
+                    key={el.id}
+                    date={el.StartDate}
+                    name={el.BoatName}
+                    pickUpTime={el.PickUpTime}
+                    pickUpPlace={el.PickUpPlace}
+                    checkOutPlace={el.CheckOutPlace}
+                    numberOfPeople={el.NumberOfPeople}
+                    additionalEquipment={el.AdditionalEquipment}
+                  />
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          }
+          <div className="text-2xl font-semibold py-8">
+            You currently have no reservations... why not make one!
+          </div>
         </div>
       </div >
     );
