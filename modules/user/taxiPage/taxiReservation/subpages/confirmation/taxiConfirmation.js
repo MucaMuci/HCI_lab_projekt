@@ -1,11 +1,31 @@
+/* import emailjs from "@emailjs/browser"; */
+
 const TaxiConfirmation = ({
   currentStep,
   nextFormStep,
   prevFormStep,
   reservationData,
 }) => {
+  /* function sendEmail() {
+    emailjs
+      .sendForm(
+        "gmail",
+        "template_y1ec6I9",
+        reservationData.Email,
+        "rZwVgaQj5yjfalvUm"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  } */
   function handleSubmit() {
     nextFormStep();
+    /* sendEmail(); */
   }
   return (
     <div className=" flex flex-col">
