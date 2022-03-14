@@ -31,8 +31,14 @@ const TaxiReservationDetails = ({ nextFormStep, currentStep, handleData }) => {
   }
 
   useEffect(() => {
-    setFlag(value.state.info.Flag);
-    setFl(value.state.info.Flag);
+    if (value.state.info.Flag) {
+      setFlag(value.state.info.Flag);
+      setFl(value.state.info.Flag);
+    }
+    else {
+      setFlag(0);
+      setFl(0);
+    }
   }, []);
 
   function handleSubmit() {
