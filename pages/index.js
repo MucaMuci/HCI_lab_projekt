@@ -53,12 +53,16 @@ const Home = () => {
             <PastRides />
           </div> */}
         </div>
-        <Footer />
+        <div className="absolute w-full bottom-0">
+          <Footer />
+        </div>
       </div>
     );
   } else {
     return (
-      <div classN="min-h-screen relative">
+
+
+      <div className="min-h-screen relative">
         <NextSeo title={`${SEO.title}`} description={SEO.description} />
         <HeaderUser />
         <div className="pb-32 flex flex-col w-full">
@@ -67,6 +71,7 @@ const Home = () => {
           <div className="max-w-5xl mx-auto pb-7">
             <Image src={HomeImg} alt="Home" />
           </div>
+
 
           <div className="bg-hci-siva-2 flex justify-center py-2 mt-10 my-6">
             <div className="text-4xl">TODAY&apos;S FREE BOATS</div>
@@ -77,6 +82,14 @@ const Home = () => {
             <FreeBoats />
 
           </div>
+
+          {/* <div className="bg-hci-siva-2 flex justify-center py-2 mt-10 my-6">
+          <div className="text-4xl">PAST RIDES</div>
+        </div>
+
+        <div className="max-w-5xl mx-auto">
+          <PastRides />
+        </div> */}
         </div>
         <div className="absolute w-full bottom-0">
           <Footer />

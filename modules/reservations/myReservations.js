@@ -32,7 +32,7 @@ const MyReservations = () => {
   if (user != undefined && email != user.email)
     setEmail(user.email)
 
-  console.log(boats)
+
 
   if (user)
     return (
