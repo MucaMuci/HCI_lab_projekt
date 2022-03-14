@@ -11,7 +11,7 @@ import DownArrow from "../../../../../../assets/down_arrow.png";
 const TaxiReservationDetails = ({ nextFormStep, currentStep, handleData }) => {
   const [numberOfPeople, setNumberOfPeople] = useState(1);
   const [pickUpTime, setPickUpTime] = useState();
-  const [flag, setFlag] = useState(0);
+  const [flag, setFlag] = useState(1);
   const [fl, setFl] = useState(0);
 
   const [listOfAvailableCitiesClicked, setlistOfAvailableCitiesClicked] =
@@ -21,6 +21,10 @@ const TaxiReservationDetails = ({ nextFormStep, currentStep, handleData }) => {
   const [estimatedTime, setestimatedTime] = useState("0 minutes");
 
   const value = useContext(AppContext);
+
+  console.log(flag);
+  console.log(fl);
+  console.log(value);
 
   function citySelectionHandler(city, time, price) {
     setselectedCity(city);
@@ -34,10 +38,9 @@ const TaxiReservationDetails = ({ nextFormStep, currentStep, handleData }) => {
     if (value.state.info.Flag) {
       setFlag(value.state.info.Flag);
       setFl(value.state.info.Flag);
-    }
-    else {
-      setFlag(0);
+    } else {
       setFl(0);
+      setFlag(0);
     }
   }, []);
 
