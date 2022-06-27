@@ -1,3 +1,7 @@
+# Meduza
+This project was developed as a part of Korisnička sučelja and Napredne web tehnologije courses. The goal of the project was to make web application for a small boat company, that had admin side (owner of the company) and users side (boat renters). Only users side was finished due to the complexity of the project.
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
